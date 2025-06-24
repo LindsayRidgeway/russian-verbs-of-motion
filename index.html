@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Russian Verbs of Motion Quiz</title>
+  <title>Russian Verbs of Motion Practice App</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -38,6 +38,39 @@
     .tense-aspect-option {
       margin: 8px 0;
     }
+    .reveal-section {
+      margin: 15px 0;
+    }
+    .reveal-section button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .reveal-section button:hover {
+      background-color: #0056b3;
+    }
+    .repeat-section {
+      margin: 10px 0;
+    }
+    .repeat-section button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .repeat-section button:hover {
+      background-color: #1e7e34;
+    }
+    .hidden {
+      display: none;
+    }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
@@ -46,7 +79,7 @@
   </style>
 </head>
 <body>
-  <h1>Russian Verbs of Action Practice App</h1>
+  <h1>Russian Verbs of Motion Practice App</h1>
 
   <div id="main-container">
     <div id="left-panel">
@@ -59,10 +92,22 @@
 
       <div class="quiz-section">
         <div id="challenge">Here is where the challenge sentence will display</div>
-        <div id="choices"></div>
-        <div class="quiz-section">
-          <button id="submit-btn">Submit</button>
+        
+        <div id="repeat-section" class="repeat-section hidden">
+          <button id="repeat-btn">🔊 Repeat</button>
         </div>
+
+        <div id="reveal-section" class="reveal-section hidden">
+          <button id="reveal-btn">Reveal Choices</button>
+        </div>
+
+        <div id="choices-container" class="hidden">
+          <div id="choices"></div>
+          <div class="quiz-section">
+            <button id="submit-btn">Submit</button>
+          </div>
+        </div>
+
         <div id="result">Correct or Incorrect + correct answer</div>
         <div id="score">Running score</div>
       </div>
@@ -101,7 +146,7 @@
   </div>
 
   <footer>
-    To contact developer: <a href="mailto:LDRidgeway@gmail.com">LDRidgeway@gmail.com</a>
+    To contact the developer: <a href="mailto:LDRidgeway@gmail.com">LDRidgeway@gmail.com</a>
   </footer>
 
   <script src="quizdata.js"></script>
@@ -112,11 +157,19 @@
     const resultEl = document.getElementById('result');
     const scoreEl = document.getElementById('score');
     const prefixContainer = document.getElementById('prefix-container');
+    const revealSection = document.getElementById('reveal-section');
+    const revealBtn = document.getElementById('reveal-btn');
+    const choicesContainer = document.getElementById('choices-container');
+    const repeatSection = document.getElementById('repeat-section');
+    const repeatBtn = document.getElementById('repeat-btn');
+    
     let currentCorrectAnswer = null;
     let currentRound = [];
     let currentIndex = 0;
     let score = 0;
     let currentMode = "en-to-ru";
+    let currentChallengeText = "";
+    let currentLanguage = "en-US";
 
     function speak(text, lang = "en-US") {
       const utterance = new SpeechSynthesisUtterance(text);
@@ -202,25 +255,19 @@
 
       if (selectedPrefixes.length === 0) {
         challengeEl.innerText = 'Please select at least one prefix.';
-        choicesEl.innerHTML = '';
-        resultEl.innerText = '';
-        scoreEl.innerText = '';
+        hideAllQuizElements();
         return;
       }
 
       if (selectedTenseAspects.length === 0) {
         challengeEl.innerText = 'Please select at least one tense and aspect.';
-        choicesEl.innerHTML = '';
-        resultEl.innerText = '';
-        scoreEl.innerText = '';
+        hideAllQuizElements();
         return;
       }
 
       if (availableSentences.length < 10) {
         challengeEl.innerText = `Not enough data for selected filters. Found ${availableSentences.length} sentences, need at least 10.`;
-        choicesEl.innerHTML = '';
-        resultEl.innerText = '';
-        scoreEl.innerText = '';
+        hideAllQuizElements();
         return;
       }
 
@@ -233,6 +280,14 @@
       shuffleArray(availableSentences);
       currentRound = availableSentences.slice(0, 10);
       showCurrentChallenge();
+    }
+
+    function hideAllQuizElements() {
+      revealSection.classList.add('hidden');
+      choicesContainer.classList.add('hidden');
+      repeatSection.classList.add('hidden');
+      resultEl.innerText = '';
+      scoreEl.innerText = '';
     }
 
     function showCurrentChallenge() {
@@ -255,15 +310,24 @@
       }
 
       currentCorrectAnswer = correct;
+      currentChallengeText = challengeText;
+      currentLanguage = lang;
       resultEl.innerText = '';
 
+      // Hide choices initially
+      choicesContainer.classList.add('hidden');
+      revealSection.classList.remove('hidden');
+
       if (currentMode.startsWith("spoken")) {
-        challengeEl.innerText = '';
+        challengeEl.innerText = '🔊 Listen carefully...';
+        repeatSection.classList.remove('hidden');
         speak(challengeText, lang);
       } else {
         challengeEl.innerText = challengeText;
+        repeatSection.classList.add('hidden');
       }
 
+      // Prepare choices but don't show them yet
       const decoys = allOptions
         .filter(s => s[wrongField] !== correct)
         .map(s => s[wrongField]);
@@ -281,6 +345,7 @@
       });
     }
 
+    // Event Listeners
     document.getElementById('btn1').addEventListener('click', () => {
       startNewRound("en-to-ru");
     });
@@ -295,6 +360,15 @@
 
     document.getElementById('btn4').addEventListener('click', () => {
       startNewRound("spoken-ru-to-en");
+    });
+
+    revealBtn.addEventListener('click', () => {
+      revealSection.classList.add('hidden');
+      choicesContainer.classList.remove('hidden');
+    });
+
+    repeatBtn.addEventListener('click', () => {
+      speak(currentChallengeText, currentLanguage);
     });
 
     submitBtn.addEventListener('click', () => {
@@ -315,24 +389,18 @@
 
       currentIndex++;
       if (currentIndex < currentRound.length) {
-        setTimeout(showCurrentChallenge, 500);
+        setTimeout(showCurrentChallenge, 1500);
       } else {
         challengeEl.innerText = 'Round complete!';
+        hideAllQuizElements();
       }
     });
 
     window.onload = function() {
       buildPrefixCheckboxes();
-      
-      // Debug: Log the loaded data structure
-      console.log('Loaded verbData:', verbData);
-      console.log('First item structure:', verbData[0]);
-      if (verbData[0] && verbData[0].groups) {
-        console.log('First groups structure:', verbData[0].groups[0]);
-      }
     };
   </script>
-  <script data-goatcounter="https://russian-verbs-of-action.goatcounter.com/count"
+  <script data-goatcounter="https://russian-verbs-of-motion.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
