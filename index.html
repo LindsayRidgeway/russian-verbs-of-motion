@@ -9,70 +9,125 @@
       display: flex;
       flex-direction: column;
       padding: 20px;
+      background-color: #f5f5f5;
     }
     #main-container {
       display: flex;
       flex-direction: row;
+      gap: 20px;
     }
     #left-panel {
       flex: 3;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     #right-panel {
       flex: 1;
-      padding-left: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-height: 80vh;
+      overflow-y: auto;
     }
     .button-group {
       margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .mode-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    .mode-button:hover {
+      background-color: #45a049;
+    }
+    .mode-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
     }
     .quiz-section {
       margin-top: 20px;
     }
     .radio-option {
-      margin: 4px 0;
+      margin: 6px 0;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    .radio-option:hover {
+      background-color: #f0f0f0;
     }
     .tense-aspect-section {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       padding-bottom: 20px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 2px solid #e0e0e0;
     }
     .tense-aspect-option {
-      margin: 8px 0;
+      margin: 6px 0;
+      font-size: 14px;
     }
     .prefix-option {
-      margin: 8px 0;
+      margin: 6px 0;
+      font-size: 14px;
     }
     .reveal-section {
       margin: 15px 0;
     }
     .reveal-section button {
-      background-color: #007bff;
+      background-color: #2196F3;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
+      padding: 12px 24px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 16px;
+      transition: background-color 0.3s;
     }
     .reveal-section button:hover {
-      background-color: #0056b3;
+      background-color: #1976D2;
     }
     .repeat-section {
       margin: 10px 0;
     }
     .repeat-section button {
-      background-color: #28a745;
+      background-color: #FF9800;
       color: white;
       border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
+      padding: 10px 18px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 14px;
+      transition: background-color 0.3s;
     }
     .repeat-section button:hover {
-      background-color: #1e7e34;
+      background-color: #F57C00;
+    }
+    .submit-button {
+      background-color: #9C27B0;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+    .submit-button:hover {
+      background-color: #7B1FA2;
     }
     .loading {
-      color: #007bff;
+      color: #2196F3;
       font-style: italic;
     }
     .error {
@@ -82,27 +137,48 @@
     .hidden {
       display: none;
     }
+    #challenge {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-left: 4px solid #4CAF50;
+      border-radius: 4px;
+    }
+    #result {
+      margin: 15px 0;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .result-correct {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .result-incorrect {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    #score {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin: 10px 0;
+    }
+    .tense-aspect-section h3 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
       font-style: italic;
-    }
-    .button-group button {
-      margin-right: 10px;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .button-group button:hover {
-      background-color: #0056b3;
-    }
-    .button-group button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
+      text-align: center;
+      color: #666;
     }
   </style>
 </head>
@@ -112,10 +188,10 @@
   <div id="main-container">
     <div id="left-panel">
       <div class="button-group">
-        <button id="btn1">English Written</button>
-        <button id="btn2">Russian Written</button>
-        <button id="btn3">Spoken English</button>
-        <button id="btn4">Spoken Russian</button>
+        <button class="mode-button" id="btn1">English → Russian</button>
+        <button class="mode-button" id="btn2">Russian → English</button>
+        <button class="mode-button" id="btn3">🔊 Spoken English</button>
+        <button class="mode-button" id="btn4">🔊 Spoken Russian</button>
       </div>
 
       <div class="quiz-section">
@@ -132,7 +208,7 @@
         <div id="choices-container" class="hidden">
           <div id="choices"></div>
           <div class="quiz-section">
-            <button id="submit-btn">Submit</button>
+            <button class="submit-button" id="submit-btn">Submit Answer</button>
           </div>
         </div>
 
@@ -178,7 +254,7 @@
   </div>
 
   <footer>
-    To contact the developer: <a href="mailto:LDRidgeway@gmail.com">LDRidgeway@gmail.com</a>
+    To contact developer: <a href="mailto:LDRidgeway@gmail.com">LDRidgeway@gmail.com</a>
   </footer>
 
   <script src="quizdata.js"></script>
@@ -289,7 +365,7 @@
     }
 
     function setButtonsDisabled(disabled) {
-      const buttons = document.querySelectorAll('.button-group button');
+      const buttons = document.querySelectorAll('.mode-button');
       buttons.forEach(btn => btn.disabled = disabled);
     }
 
