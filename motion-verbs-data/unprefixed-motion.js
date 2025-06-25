@@ -1,0 +1,148 @@
+// Unprefixed motion verbs data
+// Basic идти/ехать forms without prefixes
+
+window.unprefixedMotionData = {
+  prefix: "",
+  groups: [
+    {
+      tense: "past",
+      aspect: "perfective",
+      sentences: [
+        { english: "I walked to the lake (male)", russian: "я пошёл к озеру" },
+        { english: "I walked to the lake (female)", russian: "я пошла к озеру" },
+        { english: "She walked to the forest", russian: "она пошла в лес" },
+        { english: "He drove to the theater", russian: "он поехал в театр" },
+        { english: "We drove to the museum", russian: "мы поехали в музей" },
+        { english: "They walked up the mountain", russian: "они пошли в горы" },
+        { english: "You drove to the cinema", russian: "вы поехали в кино" },
+        { english: "The children walked to the meadow", russian: "дети пошли на луг" },
+        { english: "My friend drove to the mall (male)", russian: "мой друг поехал в торговый центр" },
+        { english: "My friend drove to the mall (female)", russian: "моя подруга поехала в торговый центр" },
+        { english: "We walked down the trail", russian: "мы пошли по тропе" },
+        { english: "She drove to the airport", russian: "она поехала в аэропорт" },
+        { english: "He walked into the woods", russian: "он пошёл в лес" },
+        { english: "They drove to the stadium", russian: "они поехали на стадион" },
+        { english: "The tourist walked to the hilltop (male)", russian: "турист пошёл на вершину холма" },
+        { english: "The tourist walked to the hilltop (female)", russian: "туристка пошла на вершину холма" },
+        { english: "The tourists walked to the waterfall", russian: "туристы пошли к водопаду" },
+        { english: "She drove across the bridge", russian: "она поехала по мосту" },
+        { english: "We walked along the creek", russian: "мы пошли вдоль ручья" },
+        { english: "He drove to the restaurant", russian: "он поехал в ресторан" },
+        { english: "They walked up the valley", russian: "они пошли по долине" },
+        { english: "She walked through the field", russian: "она пошла через поле" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I used to walk in the forest (male)", russian: "я ходил в лесу" },
+        { english: "I used to walk in the forest (female)", russian: "я ходила в лесу" },
+        { english: "She often walked by the river", russian: "она ходила у реки" },
+        { english: "He regularly drove to the office", russian: "он ездил в офис" },
+        { english: "We would drive to the park", russian: "мы ездили в парк" },
+        { english: "They walked in the mountains every summer", russian: "они ходили в горы каждое лето" },
+        { english: "You used to drive around the city", russian: "вы ездили по городу" },
+        { english: "The dog would walk in the yard", russian: "собака ходила во дворе" },
+        { english: "My parents drove to the market", russian: "мои родители ездили на рынок" },
+        { english: "We used to walk in the meadow", russian: "мы ходили по лугу" },
+        { english: "She would drive to the theater", russian: "она ездила в театр" },
+        { english: "He walked around the lake", russian: "он ходил вокруг озера" },
+        { english: "They often drove to concerts", russian: "они ездили на концерты" },
+        { english: "The child walked through the woods (male)", russian: "ребёнок ходил по лесу" },
+        { english: "The child walked through the woods (female)", russian: "ребёнок ходила по лесу" },
+        { english: "The children walked near the stream", russian: "дети ходили у ручья" },
+        { english: "She used to drive to the gym", russian: "она ездила в спортзал" },
+        { english: "We would walk up the hills", russian: "мы ходили по холмам" },
+        { english: "He drove around town", russian: "он ездил по городу" },
+        { english: "They walked in the canyon", russian: "они ходили в ущелье" },
+        { english: "The student used to drive to work (male)", russian: "студент ездил на работу" },
+        { english: "The student used to drive to work (female)", russian: "студентка ездила на работу" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I walk in the park", russian: "я хожу в парке" },
+        { english: "She walks by the lake", russian: "она ходит у озера" },
+        { english: "He drives to work", russian: "он ездит на работу" },
+        { english: "We drive to school", russian: "мы ездим в школу" },
+        { english: "They walk in the forest", russian: "они ходят в лесу" },
+        { english: "You drive around the city", russian: "вы ездите по городу" },
+        { english: "The cat walks in the yard", russian: "кот ходит во дворе" },
+        { english: "My sister drives to the mall", russian: "моя сестра ездит в торговый центр" },
+        { english: "We walk along the river", russian: "мы ходим вдоль реки" },
+        { english: "She drives to the hospital", russian: "она ездит в больницу" },
+        { english: "He walks around the village", russian: "он ходит по деревне" },
+        { english: "They drive to restaurants", russian: "они ездят в рестораны" },
+        { english: "The teacher walks through the meadow", russian: "учитель ходит по лугу" },
+        { english: "The students walk on campus", russian: "студенты ходят по кампусу" },
+        { english: "She drives to the airport", russian: "она ездит в аэропорт" },
+        { english: "We walk in the mountains", russian: "мы ходим в горах" },
+        { english: "He drives across the bridge", russian: "он ездит по мосту" },
+        { english: "They walk near the waterfall", russian: "они ходят у водопада" },
+        { english: "The doctor drives to the library", russian: "врач ездит в библиотеку" },
+        { english: "She walks in the valley", russian: "она ходит по долине" },
+        { english: "The worker walks on the trail", russian: "рабочий ходит по тропе" },
+        { english: "My brother drives to the cinema", russian: "мой брат ездит в кино" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I will walk in the forest", russian: "я буду ходить в лесу" },
+        { english: "She will walk by the creek", russian: "она будет ходить у ручья" },
+        { english: "He will drive to the office", russian: "он будет ездить в офис" },
+        { english: "We will drive to the theater", russian: "мы будем ездить в театр" },
+        { english: "They will walk in the hills", russian: "они будут ходить по холмам" },
+        { english: "You will drive around town", russian: "вы будете ездить по городу" },
+        { english: "The children will walk in the garden", russian: "дети будут ходить в саду" },
+        { english: "My friend will drive to work (male)", russian: "мой друг будет ездить на работу" },
+        { english: "My friend will drive to work (female)", russian: "моя подруга будет ездить на работу" },
+        { english: "We will walk along the lake", russian: "мы будем ходить вдоль озера" },
+        { english: "She will drive to the gym", russian: "она будет ездить в спортзал" },
+        { english: "He will walk around the park", russian: "он будет ходить по парку" },
+        { english: "They will drive to concerts", russian: "они будут ездить на концерты" },
+        { english: "The guide will walk through the woods", russian: "гид будет ходить по лесу" },
+        { english: "The tourists will walk in the canyon", russian: "туристы будут ходить в ущелье" },
+        { english: "She will drive to the market", russian: "она будет ездить на рынок" },
+        { english: "We will walk up the mountain", russian: "мы будем ходить в горы" },
+        { english: "He will drive to the stadium", russian: "он будет ездить на стадион" },
+        { english: "They will walk near the river", russian: "они будут ходить у реки" },
+        { english: "The nurse will drive to the museum", russian: "медсестра будет ездить в музей" },
+        { english: "She will walk in the meadow", russian: "она будет ходить по лугу" },
+        { english: "The professor will walk on the trail", russian: "профессор будет ходить по тропе" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      sentences: [
+        { english: "I will walk to the lake (male)", russian: "я пойду к озеру" },
+        { english: "I will walk to the lake (female)", russian: "я пойду к озеру" },
+        { english: "She will walk to the forest", russian: "она пойдёт в лес" },
+        { english: "He will drive to the cinema", russian: "он поедет в кино" },
+        { english: "We will drive to the airport", russian: "мы поедем в аэропорт" },
+        { english: "They will walk up the hill", russian: "они пойдут на холм" },
+        { english: "You will drive to the hospital", russian: "вы поедете в больницу" },
+        { english: "The kids will walk to the playground", russian: "дети пойдут на площадку" },
+        { english: "My colleague will drive to the meeting (male)", russian: "мой коллега поедет на встречу" },
+        { english: "My colleague will drive to the meeting (female)", russian: "моя коллега поедет на встречу" },
+        { english: "We will walk down the trail", russian: "мы пойдём по тропе" },
+        { english: "She will drive to the mall", russian: "она поедет в торговый центр" },
+        { english: "He will walk into the woods", russian: "он пойдёт в лес" },
+        { english: "They will drive to the restaurant", russian: "они поедут в ресторан" },
+        { english: "The visitor will walk to the waterfall (male)", russian: "посетитель пойдёт к водопаду" },
+        { english: "The visitor will walk to the waterfall (female)", russian: "посетительница пойдёт к водопаду" },
+        { english: "The group will walk to the summit", russian: "группа пойдёт на вершину" },
+        { english: "She will drive across the bridge", russian: "она поедет по мосту" },
+        { english: "We will walk along the creek", russian: "мы пойдём вдоль ручья" },
+        { english: "He will drive to the theater", russian: "он поедет в театр" },
+        { english: "They will walk through the valley", russian: "они пойдут по долине" },
+        { english: "She will walk through the field", russian: "она пойдёт через поле" }
+      ]
+    }
+  ]
+};

@@ -1,1452 +1,165 @@
-const verbData = [
-  {
-    prefix: "",
-    groups: [
-      {
-        tense: "past",
-        aspect: "perfective",
-        sentences: [
-          { english: "I walked to the lake (male)", russian: "я пошёл к озеру" },
-          { english: "I walked to the lake (female)", russian: "я пошла к озеру" },
-          { english: "She walked to the forest", russian: "она пошла в лес" },
-          { english: "He drove to the theater", russian: "он поехал в театр" },
-          { english: "We drove to the museum", russian: "мы поехали в музей" },
-          { english: "They walked up the mountain", russian: "они пошли в горы" },
-          { english: "You drove to the cinema", russian: "вы поехали в кино" },
-          { english: "The children walked to the meadow", russian: "дети пошли на луг" },
-          { english: "My friend drove to the mall (male)", russian: "мой друг поехал в торговый центр" },
-          { english: "My friend drove to the mall (female)", russian: "моя подруга поехала в торговый центр" },
-          { english: "We walked down the trail", russian: "мы пошли по тропе" },
-          { english: "She drove to the airport", russian: "она поехала в аэропорт" },
-          { english: "He walked into the woods", russian: "он пошёл в лес" },
-          { english: "They drove to the stadium", russian: "они поехали на стадион" },
-          { english: "The tourist walked to the hilltop (male)", russian: "турист пошёл на вершину холма" },
-          { english: "The tourist walked to the hilltop (female)", russian: "туристка пошла на вершину холма" },
-          { english: "The tourists walked to the waterfall", russian: "туристы пошли к водопаду" },
-          { english: "She drove across the bridge", russian: "она поехала по мосту" },
-          { english: "We walked along the creek", russian: "мы пошли вдоль ручья" },
-          { english: "He drove to the restaurant", russian: "он поехал в ресторан" },
-          { english: "They walked up the valley", russian: "они пошли по долине" },
-          { english: "She walked through the field", russian: "она пошла через поле" }
-        ]
-      },
-      {
-        tense: "past",
-        aspect: "imperfective",
-        sentences: [
-          { english: "I used to walk in the forest (male)", russian: "я ходил в лесу" },
-          { english: "I used to walk in the forest (female)", russian: "я ходила в лесу" },
-          { english: "She often walked by the river", russian: "она ходила у реки" },
-          { english: "He regularly drove to the office", russian: "он ездил в офис" },
-          { english: "We would drive to the park", russian: "мы ездили в парк" },
-          { english: "They walked in the mountains every summer", russian: "они ходили в горы каждое лето" },
-          { english: "You used to drive around the city", russian: "вы ездили по городу" },
-          { english: "The dog would walk in the yard", russian: "собака ходила во дворе" },
-          { english: "My parents drove to the market", russian: "мои родители ездили на рынок" },
-          { english: "We used to walk in the meadow", russian: "мы ходили по лугу" },
-          { english: "She would drive to the theater", russian: "она ездила в театр" },
-          { english: "He walked around the lake", russian: "он ходил вокруг озера" },
-          { english: "They often drove to concerts", russian: "они ездили на концерты" },
-          { english: "The child walked through the woods (male)", russian: "ребёнок ходил по лесу" },
-          { english: "The child walked through the woods (female)", russian: "ребёнок ходила по лесу" },
-          { english: "The children walked near the stream", russian: "дети ходили у ручья" },
-          { english: "She used to drive to the gym", russian: "она ездила в спортзал" },
-          { english: "We would walk up the hills", russian: "мы ходили по холмам" },
-          { english: "He drove around town", russian: "он ездил по городу" },
-          { english: "They walked in the canyon", russian: "они ходили в ущелье" },
-          { english: "The student used to drive to work (male)", russian: "студент ездил на работу" },
-          { english: "The student used to drive to work (female)", russian: "студентка ездила на работу" }
-        ]
-      },
-      {
-        tense: "present",
-        aspect: "imperfective",
-        sentences: [
-          { english: "I walk in the park", russian: "я хожу в парке" },
-          { english: "She walks by the lake", russian: "она ходит у озера" },
-          { english: "He drives to work", russian: "он ездит на работу" },
-          { english: "We drive to school", russian: "мы ездим в школу" },
-          { english: "They walk in the forest", russian: "они ходят в лесу" },
-          { english: "You drive around the city", russian: "вы ездите по городу" },
-          { english: "The cat walks in the yard", russian: "кот ходит во дворе" },
-          { english: "My sister drives to the mall", russian: "моя сестра ездит в торговый центр" },
-          { english: "We walk along the river", russian: "мы ходим вдоль реки" },
-          { english: "She drives to the hospital", russian: "она ездит в больницу" },
-          { english: "He walks around the village", russian: "он ходит по деревне" },
-          { english: "They drive to restaurants", russian: "они ездят в рестораны" },
-          { english: "The teacher walks through the meadow", russian: "учитель ходит по лугу" },
-          { english: "The students walk on campus", russian: "студенты ходят по кампусу" },
-          { english: "She drives to the airport", russian: "она ездит в аэропорт" },
-          { english: "We walk in the mountains", russian: "мы ходим в горах" },
-          { english: "He drives across the bridge", russian: "он ездит по мосту" },
-          { english: "They walk near the waterfall", russian: "они ходят у водопада" },
-          { english: "The doctor drives to the library", russian: "врач ездит в библиотеку" },
-          { english: "She walks in the valley", russian: "она ходит по долине" },
-          { english: "The worker walks on the trail", russian: "рабочий ходит по тропе" },
-          { english: "My brother drives to the cinema", russian: "мой брат ездит в кино" }
-        ]
-      },
-      {
-        tense: "future",
-        aspect: "imperfective",
-        sentences: [
-          { english: "I will walk in the forest", russian: "я буду ходить в лесу" },
-          { english: "She will walk by the creek", russian: "она будет ходить у ручья" },
-          { english: "He will drive to the office", russian: "он будет ездить в офис" },
-          { english: "We will drive to the theater", russian: "мы будем ездить в театр" },
-          { english: "They will walk in the hills", russian: "они будут ходить по холмам" },
-          { english: "You will drive around town", russian: "вы будете ездить по городу" },
-          { english: "The children will walk in the garden", russian: "дети будут ходить в саду" },
-          { english: "My friend will drive to work (male)", russian: "мой друг будет ездить на работу" },
-          { english: "My friend will drive to work (female)", russian: "моя подруга будет ездить на работу" },
-          { english: "We will walk along the lake", russian: "мы будем ходить вдоль озера" },
-          { english: "She will drive to the gym", russian: "она будет ездить в спортзал" },
-          { english: "He will walk around the park", russian: "он будет ходить по парку" },
-          { english: "They will drive to concerts", russian: "они будут ездить на концерты" },
-          { english: "The guide will walk through the woods", russian: "гид будет ходить по лесу" },
-          { english: "The tourists will walk in the canyon", russian: "туристы будут ходить в ущелье" },
-          { english: "She will drive to the market", russian: "она будет ездить на рынок" },
-          { english: "We will walk up the mountain", russian: "мы будем ходить в горы" },
-          { english: "He will drive to the stadium", russian: "он будет ездить на стадион" },
-          { english: "They will walk near the river", russian: "они будут ходить у реки" },
-          { english: "The nurse will drive to the museum", russian: "медсестра будет ездить в музей" },
-          { english: "She will walk in the meadow", russian: "она будет ходить по лугу" },
-          { english: "The professor will walk on the trail", russian: "профессор будет ходить по тропе" }
-        ]
-      },
-      {
-        tense: "future",
-        aspect: "perfective",
-        sentences: [
-          { english: "I will walk to the lake (male)", russian: "я пойду к озеру" },
-          { english: "I will walk to the lake (female)", russian: "я пойду к озеру" },
-          { english: "She will walk to the forest", russian: "она пойдёт в лес" },
-          { english: "He will drive to the cinema", russian: "он поедет в кино" },
-          { english: "We will drive to the airport", russian: "мы поедем в аэропорт" },
-          { english: "They will walk up the hill", russian: "они пойдут на холм" },
-          { english: "You will drive to the hospital", russian: "вы поедете в больницу" },
-          { english: "The kids will walk to the playground", russian: "дети пойдут на площадку" },
-          { english: "My colleague will drive to the meeting (male)", russian: "мой коллега поедет на встречу" },
-          { english: "My colleague will drive to the meeting (female)", russian: "моя коллега поедет на встречу" },
-          { english: "We will walk down the trail", russian: "мы пойдём по тропе" },
-          { english: "She will drive to the mall", russian: "она поедет в торговый центр" },
-          { english: "He will walk into the woods", russian: "он пойдёт в лес" },
-          { english: "They will drive to the restaurant", russian: "они поедут в ресторан" },
-          { english: "The visitor will walk to the waterfall (male)", russian: "посетитель пойдёт к водопаду" },
-          { english: "The visitor will walk to the waterfall (female)", russian: "посетительница пойдёт к водопаду" },
-          { english: "The group will walk to the summit", russian: "группа пойдёт на вершину" },
-          { english: "She will drive across the bridge", russian: "она поедет по мосту" },
-          { english: "We will walk along the creek", russian: "мы пойдём вдоль ручья" },
-          { english: "He will drive to the theater", russian: "он поедет в театр" },
-          { english: "They will walk through the valley", russian: "они пойдут по долине" },
-          { english: "She will walk through the field", russian: "она пойдёт через поле" }
-        ]
-      }
-    ]
+// Main data loader for Russian Verbs of Motion Practice App
+// This file coordinates loading of individual prefix modules
+
+let verbData = [];
+let availablePrefixes = [];
+
+// Define all available prefix modules
+const prefixModules = [
+  { 
+    prefix: "", 
+    name: "(no prefix)", 
+    file: "unprefixed-motion.js",
+    loaded: false,
+    data: null
   },
-  {
-	  prefix: "у",
-	  groups: [
-	    {
-	      tense: "past",
-	      aspect: "perfective",
-	      sentences: [
-	        { english: "I left the forest trail (male)", russian: "я ушёл с лесной тропы" },
-	        { english: "I left the forest trail (female)", russian: "я ушла с лесной тропы" },
-	        { english: "She left the mountain cabin", russian: "она ушла из горной хижины" },
-	        { english: "He drove away from the theater", russian: "он уехал из театра" },
-	        { english: "We drove away from the museum", russian: "мы уехали из музея" },
-	        { english: "They left the hiking path", russian: "они ушли с тропы" },
-	        { english: "You drove away from the cinema", russian: "вы уехали из кинотеатра" },
-	        { english: "The children left the meadow", russian: "дети ушли с луга" },
-	        { english: "My friend drove away from the mall (male)", russian: "мой друг уехал из торгового центра" },
-	        { english: "My friend drove away from the mall (female)", russian: "моя подруга уехала из торгового центра" },
-	        { english: "We left the campsite", russian: "мы ушли с места стоянки" },
-	        { english: "She drove away from the airport", russian: "она уехала из аэропорта" },
-	        { english: "He left the woodland area", russian: "он ушёл из лесной зоны" },
-	        { english: "They drove away from the stadium", russian: "они уехали со стадиона" },
-	        { english: "The tourist left the hilltop (male)", russian: "турист ушёл с вершины холма" },
-	        { english: "The tourist left the hilltop (female)", russian: "туристка ушла с вершины холма" },
-	        { english: "The tourists left the waterfall", russian: "туристы ушли от водопада" },
-	        { english: "She drove away from the bridge", russian: "она уехала с моста" },
-	        { english: "We left the creek area", russian: "мы ушли от ручья" },
-	        { english: "He drove away from the restaurant", russian: "он уехал из ресторана" },
-	        { english: "They left the valley", russian: "они ушли из долины" },
-	        { english: "She left the field", russian: "она ушла с поля" }
-	      ]
-	    },
-	    {
-	      tense: "past",
-	      aspect: "imperfective",
-	      sentences: [
-	        { english: "I used to leave the forest early (male)", russian: "я уходил из леса рано" },
-	        { english: "I used to leave the forest early (female)", russian: "я уходила из леса рано" },
-	        { english: "She would leave the mountain trail", russian: "она уходила с горной тропы" },
-	        { english: "He regularly drove away from the office", russian: "он уезжал из офиса" },
-	        { english: "We often drove away from the park", russian: "мы уезжали из парка" },
-	        { english: "They would leave the hiking area", russian: "они уходили с места походов" },
-	        { english: "You used to drive away from the city", russian: "вы уезжали из города" },
-	        { english: "The animals would leave the meadow", russian: "животные уходили с луга" },
-	        { english: "My parents drove away from the market", russian: "мои родители уезжали с рынка" },
-	        { english: "We used to leave the campground", russian: "мы уходили с кемпинга" },
-	        { english: "She would drive away from the theater", russian: "она уезжала из театра" },
-	        { english: "He left the lake area regularly", russian: "он уходил от озера регулярно" },
-	        { english: "They often drove away from concerts", russian: "они уезжали с концертов" },
-	        { english: "The worker would leave the woods (male)", russian: "рабочий уходил из леса" },
-	        { english: "The worker would leave the woods (female)", russian: "работница уходила из леса" },
-	        { english: "The children left the stream area", russian: "дети уходили от ручья" },
-	        { english: "She used to drive away from the gym", russian: "она уезжала из спортзала" },
-	        { english: "We would leave the hills", russian: "мы уходили с холмов" },
-	        { english: "He drove away from town", russian: "он уезжал из города" },
-	        { english: "They left the canyon", russian: "они уходили из ущелья" },
-	        { english: "The student used to drive away from work (male)", russian: "студент уезжал с работы" },
-	        { english: "The student used to drive away from work (female)", russian: "студентка уезжала с работы" }
-	      ]
-	    },
-	    {
-	      tense: "present",
-	      aspect: "imperfective",
-	      sentences: [
-	        { english: "I leave the park", russian: "я ухожу из парка" },
-	        { english: "She leaves the lakeside", russian: "она уходит от озера" },
-	        { english: "He drives away from work", russian: "он уезжает с работы" },
-	        { english: "We drive away from school", russian: "мы уезжаем из школы" },
-	        { english: "They leave the forest", russian: "они уходят из леса" },
-	        { english: "You drive away from the city", russian: "вы уезжаете из города" },
-	        { english: "The deer leaves the yard", russian: "олень уходит со двора" },
-	        { english: "My sister drives away from the mall", russian: "моя сестра уезжает из торгового центра" },
-	        { english: "We leave the riverside", russian: "мы уходим от реки" },
-	        { english: "She drives away from the hospital", russian: "она уезжает из больницы" },
-	        { english: "He leaves the village", russian: "он уходит из деревни" },
-	        { english: "They drive away from restaurants", russian: "они уезжают из ресторанов" },
-	        { english: "The teacher leaves the meadow", russian: "учитель уходит с луга" },
-	        { english: "The students leave campus", russian: "студенты уходят из кампуса" },
-	        { english: "She drives away from the airport", russian: "она уезжает из аэропорта" },
-	        { english: "We leave the mountains", russian: "мы уходим из гор" },
-	        { english: "He drives away from the bridge", russian: "он уезжает с моста" },
-	        { english: "They leave the waterfall area", russian: "они уходят от водопада" },
-	        { english: "The doctor drives away from the library", russian: "врач уезжает из библиотеки" },
-	        { english: "She leaves the valley", russian: "она уходит из долины" },
-	        { english: "The guide leaves the trail", russian: "гид уходит с тропы" },
-	        { english: "My brother drives away from the cinema", russian: "мой брат уезжает из кинотеатра" }
-	      ]
-	    },
-	    {
-	      tense: "future",
-	      aspect: "imperfective",
-	      sentences: [
-	        { english: "I will leave the forest", russian: "я буду уходить из леса" },
-	        { english: "She will leave the creek area", russian: "она будет уходить от ручья" },
-	        { english: "He will drive away from the office", russian: "он будет уезжать из офиса" },
-	        { english: "We will drive away from the theater", russian: "мы будем уезжать из театра" },
-	        { english: "They will leave the hills", russian: "они будут уходить с холмов" },
-	        { english: "You will drive away from town", russian: "вы будете уезжать из города" },
-	        { english: "The children will leave the garden", russian: "дети будут уходить из сада" },
-	        { english: "My friend will drive away from work (male)", russian: "мой друг будет уезжать с работы" },
-	        { english: "My friend will drive away from work (female)", russian: "моя подруга будет уезжать с работы" },
-	        { english: "We will leave the lakeside", russian: "мы будем уходить от озера" },
-	        { english: "She will drive away from the gym", russian: "она будет уезжать из спортзала" },
-	        { english: "He will leave the park", russian: "он будет уходить из парка" },
-	        { english: "They will drive away from concerts", russian: "они будут уезжать с концертов" },
-	        { english: "The visitor will leave the woods (male)", russian: "посетитель будет уходить из леса" },
-	        { english: "The visitor will leave the woods (female)", russian: "посетительница будет уходить из леса" },
-	        { english: "The tourists will leave the canyon", russian: "туристы будут уходить из ущелья" },
-	        { english: "She will drive away from the market", russian: "она будет уезжать с рынка" },
-	        { english: "We will leave the mountain", russian: "мы будем уходить с горы" },
-	        { english: "He will drive away from the stadium", russian: "он будет уезжать со стадиона" },
-	        { english: "They will leave the river", russian: "они будут уходить от реки" },
-	        { english: "The nurse will drive away from the museum", russian: "медсестра будет уезжать из музея" },
-	        { english: "She will leave the meadow", russian: "она будет уходить с луга" }
-	      ]
-	    },
-	    {
-	      tense: "future",
-	      aspect: "perfective",
-	      sentences: [
-	        { english: "I will leave the lake (male)", russian: "я уйду от озера" },
-	        { english: "I will leave the lake (female)", russian: "я уйду от озера" },
-	        { english: "She will leave the forest", russian: "она уйдёт из леса" },
-	        { english: "He will drive away from the cinema", russian: "он уедет из кинотеатра" },
-	        { english: "We will drive away from the airport", russian: "мы уедем из аэропорта" },
-	        { english: "They will leave the hill", russian: "они уйдут с холма" },
-	        { english: "You will drive away from the hospital", russian: "вы уедете из больницы" },
-	        { english: "The kids will leave the playground", russian: "дети уйдут с площадки" },
-	        { english: "My colleague will drive away from the meeting (male)", russian: "мой коллега уедет со встречи" },
-	        { english: "My colleague will drive away from the meeting (female)", russian: "моя коллега уедет со встречи" },
-	        { english: "We will leave the trail", russian: "мы уйдём с тропы" },
-	        { english: "She will drive away from the mall", russian: "она уедет из торгового центра" },
-	        { english: "He will leave the woods", russian: "он уйдёт из леса" },
-	        { english: "They will drive away from the restaurant", russian: "они уедут из ресторана" },
-	        { english: "The hiker will leave the waterfall (male)", russian: "путешественник уйдёт от водопада" },
-	        { english: "The hiker will leave the waterfall (female)", russian: "путешественница уйдёт от водопада" },
-	        { english: "The group will leave the summit", russian: "группа уйдёт с вершины" },
-	        { english: "She will drive away from the bridge", russian: "она уедет с моста" },
-	        { english: "We will leave the creek", russian: "мы уйдём от ручья" },
-	        { english: "He will drive away from the theater", russian: "он уедет из театра" },
-	        { english: "They will leave the valley", russian: "они уйдут из долины" },
-	        { english: "She will leave the field", russian: "она уйдёт с поля" }
-	      ]
-	    }
-	  ]
-    },
-	{
-	    prefix: "при",
-	    groups: [
-	      {
-	        tense: "past",
-	        aspect: "perfective",
-	        sentences: [
-	          { english: "I arrived at the forest clearing (male)", russian: "я пришёл на лесную поляну" },
-	          { english: "I arrived at the forest clearing (female)", russian: "я пришла на лесную поляну" },
-	          { english: "She arrived at the mountain lodge", russian: "она пришла в горный домик" },
-	          { english: "He arrived at the theater", russian: "он приехал в театр" },
-	          { english: "We arrived at the museum", russian: "мы приехали в музей" },
-	          { english: "They arrived at the hiking trail", russian: "они пришли на тропу" },
-	          { english: "You arrived at the cinema", russian: "вы приехали в кинотеатр" },
-	          { english: "The children arrived at the meadow", russian: "дети пришли на луг" },
-	          { english: "My friend arrived at the mall (male)", russian: "мой друг приехал в торговый центр" },
-	          { english: "My friend arrived at the mall (female)", russian: "моя подруга приехала в торговый центр" },
-	          { english: "We reached the campsite", russian: "мы пришли на место стоянки" },
-	          { english: "She arrived at the airport", russian: "она приехала в аэропорт" },
-	          { english: "He reached the woodland", russian: "он пришёл в лесную зону" },
-	          { english: "They arrived at the stadium", russian: "они приехали на стадион" },
-	          { english: "The tourist reached the hilltop (male)", russian: "турист пришёл на вершину холма" },
-	          { english: "The tourist reached the hilltop (female)", russian: "туристка пришла на вершину холма" },
-	          { english: "The tourists reached the waterfall", russian: "туристы пришли к водопаду" },
-	          { english: "She arrived at the bridge", russian: "она приехала к мосту" },
-	          { english: "We reached the creek", russian: "мы пришли к ручью" },
-	          { english: "He arrived at the restaurant", russian: "он приехал в ресторан" },
-	          { english: "They reached the valley", russian: "они пришли в долину" },
-	          { english: "She reached the field", russian: "она пришла на поле" }
-	        ]
-	      },
-	      {
-	        tense: "past",
-	        aspect: "imperfective",
-	        sentences: [
-	          { english: "I used to arrive at the forest (male)", russian: "я приходил в лес" },
-	          { english: "I used to arrive at the forest (female)", russian: "я приходила в лес" },
-	          { english: "She would arrive at the mountain trail", russian: "она приходила на горную тропу" },
-	          { english: "He regularly arrived at the office", russian: "он приезжал в офис" },
-	          { english: "We often arrived at the park", russian: "мы приезжали в парк" },
-	          { english: "They would arrive at the hiking area", russian: "они приходили в место походов" },
-	          { english: "You used to arrive in the city", russian: "вы приезжали в город" },
-	          { english: "The animals would arrive at the meadow", russian: "животные приходили на луг" },
-	          { english: "My parents arrived at the market", russian: "мои родители приезжали на рынок" },
-	          { english: "We used to arrive at the campground", russian: "мы приходили на кемпинг" },
-	          { english: "She would arrive at the theater", russian: "она приезжала в театр" },
-	          { english: "He arrived at the lake regularly", russian: "он приходил к озеру регулярно" },
-	          { english: "They often arrived at concerts", russian: "они приезжали на концерты" },
-	          { english: "The worker would arrive in the woods (male)", russian: "рабочий приходил в лес" },
-	          { english: "The worker would arrive in the woods (female)", russian: "работница приходила в лес" },
-	          { english: "The children arrived at the stream", russian: "дети приходили к ручью" },
-	          { english: "She used to arrive at the gym", russian: "она приезжала в спортзал" },
-	          { english: "We would arrive at the hills", russian: "мы приходили на холмы" },
-	          { english: "He arrived in town", russian: "он приезжал в город" },
-	          { english: "They arrived at the canyon", russian: "они приходили в ущелье" },
-	          { english: "The student used to arrive at work (male)", russian: "студент приезжал на работу" },
-	          { english: "The student used to arrive at work (female)", russian: "студентка приезжала на работу" }
-	        ]
-	      },
-	      {
-	        tense: "present",
-	        aspect: "imperfective",
-	        sentences: [
-	          { english: "I arrive at the park", russian: "я прихожу в парк" },
-	          { english: "She arrives at the lakeside", russian: "она приходит к озеру" },
-	          { english: "He arrives at work", russian: "он приезжает на работу" },
-	          { english: "We arrive at school", russian: "мы приезжаем в школу" },
-	          { english: "They arrive in the forest", russian: "они приходят в лес" },
-	          { english: "You arrive in the city", russian: "вы приезжаете в город" },
-	          { english: "The fox arrives in the yard", russian: "лиса приходит во двор" },
-	          { english: "My sister arrives at the mall", russian: "моя сестра приезжает в торговый центр" },
-	          { english: "We arrive at the riverside", russian: "мы приходим к реке" },
-	          { english: "She arrives at the hospital", russian: "она приезжает в больницу" },
-	          { english: "He arrives in the village", russian: "он приезжает в деревню" },
-	          { english: "They arrive at restaurants", russian: "они приезжают в рестораны" },
-	          { english: "The teacher arrives at the meadow", russian: "учитель приходит на луг" },
-	          { english: "The students arrive on campus", russian: "студенты приходят в кампус" },
-	          { english: "She arrives at the airport", russian: "она приезжает в аэропорт" },
-	          { english: "We arrive in the mountains", russian: "мы приходим в горы" },
-	          { english: "He arrives at the bridge", russian: "он приезжает к мосту" },
-	          { english: "They arrive at the waterfall", russian: "они приходят к водопаду" },
-	          { english: "The doctor arrives at the library", russian: "врач приезжает в библиотеку" },
-	          { english: "She arrives in the valley", russian: "она приходит в долину" },
-	          { english: "The guide arrives at the trail", russian: "гид приходит на тропу" },
-	          { english: "My brother arrives at the cinema", russian: "мой брат приезжает в кинотеатр" }
-	        ]
-	      },
-	      {
-	        tense: "future",
-	        aspect: "imperfective",
-	        sentences: [
-	          { english: "I will arrive in the forest", russian: "я буду приходить в лес" },
-	          { english: "She will arrive at the creek", russian: "она будет приходить к ручью" },
-	          { english: "He will arrive at the office", russian: "он будет приезжать в офис" },
-	          { english: "We will arrive at the theater", russian: "мы будем приезжать в театр" },
-	          { english: "They will arrive at the hills", russian: "они будут приходить на холмы" },
-	          { english: "You will arrive in town", russian: "вы будете приезжать в город" },
-	          { english: "The children will arrive at the garden", russian: "дети будут приходить в сад" },
-	          { english: "My friend will arrive at work (male)", russian: "мой друг будет приезжать на работу" },
-	          { english: "My friend will arrive at work (female)", russian: "моя подруга будет приезжать на работу" },
-	          { english: "We will arrive at the lakeside", russian: "мы будем приходить к озеру" },
-	          { english: "She will arrive at the gym", russian: "она будет приезжать в спортзал" },
-	          { english: "He will arrive at the park", russian: "он будет приходить в парк" },
-	          { english: "They will arrive at concerts", russian: "они будут приезжать на концерты" },
-	          { english: "The visitor will arrive in the woods (male)", russian: "посетитель будет приходить в лес" },
-	          { english: "The visitor will arrive in the woods (female)", russian: "посетительница будет приходить в лес" },
-	          { english: "The tourists will arrive at the canyon", russian: "туристы будут приходить в ущелье" },
-	          { english: "She will arrive at the market", russian: "она будет приезжать на рынок" },
-	          { english: "We will arrive at the mountain", russian: "мы будем приходить на гору" },
-	          { english: "He will arrive at the stadium", russian: "он будет приезжать на стадион" },
-	          { english: "They will arrive at the river", russian: "они будут приходить к реке" },
-	          { english: "The nurse will arrive at the museum", russian: "медсестра будет приезжать в музей" },
-	          { english: "She will arrive at the meadow", russian: "она будет приходить на луг" }
-	        ]
-	      },
-	      {
-	        tense: "future",
-	        aspect: "perfective",
-	        sentences: [
-	          { english: "I will arrive at the lake (male)", russian: "я приду к озеру" },
-	          { english: "I will arrive at the lake (female)", russian: "я приду к озеру" },
-	          { english: "She will arrive in the forest", russian: "она придёт в лес" },
-	          { english: "He will arrive at the cinema", russian: "он приедет в кинотеатр" },
-	          { english: "We will arrive at the airport", russian: "мы приедем в аэропорт" },
-	          { english: "They will arrive at the hill", russian: "они придут на холм" },
-	          { english: "You will arrive at the hospital", russian: "вы приедете в больницу" },
-	          { english: "The kids will arrive at the playground", russian: "дети придут на площадку" },
-	          { english: "My colleague will arrive at the meeting (male)", russian: "мой коллега приедет на встречу" },
-	          { english: "My colleague will arrive at the meeting (female)", russian: "моя коллега приедет на встречу" },
-	          { english: "We will arrive at the trail", russian: "мы придём на тропу" },
-	          { english: "She will arrive at the mall", russian: "она приедет в торговый центр" },
-	          { english: "He will arrive in the woods", russian: "он придёт в лес" },
-	          { english: "They will arrive at the restaurant", russian: "они приедут в ресторан" },
-	          { english: "The hiker will arrive at the waterfall (male)", russian: "путешественник придёт к водопаду" },
-	          { english: "The hiker will arrive at the waterfall (female)", russian: "путешественница придёт к водопаду" },
-	          { english: "The group will arrive at the summit", russian: "группа придёт на вершину" },
-	          { english: "She will arrive at the bridge", russian: "она приедет к мосту" },
-	          { english: "We will arrive at the creek", russian: "мы придём к ручью" },
-	          { english: "He will arrive at the theater", russian: "он приедет в театр" },
-	          { english: "They will arrive in the valley", russian: "они придут в долину" },
-	          { english: "She will arrive at the field", russian: "она придёт на поле" }
-	        ]
-	      }
-	    ]
-	  },
-	  {
-	      prefix: "по",
-	      groups: [
-	        {
-	          tense: "past",
-	          aspect: "perfective",
-	          sentences: [
-	            { english: "I set off toward the forest (male)", russian: "я пошёл в лес" },
-	            { english: "I set off toward the forest (female)", russian: "я пошла в лес" },
-	            { english: "She headed to the mountain trail", russian: "она пошла к горной тропе" },
-	            { english: "He drove off to the theater", russian: "он поехал в театр" },
-	            { english: "We drove off to the museum", russian: "мы поехали в музей" },
-	            { english: "They started walking to the lake", russian: "они пошли к озеру" },
-	            { english: "You drove off to the cinema", russian: "вы поехали в кинотеатр" },
-	            { english: "The children set off to the meadow", russian: "дети пошли на луг" },
-	            { english: "My friend drove off to the mall (male)", russian: "мой друг поехал в торговый центр" },
-	            { english: "My friend drove off to the mall (female)", russian: "моя подруга поехала в торговый центр" },
-	            { english: "We headed to the campsite", russian: "мы пошли на место стоянки" },
-	            { english: "She drove off to the airport", russian: "она поехала в аэропорт" },
-	            { english: "He started walking into the woods", russian: "он пошёл в лес" },
-	            { english: "They drove off to the stadium", russian: "они поехали на стадион" },
-	            { english: "The tourist headed up the hill (male)", russian: "турист пошёл на холм" },
-	            { english: "The tourist headed up the hill (female)", russian: "туристка пошла на холм" },
-	            { english: "The tourists set off to the waterfall", russian: "туристы пошли к водопаду" },
-	            { english: "She drove off to the bridge", russian: "она поехала к мосту" },
-	            { english: "We started walking to the creek", russian: "мы пошли к ручью" },
-	            { english: "He drove off to the restaurant", russian: "он поехал в ресторан" },
-	            { english: "They headed into the valley", russian: "они пошли в долину" },
-	            { english: "She set off across the field", russian: "она пошла через поле" }
-	          ]
-	        },
-	        {
-	          tense: "past",
-	          aspect: "imperfective",
-	          sentences: [
-	            { english: "I used to head to the forest (male)", russian: "я походил в лес" },
-	            { english: "I used to head to the forest (female)", russian: "я походила в лес" },
-	            { english: "She would set off to the mountains", russian: "она походила в горы" },
-	            { english: "He regularly drove off to work", russian: "он поездил на работу" },
-	            { english: "We often drove off to the park", russian: "мы поездили в парк" },
-	            { english: "They would head to hiking areas", russian: "они походили в места походов" },
-	            { english: "You used to drive around the city", russian: "вы поездили по городу" },
-	            { english: "The children would walk to the meadow", russian: "дети походили на луг" },
-	            { english: "My parents drove around to markets", russian: "мои родители поездили по рынкам" },
-	            { english: "We used to walk to the campground", russian: "мы походили на кемпинг" },
-	            { english: "She would drive to the theater", russian: "она поездила в театр" },
-	            { english: "He walked around the lake area", russian: "он походил около озера" },
-	            { english: "They often drove to concerts", russian: "они поездили на концерты" },
-	            { english: "The worker would walk in the woods (male)", russian: "рабочий походил по лесу" },
-	            { english: "The worker would walk in the woods (female)", russian: "работница походила по лесу" },
-	            { english: "The children walked by the stream", russian: "дети походили у ручья" },
-	            { english: "She used to drive to the gym", russian: "она поездила в спортзал" },
-	            { english: "We would walk up the hills", russian: "мы походили по холмам" },
-	            { english: "He drove around town", russian: "он поездил по городу" },
-	            { english: "They walked in the canyon", russian: "они походили в ущелье" },
-	            { english: "The student used to drive to work (male)", russian: "студент поездил на работу" },
-	            { english: "The student used to drive to work (female)", russian: "студентка поездила на работу" }
-	          ]
-	        },
-	        {
-	          tense: "present",
-	          aspect: "imperfective",
-	          sentences: [
-	            { english: "I head to the park", russian: "я похожу в парк" },
-	            { english: "She sets off to the lakeside", russian: "она походит к озеру" },
-	            { english: "He drives off to work", russian: "он поездит на работу" },
-	            { english: "We drive off to school", russian: "мы поездим в школу" },
-	            { english: "They head into the forest", russian: "они походят в лес" },
-	            { english: "You drive around the city", russian: "вы поездите по городу" },
-	            { english: "The rabbit hops around the yard", russian: "кролик походит по двору" },
-	            { english: "My sister drives to the mall", russian: "моя сестра поездит в торговый центр" },
-	            { english: "We walk along the riverside", russian: "мы походим вдоль реки" },
-	            { english: "She drives to the hospital", russian: "она поездит в больницу" },
-	            { english: "He walks around the village", russian: "он походит по деревне" },
-	            { english: "They drive to restaurants", russian: "они поездят в рестораны" },
-	            { english: "The teacher walks through the meadow", russian: "учитель походит по лугу" },
-	            { english: "The students walk around campus", russian: "студенты походят по кампусу" },
-	            { english: "She drives to the airport", russian: "она поездит в аэропорт" },
-	            { english: "We walk in the mountains", russian: "мы походим в горах" },
-	            { english: "He drives across the bridge", russian: "он поездит по мосту" },
-	            { english: "They walk near the waterfall", russian: "они походят у водопада" },
-	            { english: "The doctor drives to the library", russian: "врач поездит в библиотеку" },
-	            { english: "She walks in the valley", russian: "она походит по долине" },
-	            { english: "The guide walks on the trail", russian: "гид походит по тропе" },
-	            { english: "My brother drives to the cinema", russian: "мой брат поездит в кино" }
-	          ]
-	        },
-	        {
-	          tense: "future",
-	          aspect: "imperfective",
-	          sentences: [
-	            { english: "I will head to the forest", russian: "я похожу в лес" },
-	            { english: "She will walk by the creek", russian: "она походит у ручья" },
-	            { english: "He will drive to the office", russian: "он поездит в офис" },
-	            { english: "We will drive to the theater", russian: "мы поездим в театр" },
-	            { english: "They will walk in the hills", russian: "они походят по холмам" },
-	            { english: "You will drive around town", russian: "вы поездите по городу" },
-	            { english: "The children will walk in the garden", russian: "дети походят в саду" },
-	            { english: "My friend will drive to work (male)", russian: "мой друг поездит на работу" },
-	            { english: "My friend will drive to work (female)", russian: "моя подруга поездит на работу" },
-	            { english: "We will walk along the lake", russian: "мы походим вдоль озера" },
-	            { english: "She will drive to the gym", russian: "она поездит в спортзал" },
-	            { english: "He will walk around the park", russian: "он походит по парку" },
-	            { english: "They will drive to concerts", russian: "они поездят на концерты" },
-	            { english: "The visitor will walk through the woods (male)", russian: "посетитель походит по лесу" },
-	            { english: "The visitor will walk through the woods (female)", russian: "посетительница походит по лесу" },
-	            { english: "The tourists will walk in the canyon", russian: "туристы походят в ущелье" },
-	            { english: "She will drive to the market", russian: "она поездит на рынок" },
-	            { english: "We will walk up the mountain", russian: "мы походим в горы" },
-	            { english: "He will drive to the stadium", russian: "он поездит на стадион" },
-	            { english: "They will walk near the river", russian: "они походят у реки" },
-	            { english: "The nurse will drive to the museum", russian: "медсестра поездит в музей" },
-	            { english: "She will walk in the meadow", russian: "она походит по лугу" }
-	          ]
-	        },
-	        {
-	          tense: "future",
-	          aspect: "perfective",
-	          sentences: [
-	            { english: "I will head to the lake (male)", russian: "я пойду к озеру" },
-	            { english: "I will head to the lake (female)", russian: "я пойду к озеру" },
-	            { english: "She will set off to the forest", russian: "она пойдёт в лес" },
-	            { english: "He will drive off to the cinema", russian: "он поедет в кинотеатр" },
-	            { english: "We will drive off to the airport", russian: "мы поедем в аэропорт" },
-	            { english: "They will head up the hill", russian: "они пойдут на холм" },
-	            { english: "You will drive off to the hospital", russian: "вы поедете в больницу" },
-	            { english: "The kids will head to the playground", russian: "дети пойдут на площадку" },
-	            { english: "My colleague will drive off to the meeting (male)", russian: "мой коллега поедет на встречу" },
-	            { english: "My colleague will drive off to the meeting (female)", russian: "моя коллега поедет на встречу" },
-	            { english: "We will set off down the trail", russian: "мы пойдём по тропе" },
-	            { english: "She will drive off to the mall", russian: "она поедет в торговый центр" },
-	            { english: "He will head into the woods", russian: "он пойдёт в лес" },
-	            { english: "They will drive off to the restaurant", russian: "они поедут в ресторан" },
-	            { english: "The hiker will head to the waterfall (male)", russian: "путешественник пойдёт к водопаду" },
-	            { english: "The hiker will head to the waterfall (female)", russian: "путешественница пойдёт к водопаду" },
-	            { english: "The group will head to the summit", russian: "группа пойдёт на вершину" },
-	            { english: "She will drive off across the bridge", russian: "она поедет по мосту" },
-	            { english: "We will walk along the creek", russian: "мы пойдём вдоль ручья" },
-	            { english: "He will drive off to the theater", russian: "он поедет в театр" },
-	            { english: "They will head through the valley", russian: "они пойдут по долине" },
-	            { english: "She will set off through the field", russian: "она пойдёт через поле" }
-	          ]
-	        }
-	      ]
-	    },
-		{
-		    prefix: "в",
-		    groups: [
-		      {
-		        tense: "past",
-		        aspect: "perfective",
-		        sentences: [
-		          { english: "I entered the forest cave (male)", russian: "я вошёл в лесную пещеру" },
-		          { english: "I entered the forest cave (female)", russian: "я вошла в лесную пещеру" },
-		          { english: "She walked into the mountain shelter", russian: "она вошла в горный приют" },
-		          { english: "He drove into the theater parking", russian: "он въехал на парковку театра" },
-		          { english: "We drove into the museum lot", russian: "мы въехали на территорию музея" },
-		          { english: "They entered the hiking lodge", russian: "они вошли в туристический домик" },
-		          { english: "You drove into the cinema complex", russian: "вы въехали в кинокомплекс" },
-		          { english: "The children entered the meadow hut", russian: "дети вошли в хижину на лугу" },
-		          { english: "My friend drove into the mall garage (male)", russian: "мой друг въехал в гараж торгового центра" },
-		          { english: "My friend drove into the mall garage (female)", russian: "моя подруга въехала в гараж торгового центра" },
-		          { english: "We entered the camp shelter", russian: "мы вошли в лагерный навес" },
-		          { english: "She drove into the airport terminal", russian: "она въехала в аэропорт" },
-		          { english: "He walked into the woodland cabin", russian: "он вошёл в лесную хижину" },
-		          { english: "They drove into the stadium parking", russian: "они въехали на парковку стадиона" },
-		          { english: "The tourist entered the hilltop shelter (male)", russian: "турист вошёл в укрытие на холме" },
-		          { english: "The tourist entered the hilltop shelter (female)", russian: "туристка вошла в укрытие на холме" },
-		          { english: "The tourists entered the waterfall cave", russian: "туристы вошли в пещеру у водопада" },
-		          { english: "She drove onto the bridge", russian: "она въехала на мост" },
-		          { english: "We entered the creek-side shelter", russian: "мы вошли в укрытие у ручья" },
-		          { english: "He drove into the restaurant parking", russian: "он въехал на парковку ресторана" },
-		          { english: "They entered the valley lodge", russian: "они вошли в домик в долине" },
-		          { english: "She walked into the field barn", russian: "она вошла в сарай на поле" }
-		        ]
-		      },
-		      {
-		        tense: "past",
-		        aspect: "imperfective",
-		        sentences: [
-		          { english: "I used to enter the forest shelter (male)", russian: "я входил в лесное укрытие" },
-		          { english: "I used to enter the forest shelter (female)", russian: "я входила в лесное укрытие" },
-		          { english: "She would walk into the mountain cabin", russian: "она входила в горную хижину" },
-		          { english: "He regularly drove into the office garage", russian: "он въезжал в офисный гараж" },
-		          { english: "We often drove into the park area", russian: "мы въезжали на территорию парка" },
-		          { english: "They would enter hiking shelters", russian: "они входили в туристические укрытия" },
-		          { english: "You used to drive into the city center", russian: "вы въезжали в центр города" },
-		          { english: "The animals would enter the meadow shelter", russian: "животные входили в укрытие на лугу" },
-		          { english: "My parents drove into market areas", russian: "мои родители въезжали на рыночные территории" },
-		          { english: "We used to enter the campground buildings", russian: "мы входили в здания кемпинга" },
-		          { english: "She would drive into the theater district", russian: "она въезжала в театральный район" },
-		          { english: "He entered lake-side cabins regularly", russian: "он входил в домики у озера регулярно" },
-		          { english: "They often drove into concert venues", russian: "они въезжали на концертные площадки" },
-		          { english: "The worker would enter woodland shelters (male)", russian: "рабочий входил в лесные укрытия" },
-		          { english: "The worker would enter woodland shelters (female)", russian: "работница входила в лесные укрытия" },
-		          { english: "The children entered stream-side huts", russian: "дети входили в хижины у ручья" },
-		          { english: "She used to drive into the gym complex", russian: "она въезжала в спортивный комплекс" },
-		          { english: "We would enter hill-top shelters", russian: "мы входили в укрытия на холмах" },
-		          { english: "He drove into town districts", russian: "он въезжал в городские районы" },
-		          { english: "They entered canyon shelters", russian: "они входили в укрытия в ущелье" },
-		          { english: "The student used to drive into work complexes (male)", russian: "студент въезжал в рабочие комплексы" },
-		          { english: "The student used to drive into work complexes (female)", russian: "студентка въезжала в рабочие комплексы" }
-		        ]
-		      },
-		      {
-		        tense: "present",
-		        aspect: "imperfective",
-		        sentences: [
-		          { english: "I enter the park pavilion", russian: "я вхожу в парковый павильон" },
-		          { english: "She enters the lakeside shelter", russian: "она входит в укрытие у озера" },
-		          { english: "He drives into the work garage", russian: "он въезжает в рабочий гараж" },
-		          { english: "We drive into the school complex", russian: "мы въезжаем в школьный комплекс" },
-		          { english: "They enter forest cabins", russian: "они входят в лесные домики" },
-		          { english: "You drive into the city center", russian: "вы въезжаете в центр города" },
-		          { english: "The cat enters the yard shed", russian: "кот входит в сарай во дворе" },
-		          { english: "My sister drives into the mall complex", russian: "моя сестра въезжает в торговый комплекс" },
-		          { english: "We enter riverside pavilions", russian: "мы входим в павильоны у реки" },
-		          { english: "She drives into the hospital area", russian: "она въезжает на территорию больницы" },
-		          { english: "He enters village buildings", russian: "он входит в деревенские здания" },
-		          { english: "They drive into restaurant districts", russian: "они въезжают в ресторанные районы" },
-		          { english: "The teacher enters meadow shelters", russian: "учитель входит в укрытия на лугу" },
-		          { english: "The students enter campus buildings", russian: "студенты входят в здания кампуса" },
-		          { english: "She drives into the airport area", russian: "она въезжает в аэропорт" },
-		          { english: "We enter mountain shelters", russian: "мы входим в горные укрытия" },
-		          { english: "He drives onto the bridge area", russian: "он въезжает на мостовую территорию" },
-		          { english: "They enter waterfall caves", russian: "они входят в пещеры у водопада" },
-		          { english: "The doctor drives into the library complex", russian: "врач въезжает в библиотечный комплекс" },
-		          { english: "She enters valley lodges", russian: "она входит в домики в долине" },
-		          { english: "The guide enters trail shelters", russian: "гид входит в укрытия на тропе" },
-		          { english: "My brother drives into the cinema complex", russian: "мой брат въезжает в кинокомплекс" }
-		        ]
-		      },
-		      {
-		        tense: "future",
-		        aspect: "imperfective",
-		        sentences: [
-		          { english: "I will enter the forest shelter", russian: "я буду входить в лесное укрытие" },
-		          { english: "She will enter the creek pavilion", russian: "она будет входить в павильон у ручья" },
-		          { english: "He will drive into the office complex", russian: "он будет въезжать в офисный комплекс" },
-		          { english: "We will drive into the theater district", russian: "мы будем въезжать в театральный район" },
-		          { english: "They will enter hill shelters", russian: "они будут входить в укрытия на холмах" },
-		          { english: "You will drive into town areas", russian: "вы будете въезжать в городские районы" },
-		          { english: "The children will enter garden sheds", russian: "дети будут входить в садовые сараи" },
-		          { english: "My friend will drive into work areas (male)", russian: "мой друг будет въезжать в рабочие зоны" },
-		          { english: "My friend will drive into work areas (female)", russian: "моя подруга будет въезжать в рабочие зоны" },
-		          { english: "We will enter lakeside cabins", russian: "мы будем входить в домики у озера" },
-		          { english: "She will drive into the gym complex", russian: "она будет въезжать в спортивный комплекс" },
-		          { english: "He will enter park pavilions", russian: "он будет входить в парковые павильоны" },
-		          { english: "They will drive into concert areas", russian: "они будут въезжать на концертные площадки" },
-		          { english: "The visitor will enter woodland huts (male)", russian: "посетитель будет входить в лесные хижины" },
-		          { english: "The visitor will enter woodland huts (female)", russian: "посетительница будет входить в лесные хижины" },
-		          { english: "The tourists will enter canyon shelters", russian: "туристы будут входить в укрытия в ущелье" },
-		          { english: "She will drive into market areas", russian: "она будет въезжать на рыночные территории" },
-		          { english: "We will enter mountain lodges", russian: "мы будем входить в горные домики" },
-		          { english: "He will drive into stadium areas", russian: "он будет въезжать на территории стадионов" },
-		          { english: "They will enter river pavilions", russian: "они будут входить в павильоны у реки" },
-		          { english: "The nurse will drive into museum complexes", russian: "медсестра будет въезжать в музейные комплексы" },
-		          { english: "She will enter meadow shelters", russian: "она будет входить в укрытия на лугу" }
-		        ]
-		      },
-		      {
-		        tense: "future",
-		        aspect: "perfective",
-		        sentences: [
-		          { english: "I will enter the lake cabin (male)", russian: "я войду в домик у озера" },
-		          { english: "I will enter the lake cabin (female)", russian: "я войду в домик у озера" },
-		          { english: "She will walk into the forest shelter", russian: "она войдёт в лесное укрытие" },
-		          { english: "He will drive into the cinema parking", russian: "он въедет на парковку кинотеатра" },
-		          { english: "We will drive into the airport complex", russian: "мы въедем в аэропортовый комплекс" },
-		          { english: "They will enter the hill shelter", russian: "они войдут в укрытие на холме" },
-		          { english: "You will drive into the hospital area", russian: "вы въедете на территорию больницы" },
-		          { english: "The kids will enter the playground shed", russian: "дети войдут в сарай на площадке" },
-		          { english: "My colleague will drive into the meeting center (male)", russian: "мой коллега въедет в центр встреч" },
-		          { english: "My colleague will drive into the meeting center (female)", russian: "моя коллега въедет в центр встреч" },
-		          { english: "We will enter the trail shelter", russian: "мы войдём в укрытие на тропе" },
-		          { english: "She will drive into the mall garage", russian: "она въедет в гараж торгового центра" },
-		          { english: "He will enter the woodland cabin", russian: "он войдёт в лесную хижину" },
-		          { english: "They will drive into the restaurant complex", russian: "они въедут в ресторанный комплекс" },
-		          { english: "The hiker will enter the waterfall cave (male)", russian: "путешественник войдёт в пещеру у водопада" },
-		          { english: "The hiker will enter the waterfall cave (female)", russian: "путешественница войдёт в пещеру у водопада" },
-		          { english: "The group will enter the summit hut", russian: "группа войдёт в хижину на вершине" },
-		          { english: "She will drive onto the bridge", russian: "она въедет на мост" },
-		          { english: "We will enter the creek shelter", russian: "мы войдём в укрытие у ручья" },
-		          { english: "He will drive into the theater parking", russian: "он въедет на парковку театра" },
-		          { english: "They will enter the valley lodge", russian: "они войдут в домик в долине" },
-		          { english: "She will enter the field barn", russian: "она войдёт в сарай на поле" }
-		        ]
-		      }
-		    ]
-		  },
-		  {
-		      prefix: "вы",
-		      groups: [
-		        {
-		          tense: "past",
-		          aspect: "perfective",
-		          sentences: [
-		            { english: "I exited the forest cave (male)", russian: "я вышел из лесной пещеры" },
-		            { english: "I exited the forest cave (female)", russian: "я вышла из лесной пещеры" },
-		            { english: "She left the mountain shelter", russian: "она вышла из горного приюта" },
-		            { english: "He drove out of the theater parking", russian: "он выехал с парковки театра" },
-		            { english: "We drove out of the museum area", russian: "мы выехали с территории музея" },
-		            { english: "They exited the hiking lodge", russian: "они вышли из туристического домика" },
-		            { english: "You drove out of the cinema complex", russian: "вы выехали из кинокомплекса" },
-		            { english: "The children left the meadow hut", russian: "дети вышли из хижины на лугу" },
-		            { english: "My friend drove out of the mall garage (male)", russian: "мой друг выехал из гаража торгового центра" },
-		            { english: "My friend drove out of the mall garage (female)", russian: "моя подруга выехала из гаража торгового центра" },
-		            { english: "We exited the camp shelter", russian: "мы вышли из лагерного навеса" },
-		            { english: "She drove out of the airport terminal", russian: "она выехала из аэропорта" },
-		            { english: "He left the woodland cabin", russian: "он вышел из лесной хижины" },
-		            { english: "They drove out of the stadium parking", russian: "они выехали с парковки стадиона" },
-		            { english: "The tourist exited the hilltop shelter (male)", russian: "турист вышел из укрытия на холме" },
-		            { english: "The tourist exited the hilltop shelter (female)", russian: "туристка вышла из укрытия на холме" },
-		            { english: "The tourists left the waterfall cave", russian: "туристы вышли из пещеры у водопада" },
-		            { english: "She drove off the bridge", russian: "она выехала с моста" },
-		            { english: "We exited the creek-side shelter", russian: "мы вышли из укрытия у ручья" },
-		            { english: "He drove out of the restaurant parking", russian: "он выехал с парковки ресторана" },
-		            { english: "They left the valley lodge", russian: "они вышли из домика в долине" },
-		            { english: "She left the field barn", russian: "она вышла из сарая на поле" }
-		          ]
-		        },
-		        {
-		          tense: "past",
-		          aspect: "imperfective",
-		          sentences: [
-		            { english: "I used to exit the forest shelter (male)", russian: "я выходил из лесного укрытия" },
-		            { english: "I used to exit the forest shelter (female)", russian: "я выходила из лесного укрытия" },
-		            { english: "She would leave the mountain cabin", russian: "она выходила из горной хижины" },
-		            { english: "He regularly drove out of the office garage", russian: "он выезжал из офисного гаража" },
-		            { english: "We often drove out of the park area", russian: "мы выезжали с территории парка" },
-		            { english: "They would exit hiking shelters", russian: "они выходили из туристических укрытий" },
-		            { english: "You used to drive out of the city center", russian: "вы выезжали из центра города" },
-		            { english: "The animals would leave the meadow shelter", russian: "животные выходили из укрытия на лугу" },
-		            { english: "My parents drove out of market areas", russian: "мои родители выезжали с рыночных территорий" },
-		            { english: "We used to exit the campground buildings", russian: "мы выходили из зданий кемпинга" },
-		            { english: "She would drive out of the theater district", russian: "она выезжала из театрального района" },
-		            { english: "He left lake-side cabins regularly", russian: "он выходил из домиков у озера регулярно" },
-		            { english: "They often drove out of concert venues", russian: "они выезжали с концертных площадок" },
-		            { english: "The worker would exit woodland shelters (male)", russian: "рабочий выходил из лесных укрытий" },
-		            { english: "The worker would exit woodland shelters (female)", russian: "работница выходила из лесных укрытий" },
-		            { english: "The children left stream-side huts", russian: "дети выходили из хижин у ручья" },
-		            { english: "She used to drive out of the gym complex", russian: "она выезжала из спортивного комплекса" },
-		            { english: "We would exit hill-top shelters", russian: "мы выходили из укрытий на холмах" },
-		            { english: "He drove out of town districts", russian: "он выезжал из городских районов" },
-		            { english: "They left canyon shelters", russian: "они выходили из укрытий в ущелье" },
-		            { english: "The student used to drive out of work complexes (male)", russian: "студент выезжал из рабочих комплексов" },
-		            { english: "The student used to drive out of work complexes (female)", russian: "студентка выезжала из рабочих комплексов" }
-		          ]
-		        },
-		        {
-		          tense: "present",
-		          aspect: "imperfective",
-		          sentences: [
-		            { english: "I exit the park pavilion", russian: "я выхожу из паркового павильона" },
-		            { english: "She leaves the lakeside shelter", russian: "она выходит из укрытия у озера" },
-		            { english: "He drives out of the work garage", russian: "он выезжает из рабочего гаража" },
-		            { english: "We drive out of the school complex", russian: "мы выезжаем из школьного комплекса" },
-		            { english: "They exit forest cabins", russian: "они выходят из лесных домиков" },
-		            { english: "You drive out of the city center", russian: "вы выезжаете из центра города" },
-		            { english: "The cat leaves the yard shed", russian: "кот выходит из сарая во дворе" },
-		            { english: "My sister drives out of the mall complex", russian: "моя сестра выезжает из торгового комплекса" },
-		            { english: "We exit riverside pavilions", russian: "мы выходим из павильонов у реки" },
-		            { english: "She drives out of the hospital area", russian: "она выезжает с территории больницы" },
-		            { english: "He leaves village buildings", russian: "он выходит из деревенских зданий" },
-		            { english: "They drive out of restaurant districts", russian: "они выезжают из ресторанных районов" },
-		            { english: "The teacher exits meadow shelters", russian: "учитель выходит из укрытий на лугу" },
-		            { english: "The students leave campus buildings", russian: "студенты выходят из зданий кампуса" },
-		            { english: "She drives out of the airport area", russian: "она выезжает из аэропорта" },
-		            { english: "We exit mountain shelters", russian: "мы выходим из горных укрытий" },
-		            { english: "He drives off the bridge area", russian: "он выезжает с мостовой территории" },
-		            { english: "They leave waterfall caves", russian: "они выходят из пещер у водопада" },
-		            { english: "The doctor drives out of the library complex", russian: "врач выезжает из библиотечного комплекса" },
-		            { english: "She exits valley lodges", russian: "она выходит из домиков в долине" },
-		            { english: "The guide exits trail shelters", russian: "гид выходит из укрытий на тропе" },
-		            { english: "My brother drives out of the cinema complex", russian: "мой брат выезжает из кинокомплекса" }
-		          ]
-		        },
-		        {
-		          tense: "future",
-		          aspect: "imperfective",
-		          sentences: [
-		            { english: "I will exit the forest shelter", russian: "я буду выходить из лесного укрытия" },
-		            { english: "She will leave the creek pavilion", russian: "она будет выходить из павильона у ручья" },
-		            { english: "He will drive out of the office complex", russian: "он будет выезжать из офисного комплекса" },
-		            { english: "We will drive out of the theater district", russian: "мы будем выезжать из театрального района" },
-		            { english: "They will exit hill shelters", russian: "они будут выходить из укрытий на холмах" },
-		            { english: "You will drive out of town areas", russian: "вы будете выезжать из городских районов" },
-		            { english: "The children will leave garden sheds", russian: "дети будут выходить из садовых сараев" },
-		            { english: "My friend will drive out of work areas (male)", russian: "мой друг будет выезжать из рабочих зон" },
-		            { english: "My friend will drive out of work areas (female)", russian: "моя подруга будет выезжать из рабочих зон" },
-		            { english: "We will exit lakeside cabins", russian: "мы будем выходить из домиков у озера" },
-		            { english: "She will drive out of the gym complex", russian: "она будет выезжать из спортивного комплекса" },
-		            { english: "He will exit park pavilions", russian: "он будет выходить из парковых павильонов" },
-		            { english: "They will drive out of concert areas", russian: "они будут выезжать с концертных площадок" },
-		            { english: "The visitor will exit woodland huts (male)", russian: "посетитель будет выходить из лесных хижин" },
-		            { english: "The visitor will exit woodland huts (female)", russian: "посетительница будет выходить из лесных хижин" },
-		            { english: "The tourists will leave canyon shelters", russian: "туристы будут выходить из укрытий в ущелье" },
-		            { english: "She will drive out of market areas", russian: "она будет выезжать с рыночных территорий" },
-		            { english: "We will exit mountain lodges", russian: "мы будем выходить из горных домиков" },
-		            { english: "He will drive out of stadium areas", russian: "он будет выезжать с территорий стадионов" },
-		            { english: "They will leave river pavilions", russian: "они будут выходить из павильонов у реки" },
-		            { english: "The nurse will drive out of museum complexes", russian: "медсестра будет выезжать из музейных комплексов" },
-		            { english: "She will exit meadow shelters", russian: "она будет выходить из укрытий на лугу" }
-		          ]
-		        },
-		        {
-		          tense: "future",
-		          aspect: "perfective",
-		          sentences: [
-		            { english: "I will exit the lake cabin (male)", russian: "я выйду из домика у озера" },
-		            { english: "I will exit the lake cabin (female)", russian: "я выйду из домика у озера" },
-		            { english: "She will leave the forest shelter", russian: "она выйдет из лесного укрытия" },
-		            { english: "He will drive out of the cinema parking", russian: "он выедет с парковки кинотеатра" },
-		            { english: "We will drive out of the airport complex", russian: "мы выедем из аэропортового комплекса" },
-		            { english: "They will exit the hill shelter", russian: "они выйдут из укрытия на холме" },
-		            { english: "You will drive out of the hospital area", russian: "вы выедете с территории больницы" },
-		            { english: "The kids will leave the playground shed", russian: "дети выйдут из сарая на площадке" },
-		            { english: "My colleague will drive out of the meeting center (male)", russian: "мой коллега выедет из центра встреч" },
-		            { english: "My colleague will drive out of the meeting center (female)", russian: "моя коллега выедет из центра встреч" },
-		            { english: "We will exit the trail shelter", russian: "мы выйдем из укрытия на тропе" },
-		            { english: "She will drive out of the mall garage", russian: "она выедет из гаража торгового центра" },
-		            { english: "He will leave the woodland cabin", russian: "он выйдет из лесной хижины" },
-		            { english: "They will drive out of the restaurant complex", russian: "они выедут из ресторанного комплекса" },
-		            { english: "The hiker will exit the waterfall cave (male)", russian: "путешественник выйдет из пещеры у водопада" },
-		            { english: "The hiker will exit the waterfall cave (female)", russian: "путешественница выйдет из пещеры у водопада" },
-		            { english: "The group will leave the summit hut", russian: "группа выйдет из хижины на вершине" },
-		            { english: "She will drive off the bridge", russian: "она выедет с моста" },
-		            { english: "We will exit the creek shelter", russian: "мы выйдем из укрытия у ручья" },
-		            { english: "He will drive out of the theater parking", russian: "он выедет с парковки театра" },
-		            { english: "They will leave the valley lodge", russian: "они выйдут из домика в долине" },
-		            { english: "She will exit the field barn", russian: "она выйдет из сарая на поле" }
-		          ]
-		        }
-		      ]
-		    },
-			{
-			    prefix: "до",
-			    groups: [
-			      {
-			        tense: "past",
-			        aspect: "perfective",
-			        sentences: [
-			          { english: "I reached the forest edge (male)", russian: "я дошёл до края леса" },
-			          { english: "I reached the forest edge (female)", russian: "я дошла до края леса" },
-			          { english: "She reached the mountain peak", russian: "она дошла до вершины горы" },
-			          { english: "He drove to the theater entrance", russian: "он доехал до входа в театр" },
-			          { english: "We drove to the museum steps", russian: "мы доехали до ступеней музея" },
-			          { english: "They reached the trail's end", russian: "они дошли до конца тропы" },
-			          { english: "You drove to the cinema doors", russian: "вы доехали до дверей кинотеатра" },
-			          { english: "The children reached the meadow fence", russian: "дети дошли до забора луга" },
-			          { english: "My friend drove to the mall entrance (male)", russian: "мой друг доехал до входа в торговый центр" },
-			          { english: "My friend drove to the mall entrance (female)", russian: "моя подруга доехала до входа в торговый центр" },
-			          { english: "We reached the campsite gate", russian: "мы дошли до ворот кемпинга" },
-			          { english: "She drove to the airport terminal", russian: "она доехала до терминала аэропорта" },
-			          { english: "He walked to the woodland border", russian: "он дошёл до границы леса" },
-			          { english: "They drove to the stadium entrance", russian: "они доехали до входа на стадион" },
-			          { english: "The tourist reached the hilltop (male)", russian: "турист дошёл до вершины холма" },
-			          { english: "The tourist reached the hilltop (female)", russian: "туристка дошла до вершины холма" },
-			          { english: "The tourists reached the waterfall base", russian: "туристы дошли до подножия водопада" },
-			          { english: "She drove to the bridge approach", russian: "она доехала до подъезда к мосту" },
-			          { english: "We walked to the creek crossing", russian: "мы дошли до переправы через ручей" },
-			          { english: "He drove to the restaurant parking", russian: "он доехал до парковки ресторана" },
-			          { english: "They reached the valley floor", russian: "они дошли до дна долины" },
-			          { english: "She walked to the field gate", russian: "она дошла до ворот поля" }
-			        ]
-			      },
-			      {
-			        tense: "past",
-			        aspect: "imperfective",
-			        sentences: [
-			          { english: "I used to reach the forest border (male)", russian: "я доходил до границы леса" },
-			          { english: "I used to reach the forest border (female)", russian: "я доходила до границы леса" },
-			          { english: "She would walk to the mountain base", russian: "она доходила до подножия горы" },
-			          { english: "He regularly drove to the office entrance", russian: "он доезжал до входа в офис" },
-			          { english: "We often drove to the park gate", russian: "мы доезжали до ворот парка" },
-			          { english: "They would reach hiking destinations", russian: "они доходили до мест походов" },
-			          { english: "You used to drive to the city limits", russian: "вы доезжали до границ города" },
-			          { english: "The animals would reach the meadow edge", russian: "животные доходили до края луга" },
-			          { english: "My parents drove to market entrances", russian: "мои родители доезжали до входов на рынки" },
-			          { english: "We used to walk to the campground border", russian: "мы доходили до границы кемпинга" },
-			          { english: "She would drive to the theater district", russian: "она доезжала до театрального района" },
-			          { english: "He reached lake shores regularly", russian: "он доходил до берегов озера регулярно" },
-			          { english: "They often drove to concert venues", russian: "они доезжали до концертных площадок" },
-			          { english: "The worker would walk to woodland clearings (male)", russian: "рабочий доходил до лесных полян" },
-			          { english: "The worker would walk to woodland clearings (female)", russian: "работница доходила до лесных полян" },
-			          { english: "The children walked to stream banks", russian: "дети доходили до берегов ручья" },
-			          { english: "She used to drive to the gym entrance", russian: "она доезжала до входа в спортзал" },
-			          { english: "We would walk to hill summits", russian: "мы доходили до вершин холмов" },
-			          { english: "He drove to town centers", russian: "он доезжал до центров городов" },
-			          { english: "They reached canyon edges", russian: "они доходили до краёв ущелья" },
-			          { english: "The student used to drive to work entrances (male)", russian: "студент доезжал до входов на работу" },
-			          { english: "The student used to drive to work entrances (female)", russian: "студентка доезжала до входов на работу" }
-			        ]
-			      },
-			      {
-			        tense: "present",
-			        aspect: "imperfective",
-			        sentences: [
-			          { english: "I reach the park entrance", russian: "я дохожу до входа в парк" },
-			          { english: "She walks to the lakeside", russian: "она доходит до берега озера" },
-			          { english: "He drives to work", russian: "он доезжает до работы" },
-			          { english: "We drive to school", russian: "мы доезжаем до школы" },
-			          { english: "They reach forest clearings", russian: "они доходят до лесных полян" },
-			          { english: "You drive to the city center", russian: "вы доезжаете до центра города" },
-			          { english: "The fox reaches the yard fence", russian: "лиса доходит до забора двора" },
-			          { english: "My sister drives to the mall entrance", russian: "моя сестра доезжает до входа в торговый центр" },
-			          { english: "We walk to the riverside", russian: "мы доходим до берега реки" },
-			          { english: "She drives to the hospital entrance", russian: "она доезжает до входа в больницу" },
-			          { english: "He walks to village borders", russian: "он доходит до границ деревни" },
-			          { english: "They drive to restaurant areas", russian: "они доезжают до ресторанных районов" },
-			          { english: "The teacher walks to meadow edges", russian: "учитель доходит до краёв луга" },
-			          { english: "The students walk to campus borders", russian: "студенты доходят до границ кампуса" },
-			          { english: "She drives to the airport terminal", russian: "она доезжает до терминала аэропорта" },
-			          { english: "We walk to mountain bases", russian: "мы доходим до подножий гор" },
-			          { english: "He drives to bridge entrances", russian: "он доезжает до въездов на мосты" },
-			          { english: "They walk to waterfall pools", russian: "они доходят до водопадных бассейнов" },
-			          { english: "The doctor drives to the library entrance", russian: "врач доезжает до входа в библиотеку" },
-			          { english: "She walks to valley centers", russian: "она доходит до центров долин" },
-			          { english: "The guide reaches trail ends", russian: "гид доходит до концов троп" },
-			          { english: "My brother drives to the cinema entrance", russian: "мой брат доезжает до входа в кинотеатр" }
-			        ]
-			      },
-			      {
-			        tense: "future",
-			        aspect: "imperfective",
-			        sentences: [
-			          { english: "I will reach the forest edge", russian: "я буду доходить до края леса" },
-			          { english: "She will walk to the creek bank", russian: "она будет доходить до берега ручья" },
-			          { english: "He will drive to the office entrance", russian: "он будет доезжать до входа в офис" },
-			          { english: "We will drive to the theater entrance", russian: "мы будем доезжать до входа в театр" },
-			          { english: "They will walk to hill tops", russian: "они будут доходить до вершин холмов" },
-			          { english: "You will drive to town centers", russian: "вы будете доезжать до центров городов" },
-			          { english: "The children will walk to garden gates", russian: "дети будут доходить до ворот сада" },
-			          { english: "My friend will drive to work entrances (male)", russian: "мой друг будет доезжать до входов на работу" },
-			          { english: "My friend will drive to work entrances (female)", russian: "моя подруга будет доезжать до входов на работу" },
-			          { english: "We will walk to lakeside areas", russian: "мы будем доходить до прибрежных зон озера" },
-			          { english: "She will drive to the gym entrance", russian: "она будет доезжать до входа в спортзал" },
-			          { english: "He will walk to park borders", russian: "он будет доходить до границ парка" },
-			          { english: "They will drive to concert entrances", russian: "они будут доезжать до входов на концерты" },
-			          { english: "The visitor will walk to woodland edges (male)", russian: "посетитель будет доходить до краёв леса" },
-			          { english: "The visitor will walk to woodland edges (female)", russian: "посетительница будет доходить до краёв леса" },
-			          { english: "The tourists will walk to canyon rims", russian: "туристы будут доходить до краёв ущелья" },
-			          { english: "She will drive to market entrances", russian: "она будет доезжать до входов на рынки" },
-			          { english: "We will walk to mountain summits", russian: "мы будем доходить до горных вершин" },
-			          { english: "He will drive to stadium entrances", russian: "он будет доезжать до входов на стадионы" },
-			          { english: "They will walk to river crossings", russian: "они будут доходить до речных переправ" },
-			          { english: "The nurse will drive to museum entrances", russian: "медсестра будет доезжать до входов в музеи" },
-			          { english: "She will walk to meadow centers", russian: "она будет доходить до центров лугов" }
-			        ]
-			      },
-			      {
-			        tense: "future",
-			        aspect: "perfective",
-			        sentences: [
-			          { english: "I will reach the lake shore (male)", russian: "я дойду до берега озера" },
-			          { english: "I will reach the lake shore (female)", russian: "я дойду до берега озера" },
-			          { english: "She will walk to the forest edge", russian: "она дойдёт до края леса" },
-			          { english: "He will drive to the cinema entrance", russian: "он доедет до входа в кинотеатр" },
-			          { english: "We will drive to the airport terminal", russian: "мы доедем до терминала аэропорта" },
-			          { english: "They will reach the hill summit", russian: "они дойдут до вершины холма" },
-			          { english: "You will drive to the hospital entrance", russian: "вы доедете до входа в больницу" },
-			          { english: "The kids will reach the playground gate", russian: "дети дойдут до ворот площадки" },
-			          { english: "My colleague will drive to the meeting location (male)", russian: "мой коллега доедет до места встречи" },
-			          { english: "My colleague will drive to the meeting location (female)", russian: "моя коллега доедет до места встречи" },
-			          { english: "We will walk to the trail's end", russian: "мы дойдём до конца тропы" },
-			          { english: "She will drive to the mall entrance", russian: "она доедет до входа в торговый центр" },
-			          { english: "He will walk to the woodland border", russian: "он дойдёт до границы леса" },
-			          { english: "They will drive to the restaurant entrance", russian: "они доедут до входа в ресторан" },
-			          { english: "The hiker will reach the waterfall base (male)", russian: "путешественник дойдёт до подножия водопада" },
-			          { english: "The hiker will reach the waterfall base (female)", russian: "путешественница дойдёт до подножия водопада" },
-			          { english: "The group will reach the summit", russian: "группа дойдёт до вершины" },
-			          { english: "She will drive to the bridge entrance", russian: "она доедет до въезда на мост" },
-			          { english: "We will walk to the creek bank", russian: "мы дойдём до берега ручья" },
-			          { english: "He will drive to the theater entrance", russian: "он доедет до входа в театр" },
-			          { english: "They will reach the valley floor", russian: "они дойдут до дна долины" },
-			          { english: "She will walk to the field edge", russian: "она дойдёт до края поля" }
-			        ]
-			      }
-			    ]
-			  },
-			  {
-			      prefix: "за",
-			      groups: [
-			        {
-			          tense: "past",
-			          aspect: "perfective",
-			          sentences: [
-			            { english: "I stopped by the forest ranger station (male)", russian: "я зашёл в лесную станцию" },
-			            { english: "I stopped by the forest ranger station (female)", russian: "я зашла в лесную станцию" },
-			            { english: "She dropped in at the mountain café", russian: "она зашла в горное кафе" },
-			            { english: "He drove to the theater box office", russian: "он заехал в театральную кассу" },
-			            { english: "We stopped at the museum gift shop", russian: "мы заехали в музейный магазин" },
-			            { english: "They dropped by the trail information center", russian: "они зашли в информационный центр тропы" },
-			            { english: "You drove to the cinema snack bar", russian: "вы заехали в кинобуфет" },
-			            { english: "The children went behind the meadow trees", russian: "дети зашли за деревья на лугу" },
-			            { english: "My friend drove to the mall food court (male)", russian: "мой друг заехал в фуд-корт торгового центра" },
-			            { english: "My friend drove to the mall food court (female)", russian: "моя подруга заехала в фуд-корт торгового центра" },
-			            { english: "We went behind the camp buildings", russian: "мы зашли за лагерные здания" },
-			            { english: "She stopped at the airport café", russian: "она заехала в кафе аэропорта" },
-			            { english: "He went behind the woodland cabin", russian: "он зашёл за лесную хижину" },
-			            { english: "They drove to the stadium snack stand", russian: "они заехали в киоск стадиона" },
-			            { english: "The tourist went behind the hilltop rocks (male)", russian: "турист зашёл за камни на холме" },
-			            { english: "The tourist went behind the hilltop rocks (female)", russian: "туристка зашла за камни на холме" },
-			            { english: "The tourists went behind the waterfall", russian: "туристы зашли за водопад" },
-			            { english: "She drove to the bridge toll booth", russian: "она заехала в будку моста" },
-			            { english: "We went behind the creek boulders", russian: "мы зашли за валуны у ручья" },
-			            { english: "He stopped at the restaurant parking", russian: "он заехал на парковку ресторана" },
-			            { english: "They went behind the valley ridge", russian: "они зашли за хребет долины" },
-			            { english: "She went behind the field fence", russian: "она зашла за забор поля" }
-			          ]
-			        },
-			        {
-			          tense: "past",
-			          aspect: "imperfective",
-			          sentences: [
-			            { english: "I used to stop by the forest station (male)", russian: "я заходил в лесную станцию" },
-			            { english: "I used to stop by the forest station (female)", russian: "я заходила в лесную станцию" },
-			            { english: "She would drop in at mountain shelters", russian: "она заходила в горные укрытия" },
-			            { english: "He regularly stopped at the office café", russian: "он заезжал в офисное кафе" },
-			            { english: "We often drove to park visitor centers", russian: "мы заезжали в центры посетителей парка" },
-			            { english: "They would stop by hiking supply stores", russian: "они заходили в магазины туристического снаряжения" },
-			            { english: "You used to drive to city information centers", russian: "вы заезжали в городские информационные центры" },
-			            { english: "The animals would go behind meadow trees", russian: "животные заходили за деревья на лугу" },
-			            { english: "My parents stopped at market stalls", russian: "мои родители заезжали в рыночные лавки" },
-			            { english: "We used to go behind campground buildings", russian: "мы заходили за здания кемпинга" },
-			            { english: "She would stop at theater lobbies", russian: "она заезжала в театральные фойе" },
-			            { english: "He went behind lake-side rocks regularly", russian: "он заходил за камни у озера регулярно" },
-			            { english: "They often stopped at concert merchandise stands", russian: "они заезжали в киоски с товарами на концертах" },
-			            { english: "The worker would go behind woodland trees (male)", russian: "рабочий заходил за лесные деревья" },
-			            { english: "The worker would go behind woodland trees (female)", russian: "работница заходила за лесные деревья" },
-			            { english: "The children went behind stream rocks", russian: "дети заходили за камни у ручья" },
-			            { english: "She used to stop at gym juice bars", russian: "она заезжала в соковые бары спортзала" },
-			            { english: "We would go behind hill formations", russian: "мы заходили за холмистые образования" },
-			            { english: "He stopped at town information kiosks", russian: "он заезжал в городские информационные киоски" },
-			            { english: "They went behind canyon walls", russian: "они заходили за стены ущелья" },
-			            { english: "The student used to stop at work break rooms (male)", russian: "студент заезжал в комнаты отдыха на работе" },
-			            { english: "The student used to stop at work break rooms (female)", russian: "студентка заезжала в комнаты отдыха на работе" }
-			          ]
-			        },
-			        {
-			          tense: "present",
-			          aspect: "imperfective",
-			          sentences: [
-			            { english: "I stop by the park information center", russian: "я захожу в информационный центр парка" },
-			            { english: "She drops in at the lakeside café", russian: "она заходит в кафе у озера" },
-			            { english: "He stops at work coffee shops", russian: "он заезжает в рабочие кофейни" },
-			            { english: "We drive to school snack bars", russian: "мы заезжаем в школьные буфеты" },
-			            { english: "They stop by forest ranger stations", russian: "они заходят в лесные станции" },
-			            { english: "You drive to city visitor centers", russian: "вы заезжаете в городские центры посетителей" },
-			            { english: "The deer goes behind yard trees", russian: "олень заходит за деревья во дворе" },
-			            { english: "My sister stops at mall food courts", russian: "моя сестра заезжает в фуд-корты торговых центров" },
-			            { english: "We go behind riverside bushes", russian: "мы заходим за кусты у реки" },
-			            { english: "She stops at hospital cafeterias", russian: "она заезжает в больничные столовые" },
-			            { english: "He goes behind village buildings", russian: "он заходит за деревенские здания" },
-			            { english: "They drive to restaurant parking areas", russian: "они заезжают на парковочные зоны ресторанов" },
-			            { english: "The teacher goes behind meadow fences", russian: "учитель заходит за заборы лугов" },
-			            { english: "The students stop by campus coffee shops", russian: "студенты заходят в кампусные кофейни" },
-			            { english: "She drives to airport gift shops", russian: "она заезжает в магазины подарков аэропорта" },
-			            { english: "We go behind mountain rocks", russian: "мы заходим за горные камни" },
-			            { english: "He stops at bridge toll areas", russian: "он заезжает в зоны оплаты мостов" },
-			            { english: "They go behind waterfall formations", russian: "они заходят за водопадные образования" },
-			            { english: "The doctor drives to library study rooms", russian: "врач заезжает в читальные залы библиотек" },
-			            { english: "She goes behind valley ridges", russian: "она заходит за хребты долин" },
-			            { english: "The guide goes behind trail markers", russian: "гид заходит за указатели тропы" },
-			            { english: "My brother stops at cinema snack counters", russian: "мой брат заезжает к киоскам кинотеатров" }
-			          ]
-			        },
-			        {
-			          tense: "future",
-			          aspect: "imperfective",
-			          sentences: [
-			            { english: "I will stop by the forest center", russian: "я буду заходить в лесной центр" },
-			            { english: "She will drop in at creek cafés", russian: "она будет заходить в кафе у ручьёв" },
-			            { english: "He will stop at office lounges", russian: "он будет заезжать в офисные комнаты отдыха" },
-			            { english: "We will drive to theater gift shops", russian: "мы будем заезжать в театральные магазины подарков" },
-			            { english: "They will go behind hill structures", russian: "они будут заходить за холмистые сооружения" },
-			            { english: "You will drive to town information booths", russian: "вы будете заезжать в городские информационные будки" },
-			            { english: "The children will go behind garden walls", russian: "дети будут заходить за садовые стены" },
-			            { english: "My friend will stop at work cafeterias (male)", russian: "мой друг будет заезжать в рабочие столовые" },
-			            { english: "My friend will stop at work cafeterias (female)", russian: "моя подруга будет заезжать в рабочие столовые" },
-			            { english: "We will go behind lakeside trees", russian: "мы будем заходить за деревья у озера" },
-			            { english: "She will stop at gym snack areas", russian: "она будет заезжать в зоны закусок спортзала" },
-			            { english: "He will go behind park monuments", russian: "он будет заходить за парковые памятники" },
-			            { english: "They will drive to concert merchandise areas", russian: "они будут заезжать в зоны товаров концертов" },
-			            { english: "The visitor will go behind woodland shelters (male)", russian: "посетитель будет заходить за лесные укрытия" },
-			            { english: "The visitor will go behind woodland shelters (female)", russian: "посетительница будет заходить за лесные укрытия" },
-			            { english: "The tourists will go behind canyon formations", russian: "туристы будут заходить за образования ущелья" },
-			            { english: "She will drive to market food stalls", russian: "она будет заезжать в продуктовые лавки рынков" },
-			            { english: "We will go behind mountain outcrops", russian: "мы будем заходить за горные выступы" },
-			            { english: "He will stop at stadium concession stands", russian: "он будет заезжать в киоски стадионов" },
-			            { english: "They will go behind river bends", russian: "они будут заходить за речные изгибы" },
-			            { english: "The nurse will drive to museum café areas", russian: "медсестра будет заезжать в зоны кафе музеев" },
-			            { english: "She will go behind meadow groves", russian: "она будет заходить за рощи лугов" }
-			          ]
-			        },
-			        {
-			          tense: "future",
-			          aspect: "perfective",
-			          sentences: [
-			            { english: "I will stop by the lake visitor center (male)", russian: "я зайду в центр посетителей озера" },
-			            { english: "I will stop by the lake visitor center (female)", russian: "я зайду в центр посетителей озера" },
-			            { english: "She will drop in at the forest café", russian: "она зайдёт в лесное кафе" },
-			            { english: "He will drive to the cinema snack bar", russian: "он заедет в буфет кинотеатра" },
-			            { english: "We will stop at the airport gift shop", russian: "мы заедем в магазин подарков аэропорта" },
-			            { english: "They will go behind the hill outcrop", russian: "они зайдут за холмистый выступ" },
-			            { english: "You will drive to the hospital cafeteria", russian: "вы заедете в больничную столовую" },
-			            { english: "The kids will go behind the playground trees", russian: "дети зайдут за деревья площадки" },
-			            { english: "My colleague will drive to the meeting lounge (male)", russian: "мой коллега заедет в комнату отдыха для встреч" },
-			            { english: "My colleague will drive to the meeting lounge (female)", russian: "моя коллега заедет в комнату отдыха для встреч" },
-			            { english: "We will go behind the trail shelter", russian: "мы зайдём за укрытие тропы" },
-			            { english: "She will stop at the mall food court", russian: "она заедет в фуд-корт торгового центра" },
-			            { english: "He will go behind the woodland rocks", russian: "он зайдёт за лесные камни" },
-			            { english: "They will drive to the restaurant valet area", russian: "они заедут в зону парковщиков ресторана" },
-			            { english: "The hiker will go behind the waterfall ledge (male)", russian: "путешественник зайдёт за выступ водопада" },
-			            { english: "The hiker will go behind the waterfall ledge (female)", russian: "путешественница зайдёт за выступ водопада" },
-			            { english: "The group will go behind the summit rocks", russian: "группа зайдёт за камни вершины" },
-			            { english: "She will drive to the bridge information booth", russian: "она заедет в информационную будку моста" },
-			            { english: "We will go behind the creek boulders", russian: "мы зайдём за валуны ручья" },
-			            { english: "He will stop at the theater box office", russian: "он заедет в театральную кассу" },
-			            { english: "They will go behind the valley formation", russian: "они зайдут за образование долины" },
-			            { english: "She will go behind the field barn", russian: "она зайдёт за сарай поля" }
-			          ]
-			        }
-			      ]
-			    },
-				{
-				    prefix: "про",
-				    groups: [
-				      {
-				        tense: "past",
-				        aspect: "perfective",
-				        sentences: [
-				          { english: "I walked past the forest clearing (male)", russian: "я прошёл мимо лесной поляны" },
-				          { english: "I walked past the forest clearing (female)", russian: "я прошла мимо лесной поляны" },
-				          { english: "She walked through the mountain pass", russian: "она прошла через горный перевал" },
-				          { english: "He drove past the theater", russian: "он проехал мимо театра" },
-				          { english: "We drove through the museum district", russian: "мы проехали через музейный район" },
-				          { english: "They walked past the hiking trail", russian: "они прошли мимо туристической тропы" },
-				          { english: "You drove past the cinema", russian: "вы проехали мимо кинотеатра" },
-				          { english: "The children walked past the meadow", russian: "дети прошли мимо луга" },
-				          { english: "My friend drove past the mall (male)", russian: "мой друг проехал мимо торгового центра" },
-				          { english: "My friend drove past the mall (female)", russian: "моя подруга проехала мимо торгового центра" },
-				          { english: "We walked through the campsite", russian: "мы прошли через кемпинг" },
-				          { english: "She drove past the airport", russian: "она проехала мимо аэропорта" },
-				          { english: "He walked through the woodland", russian: "он прошёл через лес" },
-				          { english: "They drove past the stadium", russian: "они проехали мимо стадиона" },
-				          { english: "The tourist walked past the hilltop (male)", russian: "турист прошёл мимо вершины холма" },
-				          { english: "The tourist walked past the hilltop (female)", russian: "туристка прошла мимо вершины холма" },
-				          { english: "The tourists walked past the waterfall", russian: "туристы прошли мимо водопада" },
-				          { english: "She drove through the bridge tunnel", russian: "она проехала через туннель моста" },
-				          { english: "We walked past the creek", russian: "мы прошли мимо ручья" },
-				          { english: "He drove past the restaurant", russian: "он проехал мимо ресторана" },
-				          { english: "They walked through the valley", russian: "они прошли через долину" },
-				          { english: "She walked past the field", russian: "она прошла мимо поля" }
-				        ]
-				      },
-				      {
-				        tense: "past",
-				        aspect: "imperfective",
-				        sentences: [
-				          { english: "I used to walk past the forest (male)", russian: "я проходил мимо леса" },
-				          { english: "I used to walk past the forest (female)", russian: "я проходила мимо леса" },
-				          { english: "She would walk through mountain areas", russian: "она проходила через горные районы" },
-				          { english: "He regularly drove past the office", russian: "он проезжал мимо офиса" },
-				          { english: "We often drove through the park", russian: "мы проезжали через парк" },
-				          { english: "They would walk past hiking areas", russian: "они проходили мимо мест для походов" },
-				          { english: "You used to drive through the city", russian: "вы проезжали через город" },
-				          { english: "The animals would walk past the meadow", russian: "животные проходили мимо луга" },
-				          { english: "My parents drove past markets", russian: "мои родители проезжали мимо рынков" },
-				          { english: "We used to walk through the campground", russian: "мы проходили через кемпинг" },
-				          { english: "She would drive past the theater", russian: "она проезжала мимо театра" },
-				          { english: "He walked past lake areas regularly", russian: "он проходил мимо озёрных районов регулярно" },
-				          { english: "They often drove past concert venues", russian: "они проезжали мимо концертных площадок" },
-				          { english: "The worker would walk through woodland areas (male)", russian: "рабочий проходил через лесные районы" },
-				          { english: "The worker would walk through woodland areas (female)", russian: "работница проходила через лесные районы" },
-				          { english: "The children walked past stream areas", russian: "дети проходили мимо районов ручьёв" },
-				          { english: "She used to drive past the gym", russian: "она проезжала мимо спортзала" },
-				          { english: "We would walk through hill areas", russian: "мы проходили через холмистые районы" },
-				          { english: "He drove through town districts", russian: "он проезжал через городские районы" },
-				          { english: "They walked past canyon areas", russian: "они проходили мимо районов ущелий" },
-				          { english: "The student used to drive past work locations (male)", russian: "студент проезжал мимо рабочих мест" },
-				          { english: "The student used to drive past work locations (female)", russian: "студентка проезжала мимо рабочих мест" }
-				        ]
-				      },
-				      {
-				        tense: "present",
-				        aspect: "imperfective",
-				        sentences: [
-				          { english: "I walk past the park", russian: "я прохожу мимо парка" },
-				          { english: "She walks through the lakeside area", russian: "она проходит через прибрежную зону озера" },
-				          { english: "He drives past work", russian: "он проезжает мимо работы" },
-				          { english: "We drive through school areas", russian: "мы проезжаем через школьные районы" },
-				          { english: "They walk past forest areas", russian: "они проходят мимо лесных районов" },
-				          { english: "You drive through the city center", russian: "вы проезжаете через центр города" },
-				          { english: "The fox walks past the yard", russian: "лиса проходит мимо двора" },
-				          { english: "My sister drives past the mall", russian: "моя сестра проезжает мимо торгового центра" },
-				          { english: "We walk through riverside areas", russian: "мы проходим через прибрежные районы" },
-				          { english: "She drives past the hospital", russian: "она проезжает мимо больницы" },
-				          { english: "He walks through village areas", russian: "он проходит через деревенские районы" },
-				          { english: "They drive past restaurant districts", russian: "они проезжают мимо ресторанных районов" },
-				          { english: "The teacher walks past meadow areas", russian: "учитель проходит мимо луговых районов" },
-				          { english: "The students walk through campus", russian: "студенты проходят через кампус" },
-				          { english: "She drives past the airport", russian: "она проезжает мимо аэропорта" },
-				          { english: "We walk through mountain areas", russian: "мы проходим через горные районы" },
-				          { english: "He drives past bridge areas", russian: "он проезжает мимо мостовых районов" },
-				          { english: "They walk past waterfall areas", russian: "они проходят мимо водопадных районов" },
-				          { english: "The doctor drives past the library", russian: "врач проезжает мимо библиотеки" },
-				          { english: "She walks through valley areas", russian: "она проходит через долинные районы" },
-				          { english: "The guide walks past trail areas", russian: "гид проходит мимо троповых районов" },
-				          { english: "My brother drives past the cinema", russian: "мой брат проезжает мимо кинотеатра" }
-				        ]
-				      },
-				      {
-				        tense: "future",
-				        aspect: "imperfective",
-				        sentences: [
-				          { english: "I will walk past the forest", russian: "я буду проходить мимо леса" },
-				          { english: "She will walk through creek areas", russian: "она будет проходить через районы ручьёв" },
-				          { english: "He will drive past the office", russian: "он будет проезжать мимо офиса" },
-				          { english: "We will drive through theater districts", russian: "мы будем проезжать через театральные районы" },
-				          { english: "They will walk past hill areas", russian: "они будут проходить мимо холмистых районов" },
-				          { english: "You will drive through town centers", russian: "вы будете проезжать через центры городов" },
-				          { english: "The children will walk through garden areas", russian: "дети будут проходить через садовые районы" },
-				          { english: "My friend will drive past work areas (male)", russian: "мой друг будет проезжать мимо рабочих районов" },
-				          { english: "My friend will drive past work areas (female)", russian: "моя подруга будет проезжать мимо рабочих районов" },
-				          { english: "We will walk past lakeside areas", russian: "мы будем проходить мимо прибрежных районов озера" },
-				          { english: "She will drive past gym areas", russian: "она будет проезжать мимо районов спортзалов" },
-				          { english: "He will walk through park areas", russian: "он будет проходить через парковые районы" },
-				          { english: "They will drive past concert areas", russian: "они будут проезжать мимо концертных районов" },
-				          { english: "The visitor will walk through woodland areas (male)", russian: "посетитель будет проходить через лесные районы" },
-				          { english: "The visitor will walk through woodland areas (female)", russian: "посетительница будет проходить через лесные районы" },
-				          { english: "The tourists will walk past canyon areas", russian: "туристы будут проходить мимо районов ущелий" },
-				          { english: "She will drive through market areas", russian: "она будет проезжать через рыночные районы" },
-				          { english: "We will walk past mountain areas", russian: "мы будем проходить мимо горных районов" },
-				          { english: "He will drive past stadium areas", russian: "он будет проезжать мимо районов стадионов" },
-				          { english: "They will walk through river areas", russian: "они будут проходить через речные районы" },
-				          { english: "The nurse will drive past museum areas", russian: "медсестра будет проезжать мимо музейных районов" },
-				          { english: "She will walk past meadow areas", russian: "она будет проходить мимо луговых районов" }
-				        ]
-				      },
-				      {
-				        tense: "future",
-				        aspect: "perfective",
-				        sentences: [
-				          { english: "I will walk past the lake (male)", russian: "я пройду мимо озера" },
-				          { english: "I will walk past the lake (female)", russian: "я пройду мимо озера" },
-				          { english: "She will walk through the forest", russian: "она пройдёт через лес" },
-				          { english: "He will drive past the cinema", russian: "он проедет мимо кинотеатра" },
-				          { english: "We will drive through the airport area", russian: "мы проедем через район аэропорта" },
-				          { english: "They will walk past the hill", russian: "они пройдут мимо холма" },
-				          { english: "You will drive past the hospital", russian: "вы проедете мимо больницы" },
-				          { english: "The kids will walk past the playground", russian: "дети пройдут мимо площадки" },
-				          { english: "My colleague will drive past the meeting center (male)", russian: "мой коллега проедет мимо центра встреч" },
-				          { english: "My colleague will drive past the meeting center (female)", russian: "моя коллега проедет мимо центра встреч" },
-				          { english: "We will walk past the trail", russian: "мы пройдём мимо тропы" },
-				          { english: "She will drive past the mall", russian: "она проедет мимо торгового центра" },
-				          { english: "He will walk through the woods", russian: "он пройдёт через лес" },
-				          { english: "They will drive past the restaurant", russian: "они проедут мимо ресторана" },
-				          { english: "The hiker will walk past the waterfall (male)", russian: "путешественник пройдёт мимо водопада" },
-				          { english: "The hiker will walk past the waterfall (female)", russian: "путешественница пройдёт мимо водопада" },
-				          { english: "The group will walk through the summit area", russian: "группа пройдёт через район вершины" },
-				          { english: "She will drive through the bridge area", russian: "она проедет через район моста" },
-				          { english: "We will walk past the creek", russian: "мы пройдём мимо ручья" },
-				          { english: "He will drive past the theater", russian: "он проедет мимо театра" },
-				          { english: "They will walk through the valley", russian: "они пройдут через долину" },
-				          { english: "She will walk past the field", russian: "она пройдёт мимо поля" }
-				        ]
-				      }
-				    ]
-				  },
-				  {
-				      prefix: "от",
-				      groups: [
-				        {
-				          tense: "past",
-				          aspect: "perfective",
-				          sentences: [
-				            { english: "I stepped away from the forest edge (male)", russian: "я отошёл от края леса" },
-				            { english: "I stepped away from the forest edge (female)", russian: "я отошла от края леса" },
-				            { english: "She moved back from the mountain cliff", russian: "она отошла от горного обрыва" },
-				            { english: "He backed away from the theater entrance", russian: "он отъехал от входа в театр" },
-				            { english: "We pulled back from the museum steps", russian: "мы отъехали от ступеней музея" },
-				            { english: "They stepped away from the trail marker", russian: "они отошли от указателя тропы" },
-				            { english: "You drove back from the cinema", russian: "вы отъехали от кинотеатра" },
-				            { english: "The children stepped back from the meadow fence", russian: "дети отошли от забора луга" },
-				            { english: "My friend pulled away from the mall (male)", russian: "мой друг отъехал от торгового центра" },
-				            { english: "My friend pulled away from the mall (female)", russian: "моя подруга отъехала от торгового центра" },
-				            { english: "We moved back from the campfire", russian: "мы отошли от костра" },
-				            { english: "She drove away from the airport", russian: "она отъехала от аэропорта" },
-				            { english: "He stepped back from the woodland", russian: "он отошёл от леса" },
-				            { english: "They pulled away from the stadium", russian: "они отъехали от стадиона" },
-				            { english: "The tourist moved away from the hilltop (male)", russian: "турист отошёл от вершины холма" },
-				            { english: "The tourist moved away from the hilltop (female)", russian: "туристка отошла от вершины холма" },
-				            { english: "The tourists stepped back from the waterfall", russian: "туристы отошли от водопада" },
-				            { english: "She pulled back from the bridge", russian: "она отъехала от моста" },
-				            { english: "We moved away from the creek", russian: "мы отошли от ручья" },
-				            { english: "He drove back from the restaurant", russian: "он отъехал от ресторана" },
-				            { english: "They stepped away from the valley", russian: "они отошли от долины" },
-				            { english: "She moved back from the field", russian: "она отошла от поля" }
-				          ]
-				        },
-				        {
-				          tense: "past",
-				          aspect: "imperfective",
-				          sentences: [
-				            { english: "I used to step away from the forest (male)", russian: "я отходил от леса" },
-				            { english: "I used to step away from the forest (female)", russian: "я отходила от леса" },
-				            { english: "She would move back from mountain areas", russian: "она отходила от горных районов" },
-				            { english: "He regularly backed away from the office", russian: "он отъезжал от офиса" },
-				            { english: "We often pulled back from the park", russian: "мы отъезжали от парка" },
-				            { english: "They would step away from hiking areas", russian: "они отходили от мест для походов" },
-				            { english: "You used to drive back from the city", russian: "вы отъезжали от города" },
-				            { english: "The animals would step back from the meadow", russian: "животные отходили от луга" },
-				            { english: "My parents drove back from markets", russian: "мои родители отъезжали от рынков" },
-				            { english: "We used to move back from the campground", russian: "мы отходили от кемпинга" },
-				            { english: "She would pull away from the theater", russian: "она отъезжала от театра" },
-				            { english: "He stepped back from lake areas regularly", russian: "он отходил от озёрных районов регулярно" },
-				            { english: "They often drove back from concert venues", russian: "они отъезжали от концертных площадок" },
-				            { english: "The worker would move away from woodland areas (male)", russian: "рабочий отходил от лесных районов" },
-				            { english: "The worker would move away from woodland areas (female)", russian: "работница отходила от лесных районов" },
-				            { english: "The children stepped back from stream areas", russian: "дети отходили от районов ручьёв" },
-				            { english: "She used to drive back from the gym", russian: "она отъезжала от спортзала" },
-				            { english: "We would move away from hill areas", russian: "мы отходили от холмистых районов" },
-				            { english: "He pulled back from town districts", russian: "он отъезжал от городских районов" },
-				            { english: "They stepped away from canyon areas", russian: "они отходили от районов ущелий" },
-				            { english: "The student used to drive back from work locations (male)", russian: "студент отъезжал от рабочих мест" },
-				            { english: "The student used to drive back from work locations (female)", russian: "студентка отъезжала от рабочих мест" }
-				          ]
-				        },
-				        {
-				          tense: "present",
-				          aspect: "imperfective",
-				          sentences: [
-				            { english: "I step away from the park", russian: "я отхожу от парка" },
-				            { english: "She moves back from the lakeside", russian: "она отходит от берега озера" },
-				            { english: "He backs away from work", russian: "он отъезжает от работы" },
-				            { english: "We pull back from school areas", russian: "мы отъезжаем от школьных районов" },
-				            { english: "They step away from forest areas", russian: "они отходят от лесных районов" },
-				            { english: "You drive back from the city center", russian: "вы отъезжаете от центра города" },
-				            { english: "The deer steps back from the yard", russian: "олень отходит от двора" },
-				            { english: "My sister drives back from the mall", russian: "моя сестра отъезжает от торгового центра" },
-				            { english: "We move away from riverside areas", russian: "мы отходим от прибрежных районов" },
-				            { english: "She pulls back from the hospital", russian: "она отъезжает от больницы" },
-				            { english: "He steps away from village areas", russian: "он отходит от деревенских районов" },
-				            { english: "They drive back from restaurant districts", russian: "они отъезжают от ресторанных районов" },
-				            { english: "The teacher moves away from meadow areas", russian: "учитель отходит от луговых районов" },
-				            { english: "The students step back from campus", russian: "студенты отходят от кампуса" },
-				            { english: "She drives back from the airport", russian: "она отъезжает от аэропорта" },
-				            { english: "We move away from mountain areas", russian: "мы отходим от горных районов" },
-				            { english: "He pulls back from bridge areas", russian: "он отъезжает от мостовых районов" },
-				            { english: "They step away from waterfall areas", russian: "они отходят от водопадных районов" },
-				            { english: "The doctor drives back from the library", russian: "врач отъезжает от библиотеки" },
-				            { english: "She moves away from valley areas", russian: "она отходит от долинных районов" },
-				            { english: "The guide steps back from trail areas", russian: "гид отходит от троповых районов" },
-				            { english: "My brother backs away from the cinema", russian: "мой брат отъезжает от кинотеатра" }
-				          ]
-				        },
-				        {
-				          tense: "future",
-				          aspect: "imperfective",
-				          sentences: [
-				            { english: "I will step away from the forest", russian: "я буду отходить от леса" },
-				            { english: "She will move back from creek areas", russian: "она будет отходить от районов ручьёв" },
-				            { english: "He will back away from the office", russian: "он будет отъезжать от офиса" },
-				            { english: "We will pull back from theater districts", russian: "мы будем отъезжать от театральных районов" },
-				            { english: "They will step away from hill areas", russian: "они будут отходить от холмистых районов" },
-				            { english: "You will drive back from town centers", russian: "вы будете отъезжать от центров городов" },
-				            { english: "The children will step back from garden areas", russian: "дети будут отходить от садовых районов" },
-				            { english: "My friend will drive back from work areas (male)", russian: "мой друг будет отъезжать от рабочих районов" },
-				            { english: "My friend will drive back from work areas (female)", russian: "моя подруга будет отъезжать от рабочих районов" },
-				            { english: "We will move away from lakeside areas", russian: "мы будем отходить от прибрежных районов озера" },
-				            { english: "She will pull back from gym areas", russian: "она будет отъезжать от районов спортзалов" },
-				            { english: "He will step away from park areas", russian: "он будет отходить от парковых районов" },
-				            { english: "They will drive back from concert areas", russian: "они будут отъезжать от концертных районов" },
-				            { english: "The visitor will move away from woodland areas (male)", russian: "посетитель будет отходить от лесных районов" },
-				            { english: "The visitor will move away from woodland areas (female)", russian: "посетительница будет отходить от лесных районов" },
-				            { english: "The tourists will step back from canyon areas", russian: "туристы будут отходить от районов ущелий" },
-				            { english: "She will drive back from market areas", russian: "она будет отъезжать от рыночных районов" },
-				            { english: "We will move away from mountain areas", russian: "мы будем отходить от горных районов" },
-				            { english: "He will pull back from stadium areas", russian: "он будет отъезжать от районов стадионов" },
-				            { english: "They will step away from river areas", russian: "они будут отходить от речных районов" },
-				            { english: "The nurse will drive back from museum areas", russian: "медсестра будет отъезжать от музейных районов" },
-				            { english: "She will move away from meadow areas", russian: "она будет отходить от луговых районов" }
-				          ]
-				        },
-				        {
-				          tense: "future",
-				          aspect: "perfective",
-				          sentences: [
-				            { english: "I will step away from the lake (male)", russian: "я отойду от озера" },
-				            { english: "I will step away from the lake (female)", russian: "я отойду от озера" },
-				            { english: "She will move back from the forest", russian: "она отойдёт от леса" },
-				            { english: "He will back away from the cinema", russian: "он отъедет от кинотеатра" },
-				            { english: "We will pull back from the airport", russian: "мы отъедем от аэропорта" },
-				            { english: "They will step away from the hill", russian: "они отойдут от холма" },
-				            { english: "You will drive back from the hospital", russian: "вы отъедете от больницы" },
-				            { english: "The kids will step back from the playground", russian: "дети отойдут от площадки" },
-				            { english: "My colleague will drive back from the meeting center (male)", russian: "мой коллега отъедет от центра встреч" },
-				            { english: "My colleague will drive back from the meeting center (female)", russian: "моя коллега отъедет от центра встреч" },
-				            { english: "We will move away from the trail", russian: "мы отойдём от тропы" },
-				            { english: "She will pull back from the mall", russian: "она отъедет от торгового центра" },
-				            { english: "He will step away from the woods", russian: "он отойдёт от леса" },
-				            { english: "They will drive back from the restaurant", russian: "они отъедут от ресторана" },
-				            { english: "The hiker will move away from the waterfall (male)", russian: "путешественник отойдёт от водопада" },
-				            { english: "The hiker will move away from the waterfall (female)", russian: "путешественница отойдёт от водопада" },
-				            { english: "The group will step back from the summit", russian: "группа отойдёт от вершины" },
-				            { english: "She will drive back from the bridge", russian: "она отъедет от моста" },
-				            { english: "We will move away from the creek", russian: "мы отойдём от ручья" },
-				            { english: "He will pull back from the theater", russian: "он отъедет от театра" },
-				            { english: "They will step away from the valley", russian: "они отойдут от долины" },
-				            { english: "She will move away from the field", russian: "она отойдёт от поля" }
-				          ]
-				        }
-				      ]
-				    },				  						  					  			  
+  { 
+    prefix: "у", 
+    name: "у-", 
+    file: "u-prefix-motion.js",
+    loaded: false,
+    data: null
+  },
+  { 
+    prefix: "при", 
+    name: "при-", 
+    file: "pri-prefix-motion.js",
+    loaded: false,
+    data: null
+  },
+  { 
+    prefix: "по", 
+    name: "по-", 
+    file: "po-prefix-motion.js",
+    loaded: false,
+    data: null
+  },
+  { 
+    prefix: "в", 
+    name: "в-", 
+    file: "v-prefix-motion.js",
+    loaded: false,
+    data: null
+  },
+  { 
+    prefix: "вы", 
+    name: "вы-", 
+    file: "vy-prefix-motion.js",
+    loaded: false,
+    data: null
+  },
+  { 
+    prefix: "до", 
+    name: "до-", 
+    file: "do-prefix-motion.js",
+    loaded: false,
+    data: null
+  },
+  { 
+    prefix: "за", 
+    name: "за-", 
+    file: "za-prefix-motion.js",
+    loaded: false,
+    data: null
+  },
+  { 
+    prefix: "про", 
+    name: "про-", 
+    file: "pro-prefix-motion.js",
+    loaded: false,
+    data: null
+  },
+  { 
+    prefix: "от", 
+    name: "от-", 
+    file: "ot-prefix-motion.js",
+    loaded: false,
+    data: null
+  }
 ];
+
+// Function to load a specific prefix module
+async function loadPrefixModule(prefix) {
+  const module = prefixModules.find(m => m.prefix === prefix);
+  if (!module) {
+    console.error(`Unknown prefix: ${prefix}`);
+    return null;
+  }
+
+  if (module.loaded) {
+    return module.data;
+  }
+
+  try {
+    // Create a script element to load the module
+    const script = document.createElement('script');
+    script.src = `motion-verbs-data/${module.file}`;
+    
+    // Return a promise that resolves when the script loads
+    return new Promise((resolve, reject) => {
+      script.onload = () => {
+        // Each module will set a global variable with its data
+        const globalVarName = `${prefix || 'unprefixed'}MotionData`;
+        if (window[globalVarName]) {
+          module.data = window[globalVarName];
+          module.loaded = true;
+          resolve(module.data);
+        } else {
+          reject(new Error(`Module ${module.file} did not set expected global variable ${globalVarName}`));
+        }
+      };
+      
+      script.onerror = () => {
+        reject(new Error(`Failed to load ${module.file}`));
+      };
+      
+      document.head.appendChild(script);
+    });
+  } catch (error) {
+    console.error(`Error loading prefix module ${prefix}:`, error);
+    return null;
+  }
+}
+
+// Function to load multiple prefix modules
+async function loadSelectedPrefixes(selectedPrefixes) {
+  verbData = []; // Clear existing data
+  
+  const loadPromises = selectedPrefixes.map(async (prefix) => {
+    try {
+      const data = await loadPrefixModule(prefix);
+      if (data) {
+        verbData.push(data);
+      }
+    } catch (error) {
+      console.error(`Failed to load prefix ${prefix}:`, error);
+    }
+  });
+
+  await Promise.all(loadPromises);
+  return verbData;
+}
+
+// Function to get list of available prefixes (for UI building)
+function getAvailablePrefixes() {
+  return prefixModules.map(m => ({
+    prefix: m.prefix,
+    name: m.name,
+    loaded: m.loaded
+  }));
+}
+
+// Function to check if a prefix is loaded
+function isPrefixLoaded(prefix) {
+  const module = prefixModules.find(m => m.prefix === prefix);
+  return module ? module.loaded : false;
+}
+
+// Function to get loaded data for a specific prefix
+function getPrefixData(prefix) {
+  const module = prefixModules.find(m => m.prefix === prefix);
+  return module && module.loaded ? module.data : null;
+}
+
+// Initialize available prefixes list
+availablePrefixes = getAvailablePrefixes();

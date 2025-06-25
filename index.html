@@ -38,6 +38,9 @@
     .tense-aspect-option {
       margin: 8px 0;
     }
+    .prefix-option {
+      margin: 8px 0;
+    }
     .reveal-section {
       margin: 15px 0;
     }
@@ -68,6 +71,14 @@
     .repeat-section button:hover {
       background-color: #1e7e34;
     }
+    .loading {
+      color: #007bff;
+      font-style: italic;
+    }
+    .error {
+      color: #dc3545;
+      font-weight: bold;
+    }
     .hidden {
       display: none;
     }
@@ -75,6 +86,23 @@
       margin-top: 40px;
       font-size: 0.9em;
       font-style: italic;
+    }
+    .button-group button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .button-group button:hover {
+      background-color: #0056b3;
+    }
+    .button-group button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
     }
   </style>
 </head>
@@ -91,7 +119,7 @@
       </div>
 
       <div class="quiz-section">
-        <div id="challenge">Here is where the challenge sentence will display</div>
+        <div id="challenge">Select prefixes and tense/aspect combinations, then click a quiz mode button to begin.</div>
         
         <div id="repeat-section" class="repeat-section hidden">
           <button id="repeat-btn">🔊 Repeat</button>
@@ -108,8 +136,8 @@
           </div>
         </div>
 
-        <div id="result">Correct or Incorrect + correct answer</div>
-        <div id="score">Running score</div>
+        <div id="result"></div>
+        <div id="score"></div>
       </div>
     </div>
 
@@ -140,8 +168,12 @@
         </div>
       </div>
 
-      <h3>Prefixes</h3>
-      <div id="prefix-container"></div>
+      <div class="tense-aspect-section">
+        <h3>Prefixes</h3>
+        <div id="prefix-container">
+          <div class="loading">Loading available prefixes...</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -179,26 +211,37 @@
     }
 
     function buildPrefixCheckboxes() {
-      const prefixes = [...new Set(verbData.map(group => group.prefix))];
+      const availablePrefixes = getAvailablePrefixes();
       prefixContainer.innerHTML = '';
-      prefixes.forEach(prefix => {
-        const label = document.createElement('label');
+      
+      availablePrefixes.forEach(prefixInfo => {
+        const div = document.createElement('div');
+        div.className = 'prefix-option';
+        
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.className = 'prefix-filter';
-        checkbox.value = prefix;
-        label.appendChild(checkbox);
-        label.append(` ${prefix || '(no prefix)'}`);
-        prefixContainer.appendChild(label);
-        prefixContainer.appendChild(document.createElement('br'));
+        checkbox.value = prefixInfo.prefix;
+        checkbox.id = `prefix-${prefixInfo.prefix || 'none'}`;
+        
+        // Check the unprefixed option by default
+        if (prefixInfo.prefix === '') {
+          checkbox.checked = true;
+        }
+        
+        const label = document.createElement('label');
+        label.htmlFor = checkbox.id;
+        label.textContent = prefixInfo.name;
+        
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        prefixContainer.appendChild(div);
       });
     }
 
     function getSelectedPrefixes() {
-      const checkboxes = document.querySelectorAll('.prefix-filter');
-      return Array.from(checkboxes)
-        .filter(cb => cb.checked)
-        .map(cb => cb.value);
+      const checkboxes = document.querySelectorAll('.prefix-filter:checked');
+      return Array.from(checkboxes).map(cb => cb.value);
     }
 
     function getSelectedTenseAspects() {
@@ -214,31 +257,28 @@
       }).filter(item => item !== null);
     }
 
-    function flattenSentences(data, selectedPrefixes, selectedTenseAspects) {
-      return data
-        .filter(group => selectedPrefixes.includes(group.prefix))
-        .flatMap(group => {
-          // Handle case where groups might be undefined or empty
-          if (!group.groups || group.groups.length === 0) {
-            return [];
-          }
-          
-          return group.groups
-            .filter(subgroup => {
-              if (selectedTenseAspects.length === 0) return true;
-              return selectedTenseAspects.some(ta => 
-                subgroup.tense === ta.tense && subgroup.aspect === ta.aspect
-              );
-            })
-            .flatMap(subgroup => 
-              subgroup.sentences.map(s => ({ 
-                ...s, 
-                prefix: group.prefix, 
-                tense: subgroup.tense, 
-                aspect: subgroup.aspect 
-              }))
+    function flattenSentences(data, selectedTenseAspects) {
+      return data.flatMap(group => {
+        if (!group.groups || group.groups.length === 0) {
+          return [];
+        }
+        
+        return group.groups
+          .filter(subgroup => {
+            if (selectedTenseAspects.length === 0) return true;
+            return selectedTenseAspects.some(ta => 
+              subgroup.tense === ta.tense && subgroup.aspect === ta.aspect
             );
-        });
+          })
+          .flatMap(subgroup => 
+            subgroup.sentences.map(s => ({ 
+              ...s, 
+              prefix: group.prefix, 
+              tense: subgroup.tense, 
+              aspect: subgroup.aspect 
+            }))
+          );
+      });
     }
 
     function shuffleArray(array) {
@@ -248,10 +288,14 @@
       }
     }
 
-    function startNewRound(mode) {
+    function setButtonsDisabled(disabled) {
+      const buttons = document.querySelectorAll('.button-group button');
+      buttons.forEach(btn => btn.disabled = disabled);
+    }
+
+    async function startNewRound(mode) {
       const selectedPrefixes = getSelectedPrefixes();
       const selectedTenseAspects = getSelectedTenseAspects();
-      const availableSentences = flattenSentences(verbData, selectedPrefixes, selectedTenseAspects);
 
       if (selectedPrefixes.length === 0) {
         challengeEl.innerText = 'Please select at least one prefix.';
@@ -265,21 +309,48 @@
         return;
       }
 
-      if (availableSentences.length < 10) {
-        challengeEl.innerText = `Not enough data for selected filters. Found ${availableSentences.length} sentences, need at least 10.`;
-        hideAllQuizElements();
-        return;
+      // Show loading state
+      challengeEl.innerText = 'Loading selected verb data...';
+      setButtonsDisabled(true);
+      hideAllQuizElements();
+
+      try {
+        // Load the selected prefixes
+        const loadedData = await loadSelectedPrefixes(selectedPrefixes);
+        
+        if (loadedData.length === 0) {
+          challengeEl.innerText = 'Failed to load any verb data. Please try again.';
+          setButtonsDisabled(false);
+          return;
+        }
+
+        // Flatten sentences from loaded data
+        const availableSentences = flattenSentences(loadedData, selectedTenseAspects);
+
+        if (availableSentences.length < 10) {
+          challengeEl.innerText = `Not enough data for selected filters. Found ${availableSentences.length} sentences, need at least 10.`;
+          setButtonsDisabled(false);
+          return;
+        }
+
+        // Set up the quiz
+        currentMode = mode;
+        score = 0;
+        currentIndex = 0;
+        resultEl.innerText = '';
+        scoreEl.innerText = 'Score: 0 for 0';
+
+        shuffleArray(availableSentences);
+        currentRound = availableSentences.slice(0, 10);
+        
+        setButtonsDisabled(false);
+        showCurrentChallenge();
+        
+      } catch (error) {
+        console.error('Error loading verb data:', error);
+        challengeEl.innerHTML = `<span class="error">Error loading verb data: ${error.message}</span>`;
+        setButtonsDisabled(false);
       }
-
-      currentMode = mode;
-      score = 0;
-      currentIndex = 0;
-      resultEl.innerText = '';
-      scoreEl.innerText = 'Score: 0 for 0';
-
-      shuffleArray(availableSentences);
-      currentRound = availableSentences.slice(0, 10);
-      showCurrentChallenge();
     }
 
     function hideAllQuizElements() {
@@ -292,9 +363,8 @@
 
     function showCurrentChallenge() {
       const challenge = currentRound[currentIndex];
-      const selectedPrefixes = getSelectedPrefixes();
       const selectedTenseAspects = getSelectedTenseAspects();
-      const allOptions = flattenSentences(verbData, selectedPrefixes, selectedTenseAspects);
+      const allOptions = flattenSentences(verbData, selectedTenseAspects);
       let correct, challengeText, wrongField, lang;
 
       if (currentMode === "en-to-ru" || currentMode === "spoken-en-to-ru") {

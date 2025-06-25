@@ -1,0 +1,148 @@
+// За- prefix motion verbs data
+// Motion verbs with за- prefix (stopping by/going behind)
+
+window.заMotionData = {
+  prefix: "за",
+  groups: [
+    {
+      tense: "past",
+      aspect: "perfective",
+      sentences: [
+        { english: "I stopped by the forest ranger station (male)", russian: "я зашёл в лесную станцию" },
+        { english: "I stopped by the forest ranger station (female)", russian: "я зашла в лесную станцию" },
+        { english: "She dropped in at the mountain café", russian: "она зашла в горное кафе" },
+        { english: "He drove to the theater box office", russian: "он заехал в театральную кассу" },
+        { english: "We stopped at the museum gift shop", russian: "мы заехали в музейный магазин" },
+        { english: "They dropped by the trail information center", russian: "они зашли в информационный центр тропы" },
+        { english: "You drove to the cinema snack bar", russian: "вы заехали в кинобуфет" },
+        { english: "The children went behind the meadow trees", russian: "дети зашли за деревья на лугу" },
+        { english: "My friend drove to the mall food court (male)", russian: "мой друг заехал в фуд-корт торгового центра" },
+        { english: "My friend drove to the mall food court (female)", russian: "моя подруга заехала в фуд-корт торгового центра" },
+        { english: "We went behind the camp buildings", russian: "мы зашли за лагерные здания" },
+        { english: "She stopped at the airport café", russian: "она заехала в кафе аэропорта" },
+        { english: "He went behind the woodland cabin", russian: "он зашёл за лесную хижину" },
+        { english: "They drove to the stadium snack stand", russian: "они заехали в киоск стадиона" },
+        { english: "The tourist went behind the hilltop rocks (male)", russian: "турист зашёл за камни на холме" },
+        { english: "The tourist went behind the hilltop rocks (female)", russian: "туристка зашла за камни на холме" },
+        { english: "The tourists went behind the waterfall", russian: "туристы зашли за водопад" },
+        { english: "She drove to the bridge toll booth", russian: "она заехала в будку моста" },
+        { english: "We went behind the creek boulders", russian: "мы зашли за валуны у ручья" },
+        { english: "He stopped at the restaurant parking", russian: "он заехал на парковку ресторана" },
+        { english: "They went behind the valley ridge", russian: "они зашли за хребет долины" },
+        { english: "She went behind the field fence", russian: "она зашла за забор поля" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I used to stop by the forest station (male)", russian: "я заходил в лесную станцию" },
+        { english: "I used to stop by the forest station (female)", russian: "я заходила в лесную станцию" },
+        { english: "She would drop in at mountain shelters", russian: "она заходила в горные укрытия" },
+        { english: "He regularly stopped at the office café", russian: "он заезжал в офисное кафе" },
+        { english: "We often drove to park visitor centers", russian: "мы заезжали в центры посетителей парка" },
+        { english: "They would stop by hiking supply stores", russian: "они заходили в магазины туристического снаряжения" },
+        { english: "You used to drive to city information centers", russian: "вы заезжали в городские информационные центры" },
+        { english: "The animals would go behind meadow trees", russian: "животные заходили за деревья на лугу" },
+        { english: "My parents stopped at market stalls", russian: "мои родители заезжали в рыночные лавки" },
+        { english: "We used to go behind campground buildings", russian: "мы заходили за здания кемпинга" },
+        { english: "She would stop at theater lobbies", russian: "она заезжала в театральные фойе" },
+        { english: "He went behind lake-side rocks regularly", russian: "он заходил за камни у озера регулярно" },
+        { english: "They often stopped at concert merchandise stands", russian: "они заезжали в киоски с товарами на концертах" },
+        { english: "The worker would go behind woodland trees (male)", russian: "рабочий заходил за лесные деревья" },
+        { english: "The worker would go behind woodland trees (female)", russian: "работница заходила за лесные деревья" },
+        { english: "The children went behind stream rocks", russian: "дети заходили за камни у ручья" },
+        { english: "She used to stop at gym juice bars", russian: "она заезжала в соковые бары спортзала" },
+        { english: "We would go behind hill formations", russian: "мы заходили за холмистые образования" },
+        { english: "He stopped at town information kiosks", russian: "он заезжал в городские информационные киоски" },
+        { english: "They went behind canyon walls", russian: "они заходили за стены ущелья" },
+        { english: "The student used to stop at work break rooms (male)", russian: "студент заезжал в комнаты отдыха на работе" },
+        { english: "The student used to stop at work break rooms (female)", russian: "студентка заезжала в комнаты отдыха на работе" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I stop by the park information center", russian: "я захожу в информационный центр парка" },
+        { english: "She drops in at the lakeside café", russian: "она заходит в кафе у озера" },
+        { english: "He stops at work coffee shops", russian: "он заезжает в рабочие кофейни" },
+        { english: "We drive to school snack bars", russian: "мы заезжаем в школьные буфеты" },
+        { english: "They stop by forest ranger stations", russian: "они заходят в лесные станции" },
+        { english: "You drive to city visitor centers", russian: "вы заезжаете в городские центры посетителей" },
+        { english: "The deer goes behind yard trees", russian: "олень заходит за деревья во дворе" },
+        { english: "My sister stops at mall food courts", russian: "моя сестра заезжает в фуд-корты торговых центров" },
+        { english: "We go behind riverside bushes", russian: "мы заходим за кусты у реки" },
+        { english: "She stops at hospital cafeterias", russian: "она заезжает в больничные столовые" },
+        { english: "He goes behind village buildings", russian: "он заходит за деревенские здания" },
+        { english: "They drive to restaurant parking areas", russian: "они заезжают на парковочные зоны ресторанов" },
+        { english: "The teacher goes behind meadow fences", russian: "учитель заходит за заборы лугов" },
+        { english: "The students stop by campus coffee shops", russian: "студенты заходят в кампусные кофейни" },
+        { english: "She drives to airport gift shops", russian: "она заезжает в магазины подарков аэропорта" },
+        { english: "We go behind mountain rocks", russian: "мы заходим за горные камни" },
+        { english: "He stops at bridge toll areas", russian: "он заезжает в зоны оплаты мостов" },
+        { english: "They go behind waterfall formations", russian: "они заходят за водопадные образования" },
+        { english: "The doctor drives to library study rooms", russian: "врач заезжает в читальные залы библиотек" },
+        { english: "She goes behind valley ridges", russian: "она заходит за хребты долин" },
+        { english: "The guide goes behind trail markers", russian: "гид заходит за указатели тропы" },
+        { english: "My brother stops at cinema snack counters", russian: "мой брат заезжает к киоскам кинотеатров" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I will stop by the forest center", russian: "я буду заходить в лесной центр" },
+        { english: "She will drop in at creek cafés", russian: "она будет заходить в кафе у ручьёв" },
+        { english: "He will stop at office lounges", russian: "он будет заезжать в офисные комнаты отдыха" },
+        { english: "We will drive to theater gift shops", russian: "мы будем заезжать в театральные магазины подарков" },
+        { english: "They will go behind hill structures", russian: "они будут заходить за холмистые сооружения" },
+        { english: "You will drive to town information booths", russian: "вы будете заезжать в городские информационные будки" },
+        { english: "The children will go behind garden walls", russian: "дети будут заходить за садовые стены" },
+        { english: "My friend will stop at work cafeterias (male)", russian: "мой друг будет заезжать в рабочие столовые" },
+        { english: "My friend will stop at work cafeterias (female)", russian: "моя подруга будет заезжать в рабочие столовые" },
+        { english: "We will go behind lakeside trees", russian: "мы будем заходить за деревья у озера" },
+        { english: "She will stop at gym snack areas", russian: "она будет заезжать в зоны закусок спортзала" },
+        { english: "He will go behind park monuments", russian: "он будет заходить за парковые памятники" },
+        { english: "They will drive to concert merchandise areas", russian: "они будут заезжать в зоны товаров концертов" },
+        { english: "The visitor will go behind woodland shelters (male)", russian: "посетитель будет заходить за лесные укрытия" },
+        { english: "The visitor will go behind woodland shelters (female)", russian: "посетительница будет заходить за лесные укрытия" },
+        { english: "The tourists will go behind canyon formations", russian: "туристы будут заходить за образования ущелья" },
+        { english: "She will drive to market food stalls", russian: "она будет заезжать в продуктовые лавки рынков" },
+        { english: "We will go behind mountain outcrops", russian: "мы будем заходить за горные выступы" },
+        { english: "He will stop at stadium concession stands", russian: "он будет заезжать в киоски стадионов" },
+        { english: "They will go behind river bends", russian: "они будут заходить за речные изгибы" },
+        { english: "The nurse will drive to museum café areas", russian: "медсестра будет заезжать в зоны кафе музеев" },
+        { english: "She will go behind meadow groves", russian: "она будет заходить за рощи лугов" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      sentences: [
+        { english: "I will stop by the lake visitor center (male)", russian: "я зайду в центр посетителей озера" },
+        { english: "I will stop by the lake visitor center (female)", russian: "я зайду в центр посетителей озера" },
+        { english: "She will drop in at the forest café", russian: "она зайдёт в лесное кафе" },
+        { english: "He will drive to the cinema snack bar", russian: "он заедет в буфет кинотеатра" },
+        { english: "We will stop at the airport gift shop", russian: "мы заедем в магазин подарков аэропорта" },
+        { english: "They will go behind the hill outcrop", russian: "они зайдут за холмистый выступ" },
+        { english: "You will drive to the hospital cafeteria", russian: "вы заедете в больничную столовую" },
+        { english: "The kids will go behind the playground trees", russian: "дети зайдут за деревья площадки" },
+        { english: "My colleague will drive to the meeting lounge (male)", russian: "мой коллега заедет в комнату отдыха для встреч" },
+        { english: "My colleague will drive to the meeting lounge (female)", russian: "моя коллега заедет в комнату отдыха для встреч" },
+        { english: "We will go behind the trail shelter", russian: "мы зайдём за укрытие тропы" },
+        { english: "She will stop at the mall food court", russian: "она заедет в фуд-корт торгового центра" },
+        { english: "He will go behind the woodland rocks", russian: "он зайдёт за лесные камни" },
+        { english: "They will drive to the restaurant valet area", russian: "они заедут в зону парковщиков ресторана" },
+        { english: "The hiker will go behind the waterfall ledge (male)", russian: "путешественник зайдёт за выступ водопада" },
+        { english: "The hiker will go behind the waterfall ledge (female)", russian: "путешественница зайдёт за выступ водопада" },
+        { english: "The group will go behind the summit rocks", russian: "группа зайдёт за камни вершины" },
+        { english: "She will drive to the bridge information booth", russian: "она заедет в информационную будку моста" },
+        { english: "We will go behind the creek boulders", russian: "мы зайдём за валуны ручья" },
+        { english: "He will stop at the theater box office", russian: "он заедет в театральную кассу" },
+        { english: "They will go behind the valley formation", russian: "они зайдут за образование долины" },
+        { english: "She will go behind the field barn", russian: "она зайдёт за сарай поля" }
+      ]
+    }
+  ]
+};

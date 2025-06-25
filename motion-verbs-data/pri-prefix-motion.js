@@ -1,0 +1,148 @@
+// При- prefix motion verbs data
+// Motion verbs with при- prefix (arrival)
+
+window.приMotionData = {
+  prefix: "при",
+  groups: [
+    {
+      tense: "past",
+      aspect: "perfective",
+      sentences: [
+        { english: "I arrived at the forest clearing (male)", russian: "я пришёл на лесную поляну" },
+        { english: "I arrived at the forest clearing (female)", russian: "я пришла на лесную поляну" },
+        { english: "She arrived at the mountain lodge", russian: "она пришла в горный домик" },
+        { english: "He arrived at the theater", russian: "он приехал в театр" },
+        { english: "We arrived at the museum", russian: "мы приехали в музей" },
+        { english: "They arrived at the hiking trail", russian: "они пришли на тропу" },
+        { english: "You arrived at the cinema", russian: "вы приехали в кинотеатр" },
+        { english: "The children arrived at the meadow", russian: "дети пришли на луг" },
+        { english: "My friend arrived at the mall (male)", russian: "мой друг приехал в торговый центр" },
+        { english: "My friend arrived at the mall (female)", russian: "моя подруга приехала в торговый центр" },
+        { english: "We reached the campsite", russian: "мы пришли на место стоянки" },
+        { english: "She arrived at the airport", russian: "она приехала в аэропорт" },
+        { english: "He reached the woodland", russian: "он пришёл в лесную зону" },
+        { english: "They arrived at the stadium", russian: "они приехали на стадион" },
+        { english: "The tourist reached the hilltop (male)", russian: "турист пришёл на вершину холма" },
+        { english: "The tourist reached the hilltop (female)", russian: "туристка пришла на вершину холма" },
+        { english: "The tourists reached the waterfall", russian: "туристы пришли к водопаду" },
+        { english: "She arrived at the bridge", russian: "она приехала к мосту" },
+        { english: "We reached the creek", russian: "мы пришли к ручью" },
+        { english: "He arrived at the restaurant", russian: "он приехал в ресторан" },
+        { english: "They reached the valley", russian: "они пришли в долину" },
+        { english: "She reached the field", russian: "она пришла на поле" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I used to arrive at the forest (male)", russian: "я приходил в лес" },
+        { english: "I used to arrive at the forest (female)", russian: "я приходила в лес" },
+        { english: "She would arrive at the mountain trail", russian: "она приходила на горную тропу" },
+        { english: "He regularly arrived at the office", russian: "он приезжал в офис" },
+        { english: "We often arrived at the park", russian: "мы приезжали в парк" },
+        { english: "They would arrive at the hiking area", russian: "они приходили в место походов" },
+        { english: "You used to arrive in the city", russian: "вы приезжали в город" },
+        { english: "The animals would arrive at the meadow", russian: "животные приходили на луг" },
+        { english: "My parents arrived at the market", russian: "мои родители приезжали на рынок" },
+        { english: "We used to arrive at the campground", russian: "мы приходили на кемпинг" },
+        { english: "She would arrive at the theater", russian: "она приезжала в театр" },
+        { english: "He arrived at the lake regularly", russian: "он приходил к озеру регулярно" },
+        { english: "They often arrived at concerts", russian: "они приезжали на концерты" },
+        { english: "The worker would arrive in the woods (male)", russian: "рабочий приходил в лес" },
+        { english: "The worker would arrive in the woods (female)", russian: "работница приходила в лес" },
+        { english: "The children arrived at the stream", russian: "дети приходили к ручью" },
+        { english: "She used to arrive at the gym", russian: "она приезжала в спортзал" },
+        { english: "We would arrive at the hills", russian: "мы приходили на холмы" },
+        { english: "He arrived in town", russian: "он приезжал в город" },
+        { english: "They arrived at the canyon", russian: "они приходили в ущелье" },
+        { english: "The student used to arrive at work (male)", russian: "студент приезжал на работу" },
+        { english: "The student used to arrive at work (female)", russian: "студентка приезжала на работу" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I arrive at the park", russian: "я прихожу в парк" },
+        { english: "She arrives at the lakeside", russian: "она приходит к озеру" },
+        { english: "He arrives at work", russian: "он приезжает на работу" },
+        { english: "We arrive at school", russian: "мы приезжаем в школу" },
+        { english: "They arrive in the forest", russian: "они приходят в лес" },
+        { english: "You arrive in the city", russian: "вы приезжаете в город" },
+        { english: "The fox arrives in the yard", russian: "лиса приходит во двор" },
+        { english: "My sister arrives at the mall", russian: "моя сестра приезжает в торговый центр" },
+        { english: "We arrive at the riverside", russian: "мы приходим к реке" },
+        { english: "She arrives at the hospital", russian: "она приезжает в больницу" },
+        { english: "He arrives in the village", russian: "он приезжает в деревню" },
+        { english: "They arrive at restaurants", russian: "они приезжают в рестораны" },
+        { english: "The teacher arrives at the meadow", russian: "учитель приходит на луг" },
+        { english: "The students arrive on campus", russian: "студенты приходят в кампус" },
+        { english: "She arrives at the airport", russian: "она приезжает в аэропорт" },
+        { english: "We arrive in the mountains", russian: "мы приходим в горы" },
+        { english: "He arrives at the bridge", russian: "он приезжает к мосту" },
+        { english: "They arrive at the waterfall", russian: "они приходят к водопаду" },
+        { english: "The doctor arrives at the library", russian: "врач приезжает в библиотеку" },
+        { english: "She arrives in the valley", russian: "она приходит в долину" },
+        { english: "The guide arrives at the trail", russian: "гид приходит на тропу" },
+        { english: "My brother arrives at the cinema", russian: "мой брат приезжает в кинотеатр" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      sentences: [
+        { english: "I will arrive in the forest", russian: "я буду приходить в лес" },
+        { english: "She will arrive at the creek", russian: "она будет приходить к ручью" },
+        { english: "He will arrive at the office", russian: "он будет приезжать в офис" },
+        { english: "We will arrive at the theater", russian: "мы будем приезжать в театр" },
+        { english: "They will arrive at the hills", russian: "они будут приходить на холмы" },
+        { english: "You will arrive in town", russian: "вы будете приезжать в город" },
+        { english: "The children will arrive at the garden", russian: "дети будут приходить в сад" },
+        { english: "My friend will arrive at work (male)", russian: "мой друг будет приезжать на работу" },
+        { english: "My friend will arrive at work (female)", russian: "моя подруга будет приезжать на работу" },
+        { english: "We will arrive at the lakeside", russian: "мы будем приходить к озеру" },
+        { english: "She will arrive at the gym", russian: "она будет приезжать в спортзал" },
+        { english: "He will arrive at the park", russian: "он будет приходить в парк" },
+        { english: "They will arrive at concerts", russian: "они будут приезжать на концерты" },
+        { english: "The visitor will arrive in the woods (male)", russian: "посетитель будет приходить в лес" },
+        { english: "The visitor will arrive in the woods (female)", russian: "посетительница будет приходить в лес" },
+        { english: "The tourists will arrive at the canyon", russian: "туристы будут приходить в ущелье" },
+        { english: "She will arrive at the market", russian: "она будет приезжать на рынок" },
+        { english: "We will arrive at the mountain", russian: "мы будем приходить на гору" },
+        { english: "He will arrive at the stadium", russian: "он будет приезжать на стадион" },
+        { english: "They will arrive at the river", russian: "они будут приходить к реке" },
+        { english: "The nurse will arrive at the museum", russian: "медсестра будет приезжать в музей" },
+        { english: "She will arrive at the meadow", russian: "она будет приходить на луг" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      sentences: [
+        { english: "I will arrive at the lake (male)", russian: "я приду к озеру" },
+        { english: "I will arrive at the lake (female)", russian: "я приду к озеру" },
+        { english: "She will arrive in the forest", russian: "она придёт в лес" },
+        { english: "He will arrive at the cinema", russian: "он приедет в кинотеатр" },
+        { english: "We will arrive at the airport", russian: "мы приедем в аэропорт" },
+        { english: "They will arrive at the hill", russian: "они придут на холм" },
+        { english: "You will arrive at the hospital", russian: "вы приедете в больницу" },
+        { english: "The kids will arrive at the playground", russian: "дети придут на площадку" },
+        { english: "My colleague will arrive at the meeting (male)", russian: "мой коллега приедет на встречу" },
+        { english: "My colleague will arrive at the meeting (female)", russian: "моя коллега приедет на встречу" },
+        { english: "We will arrive at the trail", russian: "мы придём на тропу" },
+        { english: "She will arrive at the mall", russian: "она приедет в торговый центр" },
+        { english: "He will arrive in the woods", russian: "он придёт в лес" },
+        { english: "They will arrive at the restaurant", russian: "они приедут в ресторан" },
+        { english: "The hiker will arrive at the waterfall (male)", russian: "путешественник придёт к водопаду" },
+        { english: "The hiker will arrive at the waterfall (female)", russian: "путешественница придёт к водопаду" },
+        { english: "The group will arrive at the summit", russian: "группа придёт на вершину" },
+        { english: "She will arrive at the bridge", russian: "она приедет к мосту" },
+        { english: "We will arrive at the creek", russian: "мы придём к ручью" },
+        { english: "He will arrive at the theater", russian: "он приедет в театр" },
+        { english: "They will arrive in the valley", russian: "они придут в долину" },
+        { english: "She will arrive at the field", russian: "она придёт на поле" }
+      ]
+    }
+  ]
+};
