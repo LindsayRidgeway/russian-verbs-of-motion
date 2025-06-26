@@ -537,8 +537,14 @@
       if (currentIndex < currentRound.length) {
         setTimeout(showCurrentChallenge, 1500);
       } else {
-        challengeEl.innerText = 'Round complete!';
-        hideAllQuizElements();
+        setTimeout(() => {
+          challengeEl.innerText = `Round complete! Final score: ${score}/${currentRound.length}`;
+          revealSection.classList.add('hidden');
+          choicesContainer.classList.add('hidden');
+          repeatSection.classList.add('hidden');
+          resultEl.innerText = '';
+          // Keep scoreEl visible - don't clear it
+        }, 1500);
       }
     });
 
