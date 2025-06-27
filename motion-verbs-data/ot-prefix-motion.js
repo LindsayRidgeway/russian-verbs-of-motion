@@ -7,6 +7,7 @@ window.отMotionData = {
     {
       tense: "past",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I stepped away from the forest edge (male)", russian: "я отошёл от края леса" },
         { english: "I stepped away from the forest edge (female)", russian: "я отошла от края леса" },
@@ -18,7 +19,14 @@ window.отMotionData = {
         { english: "The children stepped back from the meadow fence", russian: "дети отошли от забора луга" },
         { english: "My friend pulled away from the mall (male)", russian: "мой друг отъехал от торгового центра" },
         { english: "My friend pulled away from the mall (female)", russian: "моя подруга отъехала от торгового центра" },
-        { english: "We moved back from the campfire", russian: "мы отошли от костра" },
+        { english: "We moved back from the campfire", russian: "мы отошли от костра" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She drove away from the airport", russian: "она отъехала от аэропорта" },
         { english: "He stepped back from the woodland", russian: "он отошёл от леса" },
         { english: "They pulled away from the stadium", russian: "они отъехали от стадиона" },
@@ -35,6 +43,7 @@ window.отMotionData = {
     {
       tense: "past",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I used to step away from the forest (male)", russian: "я отходил от леса" },
         { english: "I used to step away from the forest (female)", russian: "я отходила от леса" },
@@ -46,7 +55,14 @@ window.отMotionData = {
         { english: "The animals would step back from the meadow", russian: "животные отходили от луга" },
         { english: "My parents drove back from markets", russian: "мои родители отъезжали от рынков" },
         { english: "We used to move back from the campground", russian: "мы отходили от кемпинга" },
-        { english: "She would pull away from the theater", russian: "она отъезжала от театра" },
+        { english: "She would pull away from the theater", russian: "она отъезжала от театра" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He stepped back from lake areas regularly", russian: "он отходил от озёрных районов регулярно" },
         { english: "They often drove back from concert venues", russian: "они отъезжали от концертных площадок" },
         { english: "The worker would move away from woodland areas (male)", russian: "рабочий отходил от лесных районов" },
@@ -63,6 +79,7 @@ window.отMotionData = {
     {
       tense: "present",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I step away from the park", russian: "я отхожу от парка" },
         { english: "She moves back from the lakeside", russian: "она отходит от берега озера" },
@@ -74,7 +91,14 @@ window.отMotionData = {
         { english: "My sister drives back from the mall", russian: "моя сестра отъезжает от торгового центра" },
         { english: "We move away from riverside areas", russian: "мы отходим от прибрежных районов" },
         { english: "She pulls back from the hospital", russian: "она отъезжает от больницы" },
-        { english: "He steps away from village areas", russian: "он отходит от деревенских районов" },
+        { english: "He steps away from village areas", russian: "он отходит от деревенских районов" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "They drive back from restaurant districts", russian: "они отъезжают от ресторанных районов" },
         { english: "The teacher moves away from meadow areas", russian: "учитель отходит от луговых районов" },
         { english: "The students step back from campus", russian: "студенты отходят от кампуса" },
@@ -91,6 +115,7 @@ window.отMotionData = {
     {
       tense: "future",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will step away from the forest", russian: "я буду отходить от леса" },
         { english: "She will move back from creek areas", russian: "она будет отходить от районов ручьёв" },
@@ -102,7 +127,14 @@ window.отMotionData = {
         { english: "My friend will drive back from work areas (male)", russian: "мой друг будет отъезжать от рабочих районов" },
         { english: "My friend will drive back from work areas (female)", russian: "моя подруга будет отъезжать от рабочих районов" },
         { english: "We will move away from lakeside areas", russian: "мы будем отходить от прибрежных районов озера" },
-        { english: "She will pull back from gym areas", russian: "она будет отъезжать от районов спортзалов" },
+        { english: "She will pull back from gym areas", russian: "она будет отъезжать от районов спортзалов" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He will step away from park areas", russian: "он будет отходить от парковых районов" },
         { english: "They will drive back from concert areas", russian: "они будут отъезжать от концертных районов" },
         { english: "The visitor will move away from woodland areas (male)", russian: "посетитель будет отходить от лесных районов" },
@@ -119,6 +151,7 @@ window.отMotionData = {
     {
       tense: "future",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will step away from the lake (male)", russian: "я отойду от озера" },
         { english: "I will step away from the lake (female)", russian: "я отойду от озера" },
@@ -130,7 +163,14 @@ window.отMotionData = {
         { english: "The kids will step back from the playground", russian: "дети отойдут от площадки" },
         { english: "My colleague will drive back from the meeting center (male)", russian: "мой коллега отъедет от центра встреч" },
         { english: "My colleague will drive back from the meeting center (female)", russian: "моя коллега отъедет от центра встреч" },
-        { english: "We will move away from the trail", russian: "мы отойдём от тропы" },
+        { english: "We will move away from the trail", russian: "мы отойдём от тропы" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She will pull back from the mall", russian: "она отъедет от торгового центра" },
         { english: "He will step away from the woods", russian: "он отойдёт от леса" },
         { english: "They will drive back from the restaurant", russian: "они отъедут от ресторана" },

@@ -7,6 +7,7 @@ window.заMotionData = {
     {
       tense: "past",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I stopped by the forest ranger station (male)", russian: "я зашёл в лесную станцию" },
         { english: "I stopped by the forest ranger station (female)", russian: "я зашла в лесную станцию" },
@@ -18,7 +19,14 @@ window.заMotionData = {
         { english: "The children went behind the meadow trees", russian: "дети зашли за деревья на лугу" },
         { english: "My friend drove to the mall food court (male)", russian: "мой друг заехал в фуд-корт торгового центра" },
         { english: "My friend drove to the mall food court (female)", russian: "моя подруга заехала в фуд-корт торгового центра" },
-        { english: "We went behind the camp buildings", russian: "мы зашли за лагерные здания" },
+        { english: "We went behind the camp buildings", russian: "мы зашли за лагерные здания" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She stopped at the airport café", russian: "она заехала в кафе аэропорта" },
         { english: "He went behind the woodland cabin", russian: "он зашёл за лесную хижину" },
         { english: "They drove to the stadium snack stand", russian: "они заехали в киоск стадиона" },
@@ -35,6 +43,7 @@ window.заMotionData = {
     {
       tense: "past",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I used to stop by the forest station (male)", russian: "я заходил в лесную станцию" },
         { english: "I used to stop by the forest station (female)", russian: "я заходила в лесную станцию" },
@@ -46,7 +55,14 @@ window.заMotionData = {
         { english: "The animals would go behind meadow trees", russian: "животные заходили за деревья на лугу" },
         { english: "My parents stopped at market stalls", russian: "мои родители заезжали в рыночные лавки" },
         { english: "We used to go behind campground buildings", russian: "мы заходили за здания кемпинга" },
-        { english: "She would stop at theater lobbies", russian: "она заезжала в театральные фойе" },
+        { english: "She would stop at theater lobbies", russian: "она заезжала в театральные фойе" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He went behind lake-side rocks regularly", russian: "он заходил за камни у озера регулярно" },
         { english: "They often stopped at concert merchandise stands", russian: "они заезжали в киоски с товарами на концертах" },
         { english: "The worker would go behind woodland trees (male)", russian: "рабочий заходил за лесные деревья" },
@@ -63,6 +79,7 @@ window.заMotionData = {
     {
       tense: "present",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I stop by the park information center", russian: "я захожу в информационный центр парка" },
         { english: "She drops in at the lakeside café", russian: "она заходит в кафе у озера" },
@@ -74,7 +91,14 @@ window.заMotionData = {
         { english: "My sister stops at mall food courts", russian: "моя сестра заезжает в фуд-корты торговых центров" },
         { english: "We go behind riverside bushes", russian: "мы заходим за кусты у реки" },
         { english: "She stops at hospital cafeterias", russian: "она заезжает в больничные столовые" },
-        { english: "He goes behind village buildings", russian: "он заходит за деревенские здания" },
+        { english: "He goes behind village buildings", russian: "он заходит за деревенские здания" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "They drive to restaurant parking areas", russian: "они заезжают на парковочные зоны ресторанов" },
         { english: "The teacher goes behind meadow fences", russian: "учитель заходит за заборы лугов" },
         { english: "The students stop by campus coffee shops", russian: "студенты заходят в кампусные кофейни" },
@@ -91,6 +115,7 @@ window.заMotionData = {
     {
       tense: "future",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will stop by the forest center", russian: "я буду заходить в лесной центр" },
         { english: "She will drop in at creek cafés", russian: "она будет заходить в кафе у ручьёв" },
@@ -102,7 +127,14 @@ window.заMotionData = {
         { english: "My friend will stop at work cafeterias (male)", russian: "мой друг будет заезжать в рабочие столовые" },
         { english: "My friend will stop at work cafeterias (female)", russian: "моя подруга будет заезжать в рабочие столовые" },
         { english: "We will go behind lakeside trees", russian: "мы будем заходить за деревья у озера" },
-        { english: "She will stop at gym snack areas", russian: "она будет заезжать в зоны закусок спортзала" },
+        { english: "She will stop at gym snack areas", russian: "она будет заезжать в зоны закусок спортзала" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He will go behind park monuments", russian: "он будет заходить за парковые памятники" },
         { english: "They will drive to concert merchandise areas", russian: "они будут заезжать в зоны товаров концертов" },
         { english: "The visitor will go behind woodland shelters (male)", russian: "посетитель будет заходить за лесные укрытия" },
@@ -119,6 +151,7 @@ window.заMotionData = {
     {
       tense: "future",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will stop by the lake visitor center (male)", russian: "я зайду в центр посетителей озера" },
         { english: "I will stop by the lake visitor center (female)", russian: "я зайду в центр посетителей озера" },
@@ -130,7 +163,14 @@ window.заMotionData = {
         { english: "The kids will go behind the playground trees", russian: "дети зайдут за деревья площадки" },
         { english: "My colleague will drive to the meeting lounge (male)", russian: "мой коллега заедет в комнату отдыха для встреч" },
         { english: "My colleague will drive to the meeting lounge (female)", russian: "моя коллега заедет в комнату отдыха для встреч" },
-        { english: "We will go behind the trail shelter", russian: "мы зайдём за укрытие тропы" },
+        { english: "We will go behind the trail shelter", russian: "мы зайдём за укрытие тропы" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She will stop at the mall food court", russian: "она заедет в фуд-корт торгового центра" },
         { english: "He will go behind the woodland rocks", russian: "он зайдёт за лесные камни" },
         { english: "They will drive to the restaurant valet area", russian: "они заедут в зону парковщиков ресторана" },

@@ -7,6 +7,7 @@ window.вMotionData = {
     {
       tense: "past",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I entered the forest cave (male)", russian: "я вошёл в лесную пещеру" },
         { english: "I entered the forest cave (female)", russian: "я вошла в лесную пещеру" },
@@ -18,7 +19,14 @@ window.вMotionData = {
         { english: "The children entered the meadow hut", russian: "дети вошли в хижину на лугу" },
         { english: "My friend drove into the mall garage (male)", russian: "мой друг въехал в гараж торгового центра" },
         { english: "My friend drove into the mall garage (female)", russian: "моя подруга въехала в гараж торгового центра" },
-        { english: "We entered the camp shelter", russian: "мы вошли в лагерный навес" },
+        { english: "We entered the camp shelter", russian: "мы вошли в лагерный навес" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She drove into the airport terminal", russian: "она въехала в аэропорт" },
         { english: "He walked into the woodland cabin", russian: "он вошёл в лесную хижину" },
         { english: "They drove into the stadium parking", russian: "они въехали на парковку стадиона" },
@@ -35,6 +43,7 @@ window.вMotionData = {
     {
       tense: "past",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I used to enter the forest shelter (male)", russian: "я входил в лесное укрытие" },
         { english: "I used to enter the forest shelter (female)", russian: "я входила в лесное укрытие" },
@@ -46,7 +55,14 @@ window.вMotionData = {
         { english: "The animals would enter the meadow shelter", russian: "животные входили в укрытие на лугу" },
         { english: "My parents drove into market areas", russian: "мои родители въезжали на рыночные территории" },
         { english: "We used to enter the campground buildings", russian: "мы входили в здания кемпинга" },
-        { english: "She would drive into the theater district", russian: "она въезжала в театральный район" },
+        { english: "She would drive into the theater district", russian: "она въезжала в театральный район" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He entered lake-side cabins regularly", russian: "он входил в домики у озера регулярно" },
         { english: "They often drove into concert venues", russian: "они въезжали на концертные площадки" },
         { english: "The worker would enter woodland shelters (male)", russian: "рабочий входил в лесные укрытия" },
@@ -63,6 +79,7 @@ window.вMotionData = {
     {
       tense: "present",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I enter the park pavilion", russian: "я вхожу в парковый павильон" },
         { english: "She enters the lakeside shelter", russian: "она входит в укрытие у озера" },
@@ -74,7 +91,14 @@ window.вMotionData = {
         { english: "My sister drives into the mall complex", russian: "моя сестра въезжает в торговый комплекс" },
         { english: "We enter riverside pavilions", russian: "мы входим в павильоны у реки" },
         { english: "She drives into the hospital area", russian: "она въезжает на территорию больницы" },
-        { english: "He enters village buildings", russian: "он входит в деревенские здания" },
+        { english: "He enters village buildings", russian: "он входит в деревенские здания" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "They drive into restaurant districts", russian: "они въезжают в ресторанные районы" },
         { english: "The teacher enters meadow shelters", russian: "учитель входит в укрытия на лугу" },
         { english: "The students enter campus buildings", russian: "студенты входят в здания кампуса" },
@@ -91,6 +115,7 @@ window.вMotionData = {
     {
       tense: "future",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will enter the forest shelter", russian: "я буду входить в лесное укрытие" },
         { english: "She will enter the creek pavilion", russian: "она будет входить в павильон у ручья" },
@@ -102,7 +127,14 @@ window.вMotionData = {
         { english: "My friend will drive into work areas (male)", russian: "мой друг будет въезжать в рабочие зоны" },
         { english: "My friend will drive into work areas (female)", russian: "моя подруга будет въезжать в рабочие зоны" },
         { english: "We will enter lakeside cabins", russian: "мы будем входить в домики у озера" },
-        { english: "She will drive into the gym complex", russian: "она будет въезжать в спортивный комплекс" },
+        { english: "She will drive into the gym complex", russian: "она будет въезжать в спортивный комплекс" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He will enter park pavilions", russian: "он будет входить в парковые павильоны" },
         { english: "They will drive into concert areas", russian: "они будут въезжать на концертные площадки" },
         { english: "The visitor will enter woodland huts (male)", russian: "посетитель будет входить в лесные хижины" },
@@ -119,6 +151,7 @@ window.вMotionData = {
     {
       tense: "future",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will enter the lake cabin (male)", russian: "я войду в домик у озера" },
         { english: "I will enter the lake cabin (female)", russian: "я войду в домик у озера" },
@@ -130,7 +163,14 @@ window.вMotionData = {
         { english: "The kids will enter the playground shed", russian: "дети войдут в сарай на площадке" },
         { english: "My colleague will drive into the meeting center (male)", russian: "мой коллега въедет в центр встреч" },
         { english: "My colleague will drive into the meeting center (female)", russian: "моя коллега въедет в центр встреч" },
-        { english: "We will enter the trail shelter", russian: "мы войдём в укрытие на тропе" },
+        { english: "We will enter the trail shelter", russian: "мы войдём в укрытие на тропе" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She will drive into the mall garage", russian: "она въедет в гараж торгового центра" },
         { english: "He will enter the woodland cabin", russian: "он войдёт в лесную хижину" },
         { english: "They will drive into the restaurant complex", russian: "они въедут в ресторанный комплекс" },

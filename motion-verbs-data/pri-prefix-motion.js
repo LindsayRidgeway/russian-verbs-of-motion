@@ -7,6 +7,7 @@ window.приMotionData = {
     {
       tense: "past",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I arrived at the forest clearing (male)", russian: "я пришёл на лесную поляну" },
         { english: "I arrived at the forest clearing (female)", russian: "я пришла на лесную поляну" },
@@ -18,7 +19,14 @@ window.приMotionData = {
         { english: "The children arrived at the meadow", russian: "дети пришли на луг" },
         { english: "My friend arrived at the mall (male)", russian: "мой друг приехал в торговый центр" },
         { english: "My friend arrived at the mall (female)", russian: "моя подруга приехала в торговый центр" },
-        { english: "We reached the campsite", russian: "мы пришли на место стоянки" },
+        { english: "We reached the campsite", russian: "мы пришли на место стоянки" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She arrived at the airport", russian: "она приехала в аэропорт" },
         { english: "He reached the woodland", russian: "он пришёл в лесную зону" },
         { english: "They arrived at the stadium", russian: "они приехали на стадион" },
@@ -35,6 +43,7 @@ window.приMotionData = {
     {
       tense: "past",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I used to arrive at the forest (male)", russian: "я приходил в лес" },
         { english: "I used to arrive at the forest (female)", russian: "я приходила в лес" },
@@ -46,7 +55,14 @@ window.приMotionData = {
         { english: "The animals would arrive at the meadow", russian: "животные приходили на луг" },
         { english: "My parents arrived at the market", russian: "мои родители приезжали на рынок" },
         { english: "We used to arrive at the campground", russian: "мы приходили на кемпинг" },
-        { english: "She would arrive at the theater", russian: "она приезжала в театр" },
+        { english: "She would arrive at the theater", russian: "она приезжала в театр" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He arrived at the lake regularly", russian: "он приходил к озеру регулярно" },
         { english: "They often arrived at concerts", russian: "они приезжали на концерты" },
         { english: "The worker would arrive in the woods (male)", russian: "рабочий приходил в лес" },
@@ -63,6 +79,7 @@ window.приMotionData = {
     {
       tense: "present",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I arrive at the park", russian: "я прихожу в парк" },
         { english: "She arrives at the lakeside", russian: "она приходит к озеру" },
@@ -74,7 +91,14 @@ window.приMotionData = {
         { english: "My sister arrives at the mall", russian: "моя сестра приезжает в торговый центр" },
         { english: "We arrive at the riverside", russian: "мы приходим к реке" },
         { english: "She arrives at the hospital", russian: "она приезжает в больницу" },
-        { english: "He arrives in the village", russian: "он приезжает в деревню" },
+        { english: "He arrives in the village", russian: "он приезжает в деревню" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "They arrive at restaurants", russian: "они приезжают в рестораны" },
         { english: "The teacher arrives at the meadow", russian: "учитель приходит на луг" },
         { english: "The students arrive on campus", russian: "студенты приходят в кампус" },
@@ -91,6 +115,7 @@ window.приMotionData = {
     {
       tense: "future",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will arrive in the forest", russian: "я буду приходить в лес" },
         { english: "She will arrive at the creek", russian: "она будет приходить к ручью" },
@@ -102,7 +127,14 @@ window.приMotionData = {
         { english: "My friend will arrive at work (male)", russian: "мой друг будет приезжать на работу" },
         { english: "My friend will arrive at work (female)", russian: "моя подруга будет приезжать на работу" },
         { english: "We will arrive at the lakeside", russian: "мы будем приходить к озеру" },
-        { english: "She will arrive at the gym", russian: "она будет приезжать в спортзал" },
+        { english: "She will arrive at the gym", russian: "она будет приезжать в спортзал" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He will arrive at the park", russian: "он будет приходить в парк" },
         { english: "They will arrive at concerts", russian: "они будут приезжать на концерты" },
         { english: "The visitor will arrive in the woods (male)", russian: "посетитель будет приходить в лес" },
@@ -119,6 +151,7 @@ window.приMotionData = {
     {
       tense: "future",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will arrive at the lake (male)", russian: "я приду к озеру" },
         { english: "I will arrive at the lake (female)", russian: "я приду к озеру" },
@@ -130,7 +163,14 @@ window.приMotionData = {
         { english: "The kids will arrive at the playground", russian: "дети придут на площадку" },
         { english: "My colleague will arrive at the meeting (male)", russian: "мой коллега приедет на встречу" },
         { english: "My colleague will arrive at the meeting (female)", russian: "моя коллега приедет на встречу" },
-        { english: "We will arrive at the trail", russian: "мы придём на тропу" },
+        { english: "We will arrive at the trail", russian: "мы придём на тропу" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She will arrive at the mall", russian: "она приедет в торговый центр" },
         { english: "He will arrive in the woods", russian: "он придёт в лес" },
         { english: "They will arrive at the restaurant", russian: "они приедут в ресторан" },

@@ -7,6 +7,7 @@ window.выMotionData = {
     {
       tense: "past",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I exited the forest cave (male)", russian: "я вышел из лесной пещеры" },
         { english: "I exited the forest cave (female)", russian: "я вышла из лесной пещеры" },
@@ -18,7 +19,14 @@ window.выMotionData = {
         { english: "The children left the meadow hut", russian: "дети вышли из хижины на лугу" },
         { english: "My friend drove out of the mall garage (male)", russian: "мой друг выехал из гаража торгового центра" },
         { english: "My friend drove out of the mall garage (female)", russian: "моя подруга выехала из гаража торгового центра" },
-        { english: "We exited the camp shelter", russian: "мы вышли из лагерного навеса" },
+        { english: "We exited the camp shelter", russian: "мы вышли из лагерного навеса" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She drove out of the airport terminal", russian: "она выехала из аэропорта" },
         { english: "He left the woodland cabin", russian: "он вышел из лесной хижины" },
         { english: "They drove out of the stadium parking", russian: "они выехали с парковки стадиона" },
@@ -35,6 +43,7 @@ window.выMotionData = {
     {
       tense: "past",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I used to exit the forest shelter (male)", russian: "я выходил из лесного укрытия" },
         { english: "I used to exit the forest shelter (female)", russian: "я выходила из лесного укрытия" },
@@ -46,7 +55,14 @@ window.выMotionData = {
         { english: "The animals would leave the meadow shelter", russian: "животные выходили из укрытия на лугу" },
         { english: "My parents drove out of market areas", russian: "мои родители выезжали с рыночных территорий" },
         { english: "We used to exit the campground buildings", russian: "мы выходили из зданий кемпинга" },
-        { english: "She would drive out of the theater district", russian: "она выезжала из театрального района" },
+        { english: "She would drive out of the theater district", russian: "она выезжала из театрального района" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He left lake-side cabins regularly", russian: "он выходил из домиков у озера регулярно" },
         { english: "They often drove out of concert venues", russian: "они выезжали с концертных площадок" },
         { english: "The worker would exit woodland shelters (male)", russian: "рабочий выходил из лесных укрытий" },
@@ -63,6 +79,7 @@ window.выMotionData = {
     {
       tense: "present",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I exit the park pavilion", russian: "я выхожу из паркового павильона" },
         { english: "She leaves the lakeside shelter", russian: "она выходит из укрытия у озера" },
@@ -74,7 +91,14 @@ window.выMotionData = {
         { english: "My sister drives out of the mall complex", russian: "моя сестра выезжает из торгового комплекса" },
         { english: "We exit riverside pavilions", russian: "мы выходим из павильонов у реки" },
         { english: "She drives out of the hospital area", russian: "она выезжает с территории больницы" },
-        { english: "He leaves village buildings", russian: "он выходит из деревенских зданий" },
+        { english: "He leaves village buildings", russian: "он выходит из деревенских зданий" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "They drive out of restaurant districts", russian: "они выезжают из ресторанных районов" },
         { english: "The teacher exits meadow shelters", russian: "учитель выходит из укрытий на лугу" },
         { english: "The students leave campus buildings", russian: "студенты выходят из зданий кампуса" },
@@ -91,6 +115,7 @@ window.выMotionData = {
     {
       tense: "future",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will exit the forest shelter", russian: "я буду выходить из лесного укрытия" },
         { english: "She will leave the creek pavilion", russian: "она будет выходить из павильона у ручья" },
@@ -102,7 +127,14 @@ window.выMotionData = {
         { english: "My friend will drive out of work areas (male)", russian: "мой друг будет выезжать из рабочих зон" },
         { english: "My friend will drive out of work areas (female)", russian: "моя подруга будет выезжать из рабочих зон" },
         { english: "We will exit lakeside cabins", russian: "мы будем выходить из домиков у озера" },
-        { english: "She will drive out of the gym complex", russian: "она будет выезжать из спортивного комплекса" },
+        { english: "She will drive out of the gym complex", russian: "она будет выезжать из спортивного комплекса" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He will exit park pavilions", russian: "он будет выходить из парковых павильонов" },
         { english: "They will drive out of concert areas", russian: "они будут выезжать с концертных площадок" },
         { english: "The visitor will exit woodland huts (male)", russian: "посетитель будет выходить из лесных хижин" },
@@ -119,6 +151,7 @@ window.выMotionData = {
     {
       tense: "future",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will exit the lake cabin (male)", russian: "я выйду из домика у озера" },
         { english: "I will exit the lake cabin (female)", russian: "я выйду из домика у озера" },
@@ -130,7 +163,14 @@ window.выMotionData = {
         { english: "The kids will leave the playground shed", russian: "дети выйдут из сарая на площадке" },
         { english: "My colleague will drive out of the meeting center (male)", russian: "мой коллега выедет из центра встреч" },
         { english: "My colleague will drive out of the meeting center (female)", russian: "моя коллега выедет из центра встреч" },
-        { english: "We will exit the trail shelter", russian: "мы выйдем из укрытия на тропе" },
+        { english: "We will exit the trail shelter", russian: "мы выйдем из укрытия на тропе" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She will drive out of the mall garage", russian: "она выедет из гаража торгового центра" },
         { english: "He will leave the woodland cabin", russian: "он выйдет из лесной хижины" },
         { english: "They will drive out of the restaurant complex", russian: "они выедут из ресторанного комплекса" },

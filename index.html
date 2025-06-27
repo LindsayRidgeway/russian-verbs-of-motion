@@ -80,6 +80,10 @@
       margin: 6px 0;
       font-size: 14px;
     }
+    .direction-option {
+      margin: 6px 0;
+      font-size: 14px;
+    }
     .reveal-section {
       margin: 15px 0;
     }
@@ -195,7 +199,7 @@
       </div>
 
       <div class="quiz-section">
-        <div id="challenge">Select prefixes and tense/aspect combinations, then click a quiz mode button to begin.</div>
+        <div id="challenge">Select direction, prefixes, and tense/aspect combinations, then click a quiz mode button to begin.</div>
         
         <div id="repeat-section" class="repeat-section hidden">
           <button id="repeat-btn">🔊 Repeat</button>
@@ -218,6 +222,20 @@
     </div>
 
     <div id="right-panel">
+      <div class="tense-aspect-section">
+        <h3>Direction</h3>
+        <div id="direction-container">
+          <div class="direction-option">
+            <input type="checkbox" name="direction" value="unidirectional" id="unidirectional" checked>
+            <label for="unidirectional">Unidirectional</label>
+          </div>
+          <div class="direction-option">
+            <input type="checkbox" name="direction" value="multidirectional" id="multidirectional">
+            <label for="multidirectional">Multidirectional</label>
+          </div>
+        </div>
+      </div>
+
       <div class="tense-aspect-section">
         <h3>Tense and Aspect</h3>
         <div id="tense-aspect-container">
@@ -320,6 +338,11 @@
       return Array.from(checkboxes).map(cb => cb.value);
     }
 
+    function getSelectedDirections() {
+      const checkboxes = document.querySelectorAll('input[name="direction"]:checked');
+      return Array.from(checkboxes).map(cb => cb.value);
+    }
+
     function getSelectedTenseAspects() {
       const checkboxes = document.querySelectorAll('input[name="tense-aspect"]:checked');
       return Array.from(checkboxes).map(cb => {
@@ -333,7 +356,7 @@
       }).filter(item => item !== null);
     }
 
-    function flattenSentences(data, selectedTenseAspects) {
+    function flattenSentences(data, selectedDirections, selectedTenseAspects) {
       return data.flatMap(group => {
         if (!group.groups || group.groups.length === 0) {
           return [];
@@ -341,6 +364,12 @@
         
         return group.groups
           .filter(subgroup => {
+            // Filter by direction
+            if (selectedDirections.length > 0 && !selectedDirections.includes(subgroup.direction)) {
+              return false;
+            }
+            
+            // Filter by tense/aspect
             if (selectedTenseAspects.length === 0) return true;
             return selectedTenseAspects.some(ta => 
               subgroup.tense === ta.tense && subgroup.aspect === ta.aspect
@@ -351,7 +380,8 @@
               ...s, 
               prefix: group.prefix, 
               tense: subgroup.tense, 
-              aspect: subgroup.aspect 
+              aspect: subgroup.aspect,
+              direction: subgroup.direction
             }))
           );
       });
@@ -371,10 +401,17 @@
 
     async function startNewRound(mode) {
       const selectedPrefixes = getSelectedPrefixes();
+      const selectedDirections = getSelectedDirections();
       const selectedTenseAspects = getSelectedTenseAspects();
 
       if (selectedPrefixes.length === 0) {
         challengeEl.innerText = 'Please select at least one prefix.';
+        hideAllQuizElements();
+        return;
+      }
+
+      if (selectedDirections.length === 0) {
+        challengeEl.innerText = 'Please select at least one direction.';
         hideAllQuizElements();
         return;
       }
@@ -401,7 +438,7 @@
         }
 
         // Flatten sentences from loaded data
-        const availableSentences = flattenSentences(loadedData, selectedTenseAspects);
+        const availableSentences = flattenSentences(loadedData, selectedDirections, selectedTenseAspects);
 
         if (availableSentences.length < 10) {
           challengeEl.innerText = `Not enough data for selected filters. Found ${availableSentences.length} sentences, need at least 10.`;
@@ -439,8 +476,9 @@
 
     function showCurrentChallenge() {
       const challenge = currentRound[currentIndex];
+      const selectedDirections = getSelectedDirections();
       const selectedTenseAspects = getSelectedTenseAspects();
-      const allOptions = flattenSentences(verbData, selectedTenseAspects);
+      const allOptions = flattenSentences(verbData, selectedDirections, selectedTenseAspects);
       let correct, challengeText, wrongField, lang;
 
       if (currentMode === "en-to-ru" || currentMode === "spoken-en-to-ru") {

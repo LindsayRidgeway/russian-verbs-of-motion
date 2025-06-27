@@ -7,6 +7,7 @@ window.поMotionData = {
     {
       tense: "past",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I set off toward the forest (male)", russian: "я пошёл в лес" },
         { english: "I set off toward the forest (female)", russian: "я пошла в лес" },
@@ -18,7 +19,14 @@ window.поMotionData = {
         { english: "The children set off to the meadow", russian: "дети пошли на луг" },
         { english: "My friend drove off to the mall (male)", russian: "мой друг поехал в торговый центр" },
         { english: "My friend drove off to the mall (female)", russian: "моя подруга поехала в торговый центр" },
-        { english: "We headed to the campsite", russian: "мы пошли на место стоянки" },
+        { english: "We headed to the campsite", russian: "мы пошли на место стоянки" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She drove off to the airport", russian: "она поехала в аэропорт" },
         { english: "He started walking into the woods", russian: "он пошёл в лес" },
         { english: "They drove off to the stadium", russian: "они поехали на стадион" },
@@ -35,6 +43,7 @@ window.поMotionData = {
     {
       tense: "past",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I used to head to the forest (male)", russian: "я походил в лес" },
         { english: "I used to head to the forest (female)", russian: "я походила в лес" },
@@ -46,7 +55,14 @@ window.поMotionData = {
         { english: "The children would walk to the meadow", russian: "дети походили на луг" },
         { english: "My parents drove around to markets", russian: "мои родители поездили по рынкам" },
         { english: "We used to walk to the campground", russian: "мы походили на кемпинг" },
-        { english: "She would drive to the theater", russian: "она поездила в театр" },
+        { english: "She would drive to the theater", russian: "она поездила в театр" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He walked around the lake area", russian: "он походил около озера" },
         { english: "They often drove to concerts", russian: "они поездили на концерты" },
         { english: "The worker would walk in the woods (male)", russian: "рабочий походил по лесу" },
@@ -63,6 +79,7 @@ window.поMotionData = {
     {
       tense: "present",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I head to the park", russian: "я похожу в парк" },
         { english: "She sets off to the lakeside", russian: "она походит к озеру" },
@@ -74,7 +91,14 @@ window.поMotionData = {
         { english: "My sister drives to the mall", russian: "моя сестра поездит в торговый центр" },
         { english: "We walk along the riverside", russian: "мы походим вдоль реки" },
         { english: "She drives to the hospital", russian: "она поездит в больницу" },
-        { english: "He walks around the village", russian: "он походит по деревне" },
+        { english: "He walks around the village", russian: "он походит по деревне" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "They drive to restaurants", russian: "они поездят в рестораны" },
         { english: "The teacher walks through the meadow", russian: "учитель походит по лугу" },
         { english: "The students walk around campus", russian: "студенты походят по кампусу" },
@@ -91,6 +115,7 @@ window.поMotionData = {
     {
       tense: "future",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will head to the forest", russian: "я похожу в лес" },
         { english: "She will walk by the creek", russian: "она походит у ручья" },
@@ -102,7 +127,14 @@ window.поMotionData = {
         { english: "My friend will drive to work (male)", russian: "мой друг поездит на работу" },
         { english: "My friend will drive to work (female)", russian: "моя подруга поездит на работу" },
         { english: "We will walk along the lake", russian: "мы походим вдоль озера" },
-        { english: "She will drive to the gym", russian: "она поездит в спортзал" },
+        { english: "She will drive to the gym", russian: "она поездит в спортзал" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He will walk around the park", russian: "он походит по парку" },
         { english: "They will drive to concerts", russian: "они поездят на концерты" },
         { english: "The visitor will walk through the woods (male)", russian: "посетитель походит по лесу" },
@@ -119,6 +151,7 @@ window.поMotionData = {
     {
       tense: "future",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will head to the lake (male)", russian: "я пойду к озеру" },
         { english: "I will head to the lake (female)", russian: "я пойду к озеру" },
@@ -130,7 +163,14 @@ window.поMotionData = {
         { english: "The kids will head to the playground", russian: "дети пойдут на площадку" },
         { english: "My colleague will drive off to the meeting (male)", russian: "мой коллега поедет на встречу" },
         { english: "My colleague will drive off to the meeting (female)", russian: "моя коллега поедет на встречу" },
-        { english: "We will set off down the trail", russian: "мы пойдём по тропе" },
+        { english: "We will set off down the trail", russian: "мы пойдём по тропе" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She will drive off to the mall", russian: "она поедет в торговый центр" },
         { english: "He will head into the woods", russian: "он пойдёт в лес" },
         { english: "They will drive off to the restaurant", russian: "они поедут в ресторан" },

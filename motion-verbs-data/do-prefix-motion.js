@@ -7,6 +7,7 @@ window.доMotionData = {
     {
       tense: "past",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I reached the forest edge (male)", russian: "я дошёл до края леса" },
         { english: "I reached the forest edge (female)", russian: "я дошла до края леса" },
@@ -18,7 +19,14 @@ window.доMotionData = {
         { english: "The children reached the meadow fence", russian: "дети дошли до забора луга" },
         { english: "My friend drove to the mall entrance (male)", russian: "мой друг доехал до входа в торговый центр" },
         { english: "My friend drove to the mall entrance (female)", russian: "моя подруга доехала до входа в торговый центр" },
-        { english: "We reached the campsite gate", russian: "мы дошли до ворот кемпинга" },
+        { english: "We reached the campsite gate", russian: "мы дошли до ворот кемпинга" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She drove to the airport terminal", russian: "она доехала до терминала аэропорта" },
         { english: "He walked to the woodland border", russian: "он дошёл до границы леса" },
         { english: "They drove to the stadium entrance", russian: "они доехали до входа на стадион" },
@@ -35,6 +43,7 @@ window.доMotionData = {
     {
       tense: "past",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I used to reach the forest border (male)", russian: "я доходил до границы леса" },
         { english: "I used to reach the forest border (female)", russian: "я доходила до границы леса" },
@@ -46,7 +55,14 @@ window.доMotionData = {
         { english: "The animals would reach the meadow edge", russian: "животные доходили до края луга" },
         { english: "My parents drove to market entrances", russian: "мои родители доезжали до входов на рынки" },
         { english: "We used to walk to the campground border", russian: "мы доходили до границы кемпинга" },
-        { english: "She would drive to the theater district", russian: "она доезжала до театрального района" },
+        { english: "She would drive to the theater district", russian: "она доезжала до театрального района" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He reached lake shores regularly", russian: "он доходил до берегов озера регулярно" },
         { english: "They often drove to concert venues", russian: "они доезжали до концертных площадок" },
         { english: "The worker would walk to woodland clearings (male)", russian: "рабочий доходил до лесных полян" },
@@ -63,6 +79,7 @@ window.доMotionData = {
     {
       tense: "present",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I reach the park entrance", russian: "я дохожу до входа в парк" },
         { english: "She walks to the lakeside", russian: "она доходит до берега озера" },
@@ -74,7 +91,14 @@ window.доMotionData = {
         { english: "My sister drives to the mall entrance", russian: "моя сестра доезжает до входа в торговый центр" },
         { english: "We walk to the riverside", russian: "мы доходим до берега реки" },
         { english: "She drives to the hospital entrance", russian: "она доезжает до входа в больницу" },
-        { english: "He walks to village borders", russian: "он доходит до границ деревни" },
+        { english: "He walks to village borders", russian: "он доходит до границ деревни" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "They drive to restaurant areas", russian: "они доезжают до ресторанных районов" },
         { english: "The teacher walks to meadow edges", russian: "учитель доходит до краёв луга" },
         { english: "The students walk to campus borders", russian: "студенты доходят до границ кампуса" },
@@ -91,6 +115,7 @@ window.доMotionData = {
     {
       tense: "future",
       aspect: "imperfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will reach the forest edge", russian: "я буду доходить до края леса" },
         { english: "She will walk to the creek bank", russian: "она будет доходить до берега ручья" },
@@ -102,7 +127,14 @@ window.доMotionData = {
         { english: "My friend will drive to work entrances (male)", russian: "мой друг будет доезжать до входов на работу" },
         { english: "My friend will drive to work entrances (female)", russian: "моя подруга будет доезжать до входов на работу" },
         { english: "We will walk to lakeside areas", russian: "мы будем доходить до прибрежных зон озера" },
-        { english: "She will drive to the gym entrance", russian: "она будет доезжать до входа в спортзал" },
+        { english: "She will drive to the gym entrance", russian: "она будет доезжать до входа в спортзал" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "He will walk to park borders", russian: "он будет доходить до границ парка" },
         { english: "They will drive to concert entrances", russian: "они будут доезжать до входов на концерты" },
         { english: "The visitor will walk to woodland edges (male)", russian: "посетитель будет доходить до краёв леса" },
@@ -119,6 +151,7 @@ window.доMotionData = {
     {
       tense: "future",
       aspect: "perfective",
+      direction: "unidirectional",
       sentences: [
         { english: "I will reach the lake shore (male)", russian: "я дойду до берега озера" },
         { english: "I will reach the lake shore (female)", russian: "я дойду до берега озера" },
@@ -130,7 +163,14 @@ window.доMotionData = {
         { english: "The kids will reach the playground gate", russian: "дети дойдут до ворот площадки" },
         { english: "My colleague will drive to the meeting location (male)", russian: "мой коллега доедет до места встречи" },
         { english: "My colleague will drive to the meeting location (female)", russian: "моя коллега доедет до места встречи" },
-        { english: "We will walk to the trail's end", russian: "мы дойдём до конца тропы" },
+        { english: "We will walk to the trail's end", russian: "мы дойдём до конца тропы" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      sentences: [
         { english: "She will drive to the mall entrance", russian: "она доедет до входа в торговый центр" },
         { english: "He will walk to the woodland border", russian: "он дойдёт до границы леса" },
         { english: "They will drive to the restaurant entrance", russian: "они доедут до входа в ресторан" },
