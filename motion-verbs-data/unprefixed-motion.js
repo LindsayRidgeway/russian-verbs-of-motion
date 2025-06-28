@@ -78,15 +78,15 @@ window.unprefixedMotionData = {
       direction: "unidirectional",
       travelMode: "by-foot",
       sentences: [
-        { english: "I used to walk in the forest (male)", russian: "я ходил в лесу" },
-        { english: "I used to walk in the forest (female)", russian: "я ходила в лесу" },
-        { english: "You often walked by the river (male)", russian: "ты ходил у реки" },
-        { english: "You often walked by the river (female)", russian: "ты ходила у реки" },
-        { english: "He walked in the mountains every summer", russian: "он ходил в горы каждое лето" },
-        { english: "She would walk in the meadow", russian: "она ходила по лугу" },
-        { english: "We used to walk in the park", russian: "мы ходили в парке" },
-        { english: "You all would walk by the lake", russian: "вы ходили у озера" },
-        { english: "They walked in the yard", russian: "они ходили во дворе" }
+        { english: "I was walking in the forest (male)", russian: "я шёл в лесу" },
+        { english: "I was walking in the forest (female)", russian: "я шла в лесу" },
+        { english: "You were walking by the river (male)", russian: "ты шёл у реки" },
+        { english: "You were walking by the river (female)", russian: "ты шла у реки" },
+        { english: "He was walking in the mountains", russian: "он шёл в горах" },
+        { english: "She was walking in the meadow", russian: "она шла по лугу" },
+        { english: "We were walking in the park", russian: "мы шли в парке" },
+        { english: "You all were walking by the lake", russian: "вы шли у озера" },
+        { english: "They were walking in the yard", russian: "они шли во дворе" }
       ]
     },
     {
@@ -95,15 +95,15 @@ window.unprefixedMotionData = {
       direction: "unidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "I regularly drove to the office (male)", russian: "я ездил в офис" },
-        { english: "I regularly drove to the office (female)", russian: "я ездила в офис" },
-        { english: "You would drive to the park (male)", russian: "ты ездил в парк" },
-        { english: "You would drive to the park (female)", russian: "ты ездила в парк" },
-        { english: "He used to drive around the city", russian: "он ездил по городу" },
-        { english: "My mother drove to the market", russian: "моя мать ездила на рынок" },
-        { english: "We would drive to the theater", russian: "мы ездили в театр" },
-        { english: "You all used to drive to work", russian: "вы ездили на работу" },
-        { english: "They drove to concerts", russian: "они ездили на концерты" }
+        { english: "I was driving to the office (male)", russian: "я ехал в офис" },
+        { english: "I was driving to the office (female)", russian: "я ехала в офис" },
+        { english: "You were driving to the park (male)", russian: "ты ехал в парк" },
+        { english: "You were driving to the park (female)", russian: "ты ехала в парк" },
+        { english: "He was driving around the city", russian: "он ехал по городу" },
+        { english: "She was driving to the theater", russian: "она ехала в театр" },
+        { english: "We were driving to the market", russian: "мы ехали на рынок" },
+        { english: "You all were driving to work", russian: "вы ехали на работу" },
+        { english: "They were driving to concerts", russian: "они ехали на концерты" }
       ]
     },
     {
@@ -112,11 +112,11 @@ window.unprefixedMotionData = {
       direction: "multidirectional",
       travelMode: "by-foot",
       sentences: [
-        { english: "I walked around the lake (male)", russian: "я ходил вокруг озера" },
-        { english: "I walked around the lake (female)", russian: "я ходила вокруг озера" },
-        { english: "You walked through the woods (male)", russian: "ты ходил по лесу" },
-        { english: "You walked through the woods (female)", russian: "ты ходила по лесу" },
-        { english: "The child walked near the stream (male)", russian: "ребёнок ходил у ручья" },
+        { english: "I used to walk around the lake (male)", russian: "я ходил вокруг озера" },
+        { english: "I used to walk around the lake (female)", russian: "я ходила вокруг озера" },
+        { english: "You would walk through the woods (male)", russian: "ты ходил по лесу" },
+        { english: "You would walk through the woods (female)", russian: "ты ходила по лесу" },
+        { english: "He would walk near the stream", russian: "он ходил у ручья" },
         { english: "She would walk up the hills", russian: "она ходила по холмам" },
         { english: "We walked in the canyon", russian: "мы ходили в ущелье" },
         { english: "You all walked around the village", russian: "вы ходили по деревне" },
