@@ -1,187 +1,277 @@
-// Unprefixed motion verbs data
-// Basic идти/ехать forms without prefixes
+// У- prefix motion verbs data
+// Motion verbs with у- prefix (departing/going away)
 
-window.unprefixedMotionData = {
-  prefix: "",
+window.уMotionData = {
+  prefix: "у",
   groups: [
     {
       tense: "past",
       aspect: "perfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "I walked to the lake (male)", russian: "я шёл к озеру" },
-        { english: "I walked to the lake (female)", russian: "я шла к озеру" },
-        { english: "She walked to the forest", russian: "она шла в лес" },
-        { english: "He drove to the theater", russian: "он ехал в театр" },
-        { english: "We drove to the museum", russian: "мы ехали в музей" },
-        { english: "They walked up the mountain", russian: "они шли в горы" },
-        { english: "You drove to the cinema", russian: "вы ехали в кино" },
-        { english: "The children walked to the meadow", russian: "дети шли на луг" },
-        { english: "My friend drove to the mall (male)", russian: "мой друг ехал в торговый центр" },
-        { english: "My friend drove to the mall (female)", russian: "моя подруга ехала в торговый центр" },
-        { english: "We walked down the trail", russian: "мы шли по тропе" }
+        { english: "I left the forest clearing (male)", russian: "я ушёл с лесной поляны" },
+        { english: "I left the forest clearing (female)", russian: "я ушла с лесной поляны" },
+        { english: "She departed from the mountain lodge", russian: "она ушла из горного домика" },
+        { english: "They left the hiking trail", russian: "они ушли с тропы" },
+        { english: "The children departed from the meadow", russian: "дети ушли с луга" },
+        { english: "We left the campsite", russian: "мы ушли с места стоянки" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "He drove away from the theater", russian: "он уехал из театра" },
+        { english: "We left the museum", russian: "мы уехали из музея" },
+        { english: "You departed from the cinema", russian: "вы уехали из кинотеатра" },
+        { english: "My friend left the mall (male)", russian: "мой друг уехал из торгового центра" },
+        { english: "My friend left the mall (female)", russian: "моя подруга уехала из торгового центра" }
       ]
     },
     {
       tense: "past",
       aspect: "perfective",
       direction: "multidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "She drove to the airport", russian: "она ехала в аэропорт" },
-        { english: "He walked into the woods", russian: "он шёл в лес" },
-        { english: "They drove to the stadium", russian: "они ехали на стадион" },
-        { english: "The tourist walked to the hilltop (male)", russian: "турист шёл на вершину холма" },
-        { english: "The tourist walked to the hilltop (female)", russian: "туристка шла на вершину холма" },
-        { english: "The tourists walked to the waterfall", russian: "туристы шли к водопаду" },
-        { english: "She drove across the bridge", russian: "она ехала по мосту" },
-        { english: "We walked along the creek", russian: "мы шли вдоль ручья" },
-        { english: "He drove to the restaurant", russian: "он ехал в ресторан" },
-        { english: "They walked up the valley", russian: "они шли по долине" },
-        { english: "She walked through the field", russian: "она шла через поле" }
+        { english: "He departed from the woodland", russian: "он ушёл из лесной зоны" },
+        { english: "The tourist left the hilltop (male)", russian: "турист ушёл с вершины холма" },
+        { english: "The tourist left the hilltop (female)", russian: "туристка ушла с вершины холма" },
+        { english: "The tourists departed from the waterfall", russian: "туристы ушли от водопада" },
+        { english: "We left the creek area", russian: "мы ушли от ручья" },
+        { english: "They departed from the valley", russian: "они ушли из долины" },
+        { english: "She left the field", russian: "она ушла с поля" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "She drove away from the airport", russian: "она уехала из аэропорта" },
+        { english: "They left the stadium", russian: "они уехали со стадиона" },
+        { english: "She departed from the bridge area", russian: "она уехала от моста" },
+        { english: "He drove away from the restaurant", russian: "он уехал из ресторана" }
       ]
     },
     {
       tense: "past",
       aspect: "imperfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "I used to walk in the forest (male)", russian: "я ходил в лесу" },
-        { english: "I used to walk in the forest (female)", russian: "я ходила в лесу" },
-        { english: "She often walked by the river", russian: "она ходила у реки" },
-        { english: "He regularly drove to the office", russian: "он ездил в офис" },
-        { english: "We would drive to the park", russian: "мы ездили в парк" },
-        { english: "They walked in the mountains every summer", russian: "они ходили в горы каждое лето" },
-        { english: "You used to drive around the city", russian: "вы ездили по городу" },
-        { english: "The dog would walk in the yard", russian: "собака ходила во дворе" },
-        { english: "My parents drove to the market", russian: "мои родители ездили на рынок" },
-        { english: "We used to walk in the meadow", russian: "мы ходили по лугу" },
-        { english: "She would drive to the theater", russian: "она ездила в театр" }
+        { english: "I used to leave the forest (male)", russian: "я уходил из леса" },
+        { english: "I used to leave the forest (female)", russian: "я уходила из леса" },
+        { english: "She would depart from mountain areas", russian: "она уходила из горных районов" },
+        { english: "They would leave hiking areas", russian: "они уходили из мест для походов" },
+        { english: "The animals would depart from the meadow", russian: "животные уходили с луга" },
+        { english: "We used to leave the campground", russian: "мы уходили с кемпинга" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "He regularly departed from the office", russian: "он уезжал из офиса" },
+        { english: "We often left the park", russian: "мы уезжали из парка" },
+        { english: "You used to drive away from the city", russian: "вы уезжали из города" },
+        { english: "My parents left markets", russian: "мои родители уезжали с рынков" },
+        { english: "She would depart from the theater", russian: "она уезжала из театра" }
       ]
     },
     {
       tense: "past",
       aspect: "imperfective",
       direction: "multidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "He walked around the lake", russian: "он ходил вокруг озера" },
-        { english: "They often drove to concerts", russian: "они ездили на концерты" },
-        { english: "The child walked through the woods (male)", russian: "ребёнок ходил по лесу" },
-        { english: "The child walked through the woods (female)", russian: "ребёнок ходила по лесу" },
-        { english: "The children walked near the stream", russian: "дети ходили у ручья" },
-        { english: "She used to drive to the gym", russian: "она ездила в спортзал" },
-        { english: "We would walk up the hills", russian: "мы ходили по холмам" },
-        { english: "He drove around town", russian: "он ездил по городу" },
-        { english: "They walked in the canyon", russian: "они ходили в ущелье" },
-        { english: "The student used to drive to work (male)", russian: "студент ездил на работу" },
-        { english: "The student used to drive to work (female)", russian: "студентка ездила на работу" }
+        { english: "He left lake areas regularly", russian: "он уходил из озёрных районов регулярно" },
+        { english: "The worker would depart from woodland areas (male)", russian: "рабочий уходил из лесных районов" },
+        { english: "The worker would depart from woodland areas (female)", russian: "работница уходила из лесных районов" },
+        { english: "The children left stream areas", russian: "дети уходили от районов ручьёв" },
+        { english: "We would depart from hill areas", russian: "мы уходили из холмистых районов" },
+        { english: "They left canyon areas", russian: "они уходили из районов ущелий" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "They often drove away from concert venues", russian: "они уезжали с концертных площадок" },
+        { english: "She used to leave the gym", russian: "она уезжала из спортзала" },
+        { english: "He departed from town districts", russian: "он уезжал из городских районов" },
+        { english: "The student used to drive away from work locations (male)", russian: "студент уезжал с рабочих мест" },
+        { english: "The student used to drive away from work locations (female)", russian: "студентка уезжала с рабочих мест" }
       ]
     },
     {
       tense: "present",
       aspect: "imperfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "I walk in the park", russian: "я иду в парке" },
-        { english: "She walks by the lake", russian: "она идёт у озера" },
-        { english: "He drives to work", russian: "он едет на работу" },
-        { english: "We drive to school", russian: "мы едем в школу" },
-        { english: "They walk in the forest", russian: "они идут в лесу" },
-        { english: "You drive around the city", russian: "вы едете по городу" },
-        { english: "The cat walks in the yard", russian: "кот идёт во дворе" },
-        { english: "My sister drives to the mall", russian: "моя сестра едет в торговый центр" },
-        { english: "We walk along the river", russian: "мы идём вдоль реки" },
-        { english: "She drives to the hospital", russian: "она едет в больницу" },
-        { english: "He walks around the village", russian: "он идёт по деревне" }
+        { english: "I leave the park", russian: "я ухожу из парка" },
+        { english: "She departs from the lakeside", russian: "она уходит от берега озера" },
+        { english: "They leave forest areas", russian: "они уходят из лесных районов" },
+        { english: "The deer departs from the yard", russian: "олень уходит со двора" },
+        { english: "We leave riverside areas", russian: "мы уходим от прибрежных районов" },
+        { english: "He departs from village areas", russian: "он уходит из деревенских районов" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "He drives away from work", russian: "он уезжает с работы" },
+        { english: "We leave school areas", russian: "мы уезжаем из школьных районов" },
+        { english: "You drive away from the city center", russian: "вы уезжаете из центра города" },
+        { english: "My sister drives away from the mall", russian: "моя сестра уезжает из торгового центра" },
+        { english: "She departs from the hospital", russian: "она уезжает из больницы" }
       ]
     },
     {
       tense: "present",
       aspect: "imperfective",
       direction: "multidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "They drive to restaurants", russian: "они едут в рестораны" },
-        { english: "The teacher walks through the meadow", russian: "учитель идёт по лугу" },
-        { english: "The students walk on campus", russian: "студенты идут по кампусу" },
-        { english: "She drives to the airport", russian: "она едет в аэропорт" },
-        { english: "We walk in the mountains", russian: "мы идём в горах" },
-        { english: "He drives across the bridge", russian: "он едет по мосту" },
-        { english: "They walk near the waterfall", russian: "они идут у водопада" },
-        { english: "The doctor drives to the library", russian: "врач едет в библиотеку" },
-        { english: "She walks in the valley", russian: "она идёт по долине" },
-        { english: "The worker walks on the trail", russian: "рабочий идёт по тропе" },
-        { english: "My brother drives to the cinema", russian: "мой брат едет в кино" }
+        { english: "The teacher departs from meadow areas", russian: "учитель уходит из луговых районов" },
+        { english: "The students leave campus", russian: "студенты уходят из кампуса" },
+        { english: "We depart from mountain areas", russian: "мы уходим из горных районов" },
+        { english: "They leave waterfall areas", russian: "они уходят от водопадных районов" },
+        { english: "She departs from valley areas", russian: "она уходит из долинных районов" },
+        { english: "The guide leaves trail areas", russian: "гид уходит с троповых районов" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "They drive away from restaurant districts", russian: "они уезжают из ресторанных районов" },
+        { english: "She drives away from the airport", russian: "она уезжает из аэропорта" },
+        { english: "He departs from bridge areas", russian: "он уезжает от мостовых районов" },
+        { english: "The doctor drives away from the library", russian: "врач уезжает из библиотеки" },
+        { english: "My brother leaves the cinema", russian: "мой брат уезжает из кинотеатра" }
       ]
     },
     {
       tense: "future",
       aspect: "imperfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "I will walk in the forest", russian: "я буду идти в лесу" },
-        { english: "She will walk by the creek", russian: "она будет идти у ручья" },
-        { english: "He will drive to the office", russian: "он будет ехать в офис" },
-        { english: "We will drive to the theater", russian: "мы будем ехать в театр" },
-        { english: "They will walk in the hills", russian: "они будут идти по холмам" },
-        { english: "You will drive around town", russian: "вы будете ехать по городу" },
-        { english: "The children will walk in the garden", russian: "дети будут идти в саду" },
-        { english: "My friend will drive to work (male)", russian: "мой друг будет ехать на работу" },
-        { english: "My friend will drive to work (female)", russian: "моя подруга будет ехать на работу" },
-        { english: "We will walk along the lake", russian: "мы будем идти вдоль озера" },
-        { english: "She will drive to the gym", russian: "она будет ехать в спортзал" }
+        { english: "I will leave the forest", russian: "я буду уходить из леса" },
+        { english: "She will depart from creek areas", russian: "она будет уходить от районов ручьёв" },
+        { english: "They will leave hill areas", russian: "они будут уходить из холмистых районов" },
+        { english: "The children will depart from garden areas", russian: "дети будут уходить из садовых районов" },
+        { english: "We will leave lakeside areas", russian: "мы будем уходить от прибрежных районов озера" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "He will drive away from the office", russian: "он будет уезжать из офиса" },
+        { english: "We will depart from theater districts", russian: "мы будем уезжать из театральных районов" },
+        { english: "You will drive away from town centers", russian: "вы будете уезжать из центров городов" },
+        { english: "My friend will leave work areas (male)", russian: "мой друг будет уезжать с рабочих районов" },
+        { english: "My friend will leave work areas (female)", russian: "моя подруга будет уезжать с рабочих районов" },
+        { english: "She will depart from gym areas", russian: "она будет уезжать из районов спортзалов" }
       ]
     },
     {
       tense: "future",
       aspect: "imperfective",
       direction: "multidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "He will walk around the park", russian: "он будет идти по парку" },
-        { english: "They will drive to concerts", russian: "они будут ехать на концерты" },
-        { english: "The guide will walk through the woods", russian: "гид будет идти по лесу" },
-        { english: "The tourists will walk in the canyon", russian: "туристы будут идти в ущелье" },
-        { english: "She will drive to the market", russian: "она будет ехать на рынок" },
-        { english: "We will walk up the mountain", russian: "мы будем идти в горы" },
-        { english: "He will drive to the stadium", russian: "он будет ехать на стадион" },
-        { english: "They will walk near the river", russian: "они будут идти у реки" },
-        { english: "The nurse will drive to the museum", russian: "медсестра будет ехать в музей" },
-        { english: "She will walk in the meadow", russian: "она будет идти по лугу" },
-        { english: "The professor will walk on the trail", russian: "профессор будет идти по тропе" }
+        { english: "He will leave park areas", russian: "он будет уходить из парковых районов" },
+        { english: "The visitor will depart from woodland areas (male)", russian: "посетитель будет уходить из лесных районов" },
+        { english: "The visitor will depart from woodland areas (female)", russian: "посетительница будет уходить из лесных районов" },
+        { english: "The tourists will leave canyon areas", russian: "туристы будут уходить из районов ущелий" },
+        { english: "We will depart from mountain areas", russian: "мы будем уходить из горных районов" },
+        { english: "They will leave river areas", russian: "они будут уходить от речных районов" },
+        { english: "She will depart from meadow areas", russian: "она будет уходить из луговых районов" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "They will drive away from concert areas", russian: "они будут уезжать с концертных районов" },
+        { english: "She will leave market areas", russian: "она будет уезжать с рыночных районов" },
+        { english: "He will depart from stadium areas", russian: "он будет уезжать с районов стадионов" },
+        { english: "The nurse will drive away from museum areas", russian: "медсестра будет уезжать из музейных районов" }
       ]
     },
     {
       tense: "future",
       aspect: "perfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "I will set off walking to the lake (male)", russian: "я пойду к озеру" },
-        { english: "I will set off walking to the lake (female)", russian: "я пойду к озеру" },
-        { english: "She will set off walking to the forest", russian: "она пойдёт в лес" },
-        { english: "He will set off driving to the cinema", russian: "он поедет в кино" },
-        { english: "We will set off driving to the airport", russian: "мы поедем в аэропорт" },
-        { english: "They will set off walking up the hill", russian: "они пойдут на холм" },
-        { english: "You will set off driving to the hospital", russian: "вы поедете в больницу" },
-        { english: "The kids will set off walking to the playground", russian: "дети пойдут на площадку" },
-        { english: "My colleague will set off driving to the meeting (male)", russian: "мой коллега поедет на встречу" },
-        { english: "My colleague will set off driving to the meeting (female)", russian: "моя коллега поедет на встречу" },
-        { english: "We will set off walking down the trail", russian: "мы пойдём по тропе" }
+        { english: "I will leave the lake (male)", russian: "я уйду от озера" },
+        { english: "I will leave the lake (female)", russian: "я уйду от озера" },
+        { english: "She will depart from the forest", russian: "она уйдёт из леса" },
+        { english: "They will leave the hill", russian: "они уйдут с холма" },
+        { english: "The kids will depart from the playground", russian: "дети уйдут с площадки" },
+        { english: "We will leave the trail", russian: "мы уйдём с тропы" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "He will drive away from the cinema", russian: "он уедет из кинотеатра" },
+        { english: "We will depart from the airport", russian: "мы уедем из аэропорта" },
+        { english: "You will drive away from the hospital", russian: "вы уедете из больницы" },
+        { english: "My colleague will leave the meeting center (male)", russian: "мой коллега уедет из центра встреч" },
+        { english: "My colleague will leave the meeting center (female)", russian: "моя коллега уедет из центра встреч" }
       ]
     },
     {
       tense: "future",
       aspect: "perfective",
       direction: "multidirectional",
+      travelMode: "by-foot",
       sentences: [
-        { english: "She will set off driving to the mall", russian: "она поедет в торговый центр" },
-        { english: "He will set off walking into the woods", russian: "он пойдёт в лес" },
-        { english: "They will set off driving to the restaurant", russian: "они поедут в ресторан" },
-        { english: "The visitor will set off walking to the waterfall (male)", russian: "посетитель пойдёт к водопаду" },
-        { english: "The visitor will set off walking to the waterfall (female)", russian: "посетительница пойдёт к водопаду" },
-        { english: "The group will set off walking to the summit", russian: "группа пойдёт на вершину" },
-        { english: "She will set off driving across the bridge", russian: "она поедет по мосту" },
-        { english: "We will set off walking along the creek", russian: "мы пойдём вдоль ручья" },
-        { english: "He will set off driving to the theater", russian: "он поедет в театр" },
-        { english: "They will set off walking through the valley", russian: "они пойдут по долине" },
-        { english: "She will set off walking through the field", russian: "она пойдёт через поле" }
+        { english: "He will depart from the woods", russian: "он уйдёт из леса" },
+        { english: "The hiker will leave the waterfall area (male)", russian: "путешественник уйдёт от водопада" },
+        { english: "The hiker will leave the waterfall area (female)", russian: "путешественница уйдёт от водопада" },
+        { english: "The group will depart from the summit", russian: "группа уйдёт с вершины" },
+        { english: "We will leave the creek area", russian: "мы уйдём от ручья" },
+        { english: "They will depart from the valley", russian: "они уйдут из долины" },
+        { english: "She will leave the field", russian: "она уйдёт с поля" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "She will drive away from the mall", russian: "она уедет из торгового центра" },
+        { english: "They will depart from the restaurant", russian: "они уедут из ресторана" },
+        { english: "She will leave the bridge area", russian: "она уедет от моста" },
+        { english: "He will drive away from the theater", russian: "он уедет из театра" }
       ]
     }
   ]

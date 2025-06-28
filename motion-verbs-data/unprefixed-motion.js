@@ -8,53 +8,80 @@ window.unprefixedMotionData = {
       tense: "past",
       aspect: "perfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
         { english: "I walked to the lake (male)", russian: "я шёл к озеру" },
         { english: "I walked to the lake (female)", russian: "я шла к озеру" },
         { english: "She walked to the forest", russian: "она шла в лес" },
-        { english: "He drove to the theater", russian: "он ехал в театр" },
-        { english: "We drove to the museum", russian: "мы ехали в музей" },
         { english: "They walked up the mountain", russian: "они шли в горы" },
-        { english: "You drove to the cinema", russian: "вы ехали в кино" },
         { english: "The children walked to the meadow", russian: "дети шли на луг" },
-        { english: "My friend drove to the mall (male)", russian: "мой друг ехал в торговый центр" },
-        { english: "My friend drove to the mall (female)", russian: "моя подруга ехала в торговый центр" },
         { english: "We walked down the trail", russian: "мы шли по тропе" }
       ]
     },
     {
       tense: "past",
       aspect: "perfective",
-      direction: "multidirectional",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
       sentences: [
-        { english: "She drove to the airport", russian: "она ехала в аэропорт" },
+        { english: "He drove to the theater", russian: "он ехал в театр" },
+        { english: "We drove to the museum", russian: "мы ехали в музей" },
+        { english: "You drove to the cinema", russian: "вы ехали в кино" },
+        { english: "My friend drove to the mall (male)", russian: "мой друг ехал в торговый центр" },
+        { english: "My friend drove to the mall (female)", russian: "моя подруга ехала в торговый центр" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      travelMode: "by-foot",
+      sentences: [
         { english: "He walked into the woods", russian: "он шёл в лес" },
-        { english: "They drove to the stadium", russian: "они ехали на стадион" },
         { english: "The tourist walked to the hilltop (male)", russian: "турист шёл на вершину холма" },
         { english: "The tourist walked to the hilltop (female)", russian: "туристка шла на вершину холма" },
         { english: "The tourists walked to the waterfall", russian: "туристы шли к водопаду" },
-        { english: "She drove across the bridge", russian: "она ехала по мосту" },
         { english: "We walked along the creek", russian: "мы шли вдоль ручья" },
-        { english: "He drove to the restaurant", russian: "он ехал в ресторан" },
         { english: "They walked up the valley", russian: "они шли по долине" },
         { english: "She walked through the field", russian: "она шла через поле" }
       ]
     },
     {
       tense: "past",
+      aspect: "perfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "She drove to the airport", russian: "она ехала в аэропорт" },
+        { english: "They drove to the stadium", russian: "они ехали на стадион" },
+        { english: "She drove across the bridge", russian: "она ехала по мосту" },
+        { english: "He drove to the restaurant", russian: "он ехал в ресторан" }
+      ]
+    },
+    {
+      tense: "past",
       aspect: "imperfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
         { english: "I used to walk in the forest (male)", russian: "я ходил в лесу" },
         { english: "I used to walk in the forest (female)", russian: "я ходила в лесу" },
         { english: "She often walked by the river", russian: "она ходила у реки" },
+        { english: "They walked in the mountains every summer", russian: "они ходили в горы каждое лето" },
+        { english: "The dog would walk in the yard", russian: "собака ходила во дворе" },
+        { english: "We used to walk in the meadow", russian: "мы ходили по лугу" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
         { english: "He regularly drove to the office", russian: "он ездил в офис" },
         { english: "We would drive to the park", russian: "мы ездили в парк" },
-        { english: "They walked in the mountains every summer", russian: "они ходили в горы каждое лето" },
         { english: "You used to drive around the city", russian: "вы ездили по городу" },
-        { english: "The dog would walk in the yard", russian: "собака ходила во дворе" },
         { english: "My parents drove to the market", russian: "мои родители ездили на рынок" },
-        { english: "We used to walk in the meadow", russian: "мы ходили по лугу" },
         { english: "She would drive to the theater", russian: "она ездила в театр" }
       ]
     },
@@ -62,16 +89,25 @@ window.unprefixedMotionData = {
       tense: "past",
       aspect: "imperfective",
       direction: "multidirectional",
+      travelMode: "by-foot",
       sentences: [
         { english: "He walked around the lake", russian: "он ходил вокруг озера" },
-        { english: "They often drove to concerts", russian: "они ездили на концерты" },
         { english: "The child walked through the woods (male)", russian: "ребёнок ходил по лесу" },
         { english: "The child walked through the woods (female)", russian: "ребёнок ходила по лесу" },
         { english: "The children walked near the stream", russian: "дети ходили у ручья" },
-        { english: "She used to drive to the gym", russian: "она ездила в спортзал" },
         { english: "We would walk up the hills", russian: "мы ходили по холмам" },
+        { english: "They walked in the canyon", russian: "они ходили в ущелье" }
+      ]
+    },
+    {
+      tense: "past",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "They often drove to concerts", russian: "они ездили на концерты" },
+        { english: "She used to drive to the gym", russian: "она ездила в спортзал" },
         { english: "He drove around town", russian: "он ездил по городу" },
-        { english: "They walked in the canyon", russian: "они ходили в ущелье" },
         { english: "The student used to drive to work (male)", russian: "студент ездил на работу" },
         { english: "The student used to drive to work (female)", russian: "студентка ездила на работу" }
       ]
@@ -80,35 +116,53 @@ window.unprefixedMotionData = {
       tense: "present",
       aspect: "imperfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
         { english: "I walk in the park", russian: "я иду в парке" },
         { english: "She walks by the lake", russian: "она идёт у озера" },
-        { english: "He drives to work", russian: "он едет на работу" },
-        { english: "We drive to school", russian: "мы едем в школу" },
         { english: "They walk in the forest", russian: "они идут в лесу" },
-        { english: "You drive around the city", russian: "вы едете по городу" },
         { english: "The cat walks in the yard", russian: "кот идёт во дворе" },
-        { english: "My sister drives to the mall", russian: "моя сестра едет в торговый центр" },
         { english: "We walk along the river", russian: "мы идём вдоль реки" },
-        { english: "She drives to the hospital", russian: "она едет в больницу" },
         { english: "He walks around the village", russian: "он идёт по деревне" }
       ]
     },
     {
       tense: "present",
       aspect: "imperfective",
-      direction: "multidirectional",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
       sentences: [
-        { english: "They drive to restaurants", russian: "они едут в рестораны" },
+        { english: "He drives to work", russian: "он едет на работу" },
+        { english: "We drive to school", russian: "мы едем в школу" },
+        { english: "You drive around the city", russian: "вы едете по городу" },
+        { english: "My sister drives to the mall", russian: "моя сестра едет в торговый центр" },
+        { english: "She drives to the hospital", russian: "она едет в больницу" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      travelMode: "by-foot",
+      sentences: [
         { english: "The teacher walks through the meadow", russian: "учитель идёт по лугу" },
         { english: "The students walk on campus", russian: "студенты идут по кампусу" },
-        { english: "She drives to the airport", russian: "она едет в аэропорт" },
         { english: "We walk in the mountains", russian: "мы идём в горах" },
-        { english: "He drives across the bridge", russian: "он едет по мосту" },
         { english: "They walk near the waterfall", russian: "они идут у водопада" },
-        { english: "The doctor drives to the library", russian: "врач едет в библиотеку" },
         { english: "She walks in the valley", russian: "она идёт по долине" },
-        { english: "The worker walks on the trail", russian: "рабочий идёт по тропе" },
+        { english: "The worker walks on the trail", russian: "рабочий идёт по тропе" }
+      ]
+    },
+    {
+      tense: "present",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "They drive to restaurants", russian: "они едут в рестораны" },
+        { english: "She drives to the airport", russian: "она едет в аэропорт" },
+        { english: "He drives across the bridge", russian: "он едет по мосту" },
+        { english: "The doctor drives to the library", russian: "врач едет в библиотеку" },
         { english: "My brother drives to the cinema", russian: "мой брат едет в кино" }
       ]
     },
@@ -116,17 +170,26 @@ window.unprefixedMotionData = {
       tense: "future",
       aspect: "imperfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
         { english: "I will walk in the forest", russian: "я буду идти в лесу" },
         { english: "She will walk by the creek", russian: "она будет идти у ручья" },
+        { english: "They will walk in the hills", russian: "они будут идти по холмам" },
+        { english: "The children will walk in the garden", russian: "дети будут идти в саду" },
+        { english: "We will walk along the lake", russian: "мы будем идти вдоль озера" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "imperfective",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
         { english: "He will drive to the office", russian: "он будет ехать в офис" },
         { english: "We will drive to the theater", russian: "мы будем ехать в театр" },
-        { english: "They will walk in the hills", russian: "они будут идти по холмам" },
         { english: "You will drive around town", russian: "вы будете ехать по городу" },
-        { english: "The children will walk in the garden", russian: "дети будут идти в саду" },
         { english: "My friend will drive to work (male)", russian: "мой друг будет ехать на работу" },
         { english: "My friend will drive to work (female)", russian: "моя подруга будет ехать на работу" },
-        { english: "We will walk along the lake", russian: "мы будем идти вдоль озера" },
         { english: "She will drive to the gym", russian: "она будет ехать в спортзал" }
       ]
     },
@@ -134,54 +197,81 @@ window.unprefixedMotionData = {
       tense: "future",
       aspect: "imperfective",
       direction: "multidirectional",
+      travelMode: "by-foot",
       sentences: [
         { english: "He will walk around the park", russian: "он будет идти по парку" },
-        { english: "They will drive to concerts", russian: "они будут ехать на концерты" },
         { english: "The guide will walk through the woods", russian: "гид будет идти по лесу" },
         { english: "The tourists will walk in the canyon", russian: "туристы будут идти в ущелье" },
-        { english: "She will drive to the market", russian: "она будет ехать на рынок" },
         { english: "We will walk up the mountain", russian: "мы будем идти в горы" },
-        { english: "He will drive to the stadium", russian: "он будет ехать на стадион" },
         { english: "They will walk near the river", russian: "они будут идти у реки" },
-        { english: "The nurse will drive to the museum", russian: "медсестра будет ехать в музей" },
         { english: "She will walk in the meadow", russian: "она будет идти по лугу" },
         { english: "The professor will walk on the trail", russian: "профессор будет идти по тропе" }
       ]
     },
     {
       tense: "future",
+      aspect: "imperfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "They will drive to concerts", russian: "они будут ехать на концерты" },
+        { english: "She will drive to the market", russian: "она будет ехать на рынок" },
+        { english: "He will drive to the stadium", russian: "он будет ехать на стадион" },
+        { english: "The nurse will drive to the museum", russian: "медсестра будет ехать в музей" }
+      ]
+    },
+    {
+      tense: "future",
       aspect: "perfective",
       direction: "unidirectional",
+      travelMode: "by-foot",
       sentences: [
         { english: "I will set off walking to the lake (male)", russian: "я пойду к озеру" },
         { english: "I will set off walking to the lake (female)", russian: "я пойду к озеру" },
         { english: "She will set off walking to the forest", russian: "она пойдёт в лес" },
-        { english: "He will set off driving to the cinema", russian: "он поедет в кино" },
-        { english: "We will set off driving to the airport", russian: "мы поедем в аэропорт" },
         { english: "They will set off walking up the hill", russian: "они пойдут на холм" },
-        { english: "You will set off driving to the hospital", russian: "вы поедете в больницу" },
         { english: "The kids will set off walking to the playground", russian: "дети пойдут на площадку" },
-        { english: "My colleague will set off driving to the meeting (male)", russian: "мой коллега поедет на встречу" },
-        { english: "My colleague will set off driving to the meeting (female)", russian: "моя коллега поедет на встречу" },
         { english: "We will set off walking down the trail", russian: "мы пойдём по тропе" }
       ]
     },
     {
       tense: "future",
       aspect: "perfective",
-      direction: "multidirectional",
+      direction: "unidirectional",
+      travelMode: "by-vehicle",
       sentences: [
-        { english: "She will set off driving to the mall", russian: "она поедет в торговый центр" },
+        { english: "He will set off driving to the cinema", russian: "он поедет в кино" },
+        { english: "We will set off driving to the airport", russian: "мы поедем в аэропорт" },
+        { english: "You will set off driving to the hospital", russian: "вы поедете в больницу" },
+        { english: "My colleague will set off driving to the meeting (male)", russian: "мой коллега поедет на встречу" },
+        { english: "My colleague will set off driving to the meeting (female)", russian: "моя коллега поедет на встречу" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      travelMode: "by-foot",
+      sentences: [
         { english: "He will set off walking into the woods", russian: "он пойдёт в лес" },
-        { english: "They will set off driving to the restaurant", russian: "они поедут в ресторан" },
         { english: "The visitor will set off walking to the waterfall (male)", russian: "посетитель пойдёт к водопаду" },
         { english: "The visitor will set off walking to the waterfall (female)", russian: "посетительница пойдёт к водопаду" },
         { english: "The group will set off walking to the summit", russian: "группа пойдёт на вершину" },
-        { english: "She will set off driving across the bridge", russian: "она поедет по мосту" },
         { english: "We will set off walking along the creek", russian: "мы пойдём вдоль ручья" },
-        { english: "He will set off driving to the theater", russian: "он поедет в театр" },
         { english: "They will set off walking through the valley", russian: "они пойдут по долине" },
         { english: "She will set off walking through the field", russian: "она пойдёт через поле" }
+      ]
+    },
+    {
+      tense: "future",
+      aspect: "perfective",
+      direction: "multidirectional",
+      travelMode: "by-vehicle",
+      sentences: [
+        { english: "She will set off driving to the mall", russian: "она поедет в торговый центр" },
+        { english: "They will set off driving to the restaurant", russian: "они поедут в ресторан" },
+        { english: "She will set off driving across the bridge", russian: "она поедет по мосту" },
+        { english: "He will set off driving to the theater", russian: "он поедет в театр" }
       ]
     }
   ]

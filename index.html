@@ -84,6 +84,10 @@
       margin: 6px 0;
       font-size: 14px;
     }
+    .travel-mode-option {
+      margin: 6px 0;
+      font-size: 14px;
+    }
     .reveal-section {
       margin: 15px 0;
     }
@@ -199,7 +203,7 @@
       </div>
 
       <div class="quiz-section">
-        <div id="challenge">Select direction, tense/aspect, and prefix combinations, then click a quiz mode button to begin.</div>
+        <div id="challenge">Select travel mode, direction, tense/aspect, and prefix combinations, then click a quiz mode button to begin.</div>
         
         <div id="repeat-section" class="repeat-section hidden">
           <button id="repeat-btn">🔊 Repeat</button>
@@ -222,6 +226,20 @@
     </div>
 
     <div id="right-panel">
+      <div class="tense-aspect-section">
+        <h3>Travel Mode</h3>
+        <div id="travel-mode-container">
+          <div class="travel-mode-option">
+            <input type="checkbox" name="travel-mode" value="by-foot" id="by-foot" checked>
+            <label for="by-foot">By Foot</label>
+          </div>
+          <div class="travel-mode-option">
+            <input type="checkbox" name="travel-mode" value="by-vehicle" id="by-vehicle">
+            <label for="by-vehicle">By Vehicle</label>
+          </div>
+        </div>
+      </div>
+
       <div class="tense-aspect-section">
         <h3>Direction</h3>
         <div id="direction-container">
@@ -306,6 +324,19 @@
 
     function buildPrefixCheckboxes() {
       const availablePrefixes = getAvailablePrefixes();
+      const prefixDescriptions = {
+        "": "(basic forms)",
+        "до": "(reaching/arriving)",
+        "от": "(moving away)",
+        "по": "(setting off)",
+        "при": "(arrival)",
+        "про": "(passing by/through)",
+        "в": "(entering/going into)",
+        "вы": "(exiting/going out)",
+        "за": "(stopping by/behind)",
+        "у": "(departing/going away)"
+      };
+      
       prefixContainer.innerHTML = '';
       
       availablePrefixes.forEach(prefixInfo => {
@@ -325,7 +356,8 @@
         
         const label = document.createElement('label');
         label.htmlFor = checkbox.id;
-        label.textContent = prefixInfo.name;
+        const description = prefixDescriptions[prefixInfo.prefix] || "";
+        label.textContent = `${prefixInfo.name} ${description}`;
         
         div.appendChild(checkbox);
         div.appendChild(label);
@@ -335,6 +367,11 @@
 
     function getSelectedPrefixes() {
       const checkboxes = document.querySelectorAll('.prefix-filter:checked');
+      return Array.from(checkboxes).map(cb => cb.value);
+    }
+
+    function getSelectedTravelModes() {
+      const checkboxes = document.querySelectorAll('input[name="travel-mode"]:checked');
       return Array.from(checkboxes).map(cb => cb.value);
     }
 
@@ -356,7 +393,7 @@
       }).filter(item => item !== null);
     }
 
-    function flattenSentences(data, selectedDirections, selectedTenseAspects) {
+    function flattenSentences(data, selectedTravelModes, selectedDirections, selectedTenseAspects) {
       return data.flatMap(group => {
         if (!group.groups || group.groups.length === 0) {
           return [];
@@ -364,6 +401,11 @@
         
         return group.groups
           .filter(subgroup => {
+            // Filter by travel mode
+            if (selectedTravelModes.length > 0 && !selectedTravelModes.includes(subgroup.travelMode)) {
+              return false;
+            }
+            
             // Filter by direction
             if (selectedDirections.length > 0 && !selectedDirections.includes(subgroup.direction)) {
               return false;
@@ -381,7 +423,8 @@
               prefix: group.prefix, 
               tense: subgroup.tense, 
               aspect: subgroup.aspect,
-              direction: subgroup.direction
+              direction: subgroup.direction,
+              travelMode: subgroup.travelMode
             }))
           );
       });
@@ -401,11 +444,18 @@
 
     async function startNewRound(mode) {
       const selectedPrefixes = getSelectedPrefixes();
+      const selectedTravelModes = getSelectedTravelModes();
       const selectedDirections = getSelectedDirections();
       const selectedTenseAspects = getSelectedTenseAspects();
 
       if (selectedPrefixes.length === 0) {
         challengeEl.innerText = 'Please select at least one prefix.';
+        hideAllQuizElements();
+        return;
+      }
+
+      if (selectedTravelModes.length === 0) {
+        challengeEl.innerText = 'Please select at least one travel mode.';
         hideAllQuizElements();
         return;
       }
@@ -438,7 +488,7 @@
         }
 
         // Flatten sentences from loaded data
-        const availableSentences = flattenSentences(loadedData, selectedDirections, selectedTenseAspects);
+        const availableSentences = flattenSentences(loadedData, selectedTravelModes, selectedDirections, selectedTenseAspects);
 
         if (availableSentences.length < 10) {
           challengeEl.innerText = `Not enough data for selected filters. Found ${availableSentences.length} sentences, need at least 10.`;
@@ -476,9 +526,10 @@
 
     function showCurrentChallenge() {
       const challenge = currentRound[currentIndex];
+      const selectedTravelModes = getSelectedTravelModes();
       const selectedDirections = getSelectedDirections();
       const selectedTenseAspects = getSelectedTenseAspects();
-      const allOptions = flattenSentences(verbData, selectedDirections, selectedTenseAspects);
+      const allOptions = flattenSentences(verbData, selectedTravelModes, selectedDirections, selectedTenseAspects);
       let correct, challengeText, wrongField, lang;
 
       if (currentMode === "en-to-ru" || currentMode === "spoken-en-to-ru") {
