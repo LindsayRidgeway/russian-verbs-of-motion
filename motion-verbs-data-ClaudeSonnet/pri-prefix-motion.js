@@ -63,9 +63,9 @@ window.приMotionData = {
         { english: "You will arrive at the airport (female)", russian: "ты приедешь в аэропорт" },
         { english: "He will arrive at the hospital", russian: "он приедет в больницу" },
         { english: "She will arrive at the meeting", russian: "она приедет на встречу" },
-        { english: "We will arrive at the park", russian: "мы приедем в парк" },
-        { english: "You all will arrive at the stadium", russian: "вы приедете на стадион" },
-        { english: "They will arrive at the restaurant", russian: "они приедут в ресторан" }
+        { english: "We will arrive at the theater", russian: "мы приедем в театр" },
+        { english: "You all will arrive at the mall", russian: "вы приедете в торговый центр" },
+        { english: "They will arrive at the stadium", russian: "они приедут на стадион" }
       ]
     }
   ]

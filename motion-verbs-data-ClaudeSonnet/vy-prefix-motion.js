@@ -1,5 +1,5 @@
 // Вы- prefix motion verbs data
-// Motion verbs with вы- prefix (exiting / going out)
+// Motion verbs with вы- prefix (exiting/going out)
 
 window.выMotionData = {
   prefix: "вы",
@@ -31,7 +31,7 @@ window.выMotionData = {
         { english: "You drove out of the museum area (female)", russian: "ты выехала с территории музея" },
         { english: "He drove out of the cinema complex", russian: "он выехал из кинокомплекса" },
         { english: "She drove out of the mall garage", russian: "она выехала из гаража торгового центра" },
-        { english: "We drove out of the airport terminal", russian: "мы выехали из терминала аэропорта" },
+        { english: "We drove out of the airport terminal", russian: "мы выехали из аэропорта" },
         { english: "You all drove out of the stadium parking", russian: "вы выехали с парковки стадиона" },
         { english: "They drove out of the restaurant complex", russian: "они выехали из ресторанного комплекса" }
       ]
@@ -48,7 +48,7 @@ window.выMotionData = {
         { english: "He will exit the hill shelter", russian: "он выйдет из укрытия на холме" },
         { english: "She will exit the trail shelter", russian: "она выйдет из укрытия на тропе" },
         { english: "We will leave the playground shed", russian: "мы выйдем из сарая на площадке" },
-        { english: "You all will exit the creek pavilion", russian: "вы выйдёте из павильона у ручья" },
+        { english: "You all will exit the creek pavilion", russian: "вы выйдете из павильона у ручья" },
         { english: "They will leave the meadow hut", russian: "они выйдут из хижины на лугу" }
       ]
     },
@@ -62,10 +62,10 @@ window.выMotionData = {
         { english: "You will drive out of the airport complex (male)", russian: "ты выедешь из аэропортового комплекса" },
         { english: "You will drive out of the airport complex (female)", russian: "ты выедешь из аэропортового комплекса" },
         { english: "He will drive out of the hospital area", russian: "он выедет с территории больницы" },
-        { english: "She will drive out of the meeting center", russian: "она выедет с территории встречи" },
-        { english: "We will drive out of the park grounds", russian: "мы выедем с территории парка" },
-        { english: "You all will drive out of the stadium parking", russian: "вы выедете с парковки стадиона" },
-        { english: "They will drive out of the restaurant complex", russian: "они выедут из ресторанного комплекса" }
+        { english: "She will drive out of the meeting center", russian: "она выедет из центра встреч" },
+        { english: "We will drive out of the theater complex", russian: "мы выедем из театрального комплекса" },
+        { english: "You all will drive out of the mall garage", russian: "вы выедете из гаража торгового центра" },
+        { english: "They will drive out of the stadium complex", russian: "они выедут из комплекса стадиона" }
       ]
     }
   ]

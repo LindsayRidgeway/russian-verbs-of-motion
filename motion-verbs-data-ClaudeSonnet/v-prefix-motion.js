@@ -1,5 +1,5 @@
 // В- prefix motion verbs data
-// Motion verbs with в- prefix (entering / going into)
+// Motion verbs with в- prefix (entering/going into)
 
 window.вMotionData = {
   prefix: "в",
@@ -31,7 +31,7 @@ window.вMotionData = {
         { english: "You drove into the museum lot (female)", russian: "ты въехала на территорию музея" },
         { english: "He drove into the cinema complex", russian: "он въехал в кинокомплекс" },
         { english: "She drove into the mall garage", russian: "она въехала в гараж торгового центра" },
-        { english: "We drove into the airport terminal", russian: "мы въехали в терминал аэропорта" },
+        { english: "We drove into the airport terminal", russian: "мы въехали в аэропорт" },
         { english: "You all drove into the stadium parking", russian: "вы въехали на парковку стадиона" },
         { english: "They drove into the restaurant complex", russian: "они въехали в ресторанный комплекс" }
       ]
@@ -61,11 +61,11 @@ window.вMotionData = {
         { english: "I will drive into the cinema parking (female)", russian: "я въеду на парковку кинотеатра" },
         { english: "You will drive into the airport complex (male)", russian: "ты въедешь в аэропортовый комплекс" },
         { english: "You will drive into the airport complex (female)", russian: "ты въедешь в аэропортовый комплекс" },
-        { english: "He will drive into the hospital area", russian: "он въедет в территорию больницы" },
-        { english: "She will drive into the meeting area", russian: "она въедет в территорию встречи" },
-        { english: "We will drive into the park grounds", russian: "мы въедем в территорию парка" },
-        { english: "You all will drive into the stadium complex", russian: "вы въедете в спортивный комплекс" },
-        { english: "They will drive into the restaurant complex", russian: "они въедут в ресторанный комплекс" }
+        { english: "He will drive into the hospital area", russian: "он въедет на территорию больницы" },
+        { english: "She will drive into the meeting center", russian: "она въедет в центр встреч" },
+        { english: "We will drive into the theater complex", russian: "мы въедем в театральный комплекс" },
+        { english: "You all will drive into the mall garage", russian: "вы въедете в гараж торгового центра" },
+        { english: "They will drive into the stadium complex", russian: "они въедут в комплекс стадиона" }
       ]
     }
   ]

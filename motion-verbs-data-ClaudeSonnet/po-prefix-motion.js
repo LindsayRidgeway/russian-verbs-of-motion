@@ -1,7 +1,7 @@
 // По- prefix motion verbs data
-// Motion verbs with по- prefix (setting off / brief motion)
+// Motion verbs with по- prefix (setting off/brief motion)
 
-window.пoMotionData = {
+window.поMotionData = {
   prefix: "по",
   groups: [
     {
@@ -83,7 +83,7 @@ window.пoMotionData = {
         { english: "She will set off to the playground", russian: "она пойдёт на площадку" },
         { english: "We will set off down the trail", russian: "мы пойдём по тропе" },
         { english: "You all will head to the park", russian: "вы пойдёте в парк" },
-        { english: "They will head to the valley", russian: "они пойдут в долину" }
+        { english: "They will set off to the creek", russian: "они пойдут к ручью" }
       ]
     },
     {
@@ -97,8 +97,8 @@ window.пoMotionData = {
         { english: "You will drive off to the airport (female)", russian: "ты поедешь в аэропорт" },
         { english: "He will drive off to the hospital", russian: "он поедет в больницу" },
         { english: "She will drive off to the meeting", russian: "она поедет на встречу" },
-        { english: "We will drive off to the park", russian: "мы поедем в парк" },
-        { english: "You all will drive off to the stadium", russian: "вы поедете на стадион" },
+        { english: "We will drive off to the theater", russian: "мы поедем в театр" },
+        { english: "You all will drive off to the mall", russian: "вы поедете в торговый центр" },
         { english: "They will drive off to the restaurant", russian: "они поедут в ресторан" }
       ]
     }

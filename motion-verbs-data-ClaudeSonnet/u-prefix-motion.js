@@ -1,5 +1,5 @@
 // У- prefix motion verbs data
-// Motion verbs with у- prefix (departing / going away)
+// Motion verbs with у- prefix (departing/going away)
 
 window.уMotionData = {
   prefix: "у",
@@ -63,9 +63,9 @@ window.уMotionData = {
         { english: "You will depart from the airport (female)", russian: "ты уедешь из аэропорта" },
         { english: "He will drive away from the hospital", russian: "он уедет из больницы" },
         { english: "She will leave the meeting center", russian: "она уедет из центра встреч" },
-        { english: "We will drive away from the park", russian: "мы уедем из парка" },
-        { english: "You all will depart from the stadium", russian: "вы уедете со стадиона" },
-        { english: "They will drive away from the restaurant", russian: "они уедут из ресторана" }
+        { english: "We will drive away from the theater", russian: "мы уедем из театра" },
+        { english: "You all will leave the mall", russian: "вы уедете из торгового центра" },
+        { english: "They will depart from the stadium", russian: "они уедут со стадиона" }
       ]
     }
   ]

@@ -1,5 +1,5 @@
 // Про- prefix motion verbs data
-// Motion verbs with про- prefix (passing through / past)
+// Motion verbs with про- prefix (passing by/going through)
 
 window.проMotionData = {
   prefix: "про",
@@ -39,24 +39,22 @@ window.проMotionData = {
     {
       tense: "past",
       aspect: "imperfective",
-      direction: "multidirectional",
       travelMode: "by-foot",
       sentences: [
         { english: "I used to walk past the forest (male)", russian: "я проходил мимо леса" },
         { english: "I used to walk past the forest (female)", russian: "я проходила мимо леса" },
         { english: "You would walk through mountain areas (male)", russian: "ты проходил через горные районы" },
         { english: "You would walk through mountain areas (female)", russian: "ты проходила через горные районы" },
-        { english: "He would walk past hiking areas", russian: "он проходил мимо туристических мест" },
+        { english: "He would walk past hiking areas", russian: "он проходил мимо мест для походов" },
         { english: "She would walk past the meadow", russian: "она проходила мимо луга" },
         { english: "We used to walk through the campground", russian: "мы проходили через кемпинг" },
-        { english: "You all would walk past park areas", russian: "вы проходили мимо парковых зон" },
-        { english: "They would walk through the valley", russian: "они проходили через долину" }
+        { english: "You all would walk past park areas", russian: "вы проходили мимо парковых районов" },
+        { english: "They would walk past trail areas", russian: "они проходили мимо троповых районов" }
       ]
     },
     {
       tense: "past",
       aspect: "imperfective",
-      direction: "multidirectional",
       travelMode: "by-vehicle",
       sentences: [
         { english: "I regularly drove past the office (male)", russian: "я проезжал мимо офиса" },
@@ -83,7 +81,7 @@ window.проMotionData = {
         { english: "She will walk past the trail", russian: "она пройдёт мимо тропы" },
         { english: "We will walk past the playground", russian: "мы пройдём мимо площадки" },
         { english: "You all will walk through the meadow", russian: "вы пройдёте через луг" },
-        { english: "They will walk through the valley", russian: "они пройдут через долину" }
+        { english: "They will walk past the creek", russian: "они пройдут мимо ручья" }
       ]
     },
     {
@@ -93,13 +91,13 @@ window.проMotionData = {
       sentences: [
         { english: "I will drive past the cinema (male)", russian: "я проеду мимо кинотеатра" },
         { english: "I will drive past the cinema (female)", russian: "я проеду мимо кинотеатра" },
-        { english: "You will drive through the airport complex (male)", russian: "ты проедешь через аэропорт" },
-        { english: "You will drive through the airport complex (female)", russian: "ты проедешь через аэропорт" },
+        { english: "You will drive through the airport area (male)", russian: "ты проедешь через район аэропорта" },
+        { english: "You will drive through the airport area (female)", russian: "ты проедешь через район аэропорта" },
         { english: "He will drive past the hospital", russian: "он проедет мимо больницы" },
-        { english: "She will drive past the market", russian: "она проедет мимо рынка" },
-        { english: "We will drive past the stadium", russian: "мы проедем мимо стадиона" },
-        { english: "You all will drive through the park", russian: "вы проедете через парк" },
-        { english: "They will drive past the restaurant", russian: "они проедут мимо ресторана" }
+        { english: "She will drive past the meeting center", russian: "она проедет мимо центра встреч" },
+        { english: "We will drive through the theater district", russian: "мы проедем через театральный район" },
+        { english: "You all will drive past the mall", russian: "вы проедете мимо торгового центра" },
+        { english: "They will drive past the stadium", russian: "они проедут мимо стадиона" }
       ]
     }
   ]

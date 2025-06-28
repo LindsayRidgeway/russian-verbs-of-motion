@@ -62,10 +62,10 @@ window.отMotionData = {
         { english: "You will pull back from the airport (male)", russian: "ты отъедешь от аэропорта" },
         { english: "You will pull back from the airport (female)", russian: "ты отъедешь от аэропорта" },
         { english: "He will drive back from the hospital", russian: "он отъедет от больницы" },
-        { english: "She will pull away from the market", russian: "она отъедет от рынка" },
-        { english: "We will pull back from the park", russian: "мы отъедем от парка" },
-        { english: "You all will move away from the stadium", russian: "вы отъедете от стадиона" },
-        { english: "They will drive back from the restaurant", russian: "они отъедут от ресторана" }
+        { english: "She will drive back from the meeting center", russian: "она отъедет от центра встреч" },
+        { english: "We will back away from the theater", russian: "мы отъедем от театра" },
+        { english: "You all will pull back from the mall", russian: "вы отъедете от торгового центра" },
+        { english: "They will drive back from the stadium", russian: "они отъедут от стадиона" }
       ]
     }
   ]
