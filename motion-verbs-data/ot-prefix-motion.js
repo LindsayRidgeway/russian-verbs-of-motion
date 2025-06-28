@@ -12,10 +12,13 @@ window.отMotionData = {
       sentences: [
         { english: "I stepped away from the forest edge (male)", russian: "я отошёл от края леса" },
         { english: "I stepped away from the forest edge (female)", russian: "я отошла от края леса" },
-        { english: "She moved back from the mountain cliff", russian: "она отошла от горного обрыва" },
-        { english: "They stepped away from the trail marker", russian: "они отошли от указателя тропы" },
-        { english: "The children stepped back from the meadow fence", russian: "дети отошли от забора луга" },
-        { english: "We moved back from the campfire", russian: "мы отошли от костра" }
+        { english: "You moved back from the mountain cliff (male)", russian: "ты отошёл от горного обрыва" },
+        { english: "You moved back from the mountain cliff (female)", russian: "ты отошла от горного обрыва" },
+        { english: "He stepped away from the trail marker", russian: "он отошёл от указателя тропы" },
+        { english: "She moved back from the meadow fence", russian: "она отошла от забора луга" },
+        { english: "We moved back from the campfire", russian: "мы отошли от костра" },
+        { english: "You all stepped away from the creek bank", russian: "вы отошли от берега ручья" },
+        { english: "They stepped back from the valley edge", russian: "они отошли от края долины" }
       ]
     },
     {
@@ -24,11 +27,15 @@ window.отMotionData = {
       direction: "unidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "He backed away from the theater entrance", russian: "он отъехал от входа в театр" },
-        { english: "We pulled back from the museum steps", russian: "мы отъехали от ступеней музея" },
-        { english: "You drove back from the cinema", russian: "вы отъехали от кинотеатра" },
-        { english: "My friend pulled away from the mall (male)", russian: "мой друг отъехал от торгового центра" },
-        { english: "My friend pulled away from the mall (female)", russian: "моя подруга отъехала от торгового центра" }
+        { english: "I backed away from the theater entrance (male)", russian: "я отъехал от входа в театр" },
+        { english: "I backed away from the theater entrance (female)", russian: "я отъехала от входа в театр" },
+        { english: "You pulled back from the museum steps (male)", russian: "ты отъехал от ступеней музея" },
+        { english: "You pulled back from the museum steps (female)", russian: "ты отъехала от ступеней музея" },
+        { english: "He drove back from the cinema", russian: "он отъехал от кинотеатра" },
+        { english: "My friend pulled away from the mall (female)", russian: "моя подруга отъехала от торгового центра" },
+        { english: "We drove back from the airport", russian: "мы отъехали от аэропорта" },
+        { english: "You all pulled back from the hospital", russian: "вы отъехали от больницы" },
+        { english: "They backed away from the stadium", russian: "они отъехали от стадиона" }
       ]
     },
     {
@@ -37,13 +44,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-foot",
       sentences: [
-        { english: "He stepped back from the woodland", russian: "он отошёл от леса" },
-        { english: "The tourist moved away from the hilltop (male)", russian: "турист отошёл от вершины холма" },
-        { english: "The tourist moved away from the hilltop (female)", russian: "туристка отошла от вершины холма" },
-        { english: "The tourists stepped back from the waterfall", russian: "туристы отошли от водопада" },
+        { english: "I stepped back from the woodland (male)", russian: "я отошёл от леса" },
+        { english: "I stepped back from the woodland (female)", russian: "я отошла от леса" },
+        { english: "You moved away from the hilltop (male)", russian: "ты отошёл от вершины холма" },
+        { english: "You moved away from the hilltop (female)", russian: "ты отошла от вершины холма" },
+        { english: "He stepped back from the waterfall", russian: "он отошёл от водопада" },
+        { english: "She moved back from the field", russian: "она отошла от поля" },
         { english: "We moved away from the creek", russian: "мы отошли от ручья" },
-        { english: "They stepped away from the valley", russian: "они отошли от долины" },
-        { english: "She moved back from the field", russian: "она отошла от поля" }
+        { english: "You all stepped away from the valley", russian: "вы отошли от долины" },
+        { english: "They stepped back from the canyon", russian: "они отошли от ущелья" }
       ]
     },
     {
@@ -52,10 +61,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "She drove away from the airport", russian: "она отъехала от аэропорта" },
-        { english: "They pulled away from the stadium", russian: "они отъехали от стадиона" },
-        { english: "She pulled back from the bridge", russian: "она отъехала от моста" },
-        { english: "He drove back from the restaurant", russian: "он отъехал от ресторана" }
+        { english: "I drove away from the airport (male)", russian: "я отъехал от аэропорта" },
+        { english: "I drove away from the airport (female)", russian: "я отъехала от аэропорта" },
+        { english: "You pulled away from the stadium (male)", russian: "ты отъехал от стадиона" },
+        { english: "You pulled away from the stadium (female)", russian: "ты отъехала от стадиона" },
+        { english: "He pulled back from the bridge", russian: "он отъехал от моста" },
+        { english: "She drove back from the restaurant", russian: "она отъехала от ресторана" },
+        { english: "We drove away from the theater", russian: "мы отъехали от театра" },
+        { english: "You all pulled back from the mall", russian: "вы отъехали от торгового центра" },
+        { english: "They drove back from the library", russian: "они отъехали от библиотеки" }
       ]
     },
     {
@@ -66,10 +80,13 @@ window.отMotionData = {
       sentences: [
         { english: "I used to step away from the forest (male)", russian: "я отходил от леса" },
         { english: "I used to step away from the forest (female)", russian: "я отходила от леса" },
-        { english: "She would move back from mountain areas", russian: "она отходила от горных районов" },
-        { english: "They would step away from hiking areas", russian: "они отходили от мест для походов" },
-        { english: "The animals would step back from the meadow", russian: "животные отходили от луга" },
-        { english: "We used to move back from the campground", russian: "мы отходили от кемпинга" }
+        { english: "You would move back from mountain areas (male)", russian: "ты отходил от горных районов" },
+        { english: "You would move back from mountain areas (female)", russian: "ты отходила от горных районов" },
+        { english: "He would step away from hiking areas", russian: "он отходил от мест для походов" },
+        { english: "She would step back from the meadow", russian: "она отходила от луга" },
+        { english: "We used to move back from the campground", russian: "мы отходили от кемпинга" },
+        { english: "You all would step away from park areas", russian: "вы отходили от парковых районов" },
+        { english: "They would move back from trail areas", russian: "они отходили от троповых районов" }
       ]
     },
     {
@@ -78,11 +95,15 @@ window.отMotionData = {
       direction: "unidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "He regularly backed away from the office", russian: "он отъезжал от офиса" },
-        { english: "We often pulled back from the park", russian: "мы отъезжали от парка" },
-        { english: "You used to drive back from the city", russian: "вы отъезжали от города" },
-        { english: "My parents drove back from markets", russian: "мои родители отъезжали от рынков" },
-        { english: "She would pull away from the theater", russian: "она отъезжала от театра" }
+        { english: "I regularly backed away from the office (male)", russian: "я отъезжал от офиса" },
+        { english: "I regularly backed away from the office (female)", russian: "я отъезжала от офиса" },
+        { english: "You often pulled back from the park (male)", russian: "ты отъезжал от парка" },
+        { english: "You often pulled back from the park (female)", russian: "ты отъезжала от парка" },
+        { english: "He used to drive back from the city", russian: "он отъезжал от города" },
+        { english: "She would pull away from the theater", russian: "она отъезжала от театра" },
+        { english: "We drove back from markets", russian: "мы отъезжали от рынков" },
+        { english: "You all used to drive back from work", russian: "вы отъезжали от работы" },
+        { english: "They pulled back from shopping centers", russian: "они отъезжали от торговых центров" }
       ]
     },
     {
@@ -91,12 +112,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-foot",
       sentences: [
-        { english: "He stepped back from lake areas regularly", russian: "он отходил от озёрных районов регулярно" },
-        { english: "The worker would move away from woodland areas (male)", russian: "рабочий отходил от лесных районов" },
-        { english: "The worker would move away from woodland areas (female)", russian: "работница отходила от лесных районов" },
-        { english: "The children stepped back from stream areas", russian: "дети отходили от районов ручьёв" },
-        { english: "We would move away from hill areas", russian: "мы отходили от холмистых районов" },
-        { english: "They stepped away from canyon areas", russian: "они отходили от районов ущелий" }
+        { english: "I stepped back from lake areas regularly (male)", russian: "я отходил от озёрных районов регулярно" },
+        { english: "I stepped back from lake areas regularly (female)", russian: "я отходила от озёрных районов регулярно" },
+        { english: "You would move away from woodland areas (male)", russian: "ты отходил от лесных районов" },
+        { english: "You would move away from woodland areas (female)", russian: "ты отходила от лесных районов" },
+        { english: "He stepped back from stream areas", russian: "он отходил от районов ручьёв" },
+        { english: "She would move away from hill areas", russian: "она отходила от холмистых районов" },
+        { english: "We stepped away from canyon areas", russian: "мы отходили от районов ущелий" },
+        { english: "You all would move back from meadow areas", russian: "вы отходили от луговых районов" },
+        { english: "They stepped away from valley areas", russian: "они отходили от долинных районов" }
       ]
     },
     {
@@ -105,11 +129,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "They often drove back from concert venues", russian: "они отъезжали от концертных площадок" },
-        { english: "She used to drive back from the gym", russian: "она отъезжала от спортзала" },
+        { english: "I often drove back from concert venues (male)", russian: "я отъезжал от концертных площадок" },
+        { english: "I often drove back from concert venues (female)", russian: "я отъезжала от концертных площадок" },
+        { english: "You used to drive back from the gym (male)", russian: "ты отъезжал от спортзала" },
+        { english: "You used to drive back from the gym (female)", russian: "ты отъезжала от спортзала" },
         { english: "He pulled back from town districts", russian: "он отъезжал от городских районов" },
-        { english: "The student used to drive back from work locations (male)", russian: "студент отъезжал от рабочих мест" },
-        { english: "The student used to drive back from work locations (female)", russian: "студентка отъезжала от рабочих мест" }
+        { english: "The student used to drive back from work locations (female)", russian: "студентка отъезжала от рабочих мест" },
+        { english: "We drove back from theater districts", russian: "мы отъезжали от театральных районов" },
+        { english: "You all pulled back from shopping areas", russian: "вы отъезжали от торговых районов" },
+        { english: "They drove back from hospital areas", russian: "они отъезжали от больничных районов" }
       ]
     },
     {
@@ -119,11 +147,14 @@ window.отMotionData = {
       travelMode: "by-foot",
       sentences: [
         { english: "I step away from the park", russian: "я отхожу от парка" },
-        { english: "She moves back from the lakeside", russian: "она отходит от берега озера" },
-        { english: "They step away from forest areas", russian: "они отходят от лесных районов" },
-        { english: "The deer steps back from the yard", russian: "олень отходит от двора" },
-        { english: "We move away from riverside areas", russian: "мы отходим от прибрежных районов" },
-        { english: "He steps away from village areas", russian: "он отходит от деревенских районов" }
+        { english: "You move back from the lakeside", russian: "ты отходишь от берега озера" },
+        { english: "He steps away from forest areas", russian: "он отходит от лесных районов" },
+        { english: "She moves away from riverside areas", russian: "она отходит от прибрежных районов" },
+        { english: "We step away from village areas", russian: "мы отходим от деревенских районов" },
+        { english: "You all move back from mountain areas", russian: "вы отходите от горных районов" },
+        { english: "They step away from the yard", russian: "они отходят от двора" },
+        { english: "The deer steps back from the meadow", russian: "олень отходит от луга" },
+        { english: "My friend moves away from the creek", russian: "мой друг отходит от ручья" }
       ]
     },
     {
@@ -132,11 +163,15 @@ window.отMotionData = {
       direction: "unidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "He backs away from work", russian: "он отъезжает от работы" },
-        { english: "We pull back from school areas", russian: "мы отъезжаем от школьных районов" },
-        { english: "You drive back from the city center", russian: "вы отъезжаете от центра города" },
-        { english: "My sister drives back from the mall", russian: "моя сестра отъезжает от торгового центра" },
-        { english: "She pulls back from the hospital", russian: "она отъезжает от больницы" }
+        { english: "I back away from work", russian: "я отъезжаю от работы" },
+        { english: "You pull back from school areas", russian: "ты отъезжаешь от школьных районов" },
+        { english: "He drives back from the city center", russian: "он отъезжает от центра города" },
+        { english: "She pulls back from the hospital", russian: "она отъезжает от больницы" },
+        { english: "We drive back from the mall", russian: "мы отъезжаем от торгового центра" },
+        { english: "You all back away from work areas", russian: "вы отъезжаете от рабочих районов" },
+        { english: "They pull back from the theater", russian: "они отъезжают от театра" },
+        { english: "My sister drives back from the gym", russian: "моя сестра отъезжает от спортзала" },
+        { english: "The doctor backs away from the clinic", russian: "врач отъезжает от клиники" }
       ]
     },
     {
@@ -145,12 +180,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-foot",
       sentences: [
-        { english: "The teacher moves away from meadow areas", russian: "учитель отходит от луговых районов" },
-        { english: "The students step back from campus", russian: "студенты отходят от кампуса" },
-        { english: "We move away from mountain areas", russian: "мы отходим от горных районов" },
-        { english: "They step away from waterfall areas", russian: "они отходят от водопадных районов" },
-        { english: "She moves away from valley areas", russian: "она отходит от долинных районов" },
-        { english: "The guide steps back from trail areas", russian: "гид отходит от троповых районов" }
+        { english: "I move away from meadow areas", russian: "я отхожу от луговых районов" },
+        { english: "You step back from campus", russian: "ты отходишь от кампуса" },
+        { english: "He moves away from mountain areas", russian: "он отходит от горных районов" },
+        { english: "She steps away from valley areas", russian: "она отходит от долинных районов" },
+        { english: "We step away from waterfall areas", russian: "мы отходим от водопадных районов" },
+        { english: "You all move away from park areas", russian: "вы отходите от парковых районов" },
+        { english: "They step back from trail areas", russian: "они отходят от троповых районов" },
+        { english: "The teacher moves away from the field", russian: "учитель отходит от поля" },
+        { english: "The guide steps back from the forest", russian: "гид отходит от леса" }
       ]
     },
     {
@@ -159,11 +197,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "They drive back from restaurant districts", russian: "они отъезжают от ресторанных районов" },
-        { english: "She drives back from the airport", russian: "она отъезжает от аэропорта" },
+        { english: "I drive back from restaurant districts", russian: "я отъезжаю от ресторанных районов" },
+        { english: "You drive back from the airport", russian: "ты отъезжаешь от аэропорта" },
         { english: "He pulls back from bridge areas", russian: "он отъезжает от мостовых районов" },
-        { english: "The doctor drives back from the library", russian: "врач отъезжает от библиотеки" },
-        { english: "My brother backs away from the cinema", russian: "мой брат отъезжает от кинотеатра" }
+        { english: "She backs away from the cinema", russian: "она отъезжает от кинотеатра" },
+        { english: "We drive back from the library", russian: "мы отъезжаем от библиотеки" },
+        { english: "You all pull back from shopping centers", russian: "вы отъезжаете от торговых центров" },
+        { english: "They drive back from concert venues", russian: "они отъезжают от концертных площадок" },
+        { english: "The doctor drives back from hospitals", russian: "врач отъезжает от больниц" },
+        { english: "My brother backs away from work", russian: "мой брат отъезжает от работы" }
       ]
     },
     {
@@ -173,10 +215,14 @@ window.отMotionData = {
       travelMode: "by-foot",
       sentences: [
         { english: "I will step away from the forest", russian: "я буду отходить от леса" },
-        { english: "She will move back from creek areas", russian: "она будет отходить от районов ручьёв" },
-        { english: "They will step away from hill areas", russian: "они будут отходить от холмистых районов" },
-        { english: "The children will step back from garden areas", russian: "дети будут отходить от садовых районов" },
-        { english: "We will move away from lakeside areas", russian: "мы будем отходить от прибрежных районов озера" }
+        { english: "You will move back from creek areas", russian: "ты будешь отходить от районов ручьёв" },
+        { english: "He will step away from hill areas", russian: "он будет отходить от холмистых районов" },
+        { english: "She will move away from lakeside areas", russian: "она будет отходить от прибрежных районов озера" },
+        { english: "We will step back from garden areas", russian: "мы будем отходить от садовых районов" },
+        { english: "You all will move away from park areas", russian: "вы будете отходить от парковых районов" },
+        { english: "They will step away from the meadow", russian: "они будут отходить от луга" },
+        { english: "The children will step back from the playground", russian: "дети будут отходить от площадки" },
+        { english: "My friend will move away from the trail", russian: "мой друг будет отходить от тропы" }
       ]
     },
     {
@@ -185,12 +231,15 @@ window.отMotionData = {
       direction: "unidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "He will back away from the office", russian: "он будет отъезжать от офиса" },
-        { english: "We will pull back from theater districts", russian: "мы будем отъезжать от театральных районов" },
-        { english: "You will drive back from town centers", russian: "вы будете отъезжать от центров городов" },
-        { english: "My friend will drive back from work areas (male)", russian: "мой друг будет отъезжать от рабочих районов" },
-        { english: "My friend will drive back from work areas (female)", russian: "моя подруга будет отъезжать от рабочих районов" },
-        { english: "She will pull back from gym areas", russian: "она будет отъезжать от районов спортзалов" }
+        { english: "I will back away from the office", russian: "я буду отъезжать от офиса" },
+        { english: "You will pull back from theater districts", russian: "ты будешь отъезжать от театральных районов" },
+        { english: "He will drive back from town centers", russian: "он будет отъезжать от центров городов" },
+        { english: "She will pull back from gym areas", russian: "она будет отъезжать от районов спортзалов" },
+        { english: "We will drive back from work areas", russian: "мы будем отъезжать от рабочих районов" },
+        { english: "You all will back away from shopping centers", russian: "вы будете отъезжать от торговых центров" },
+        { english: "They will pull back from hospital areas", russian: "они будут отъезжать от больничных районов" },
+        { english: "My friend will drive back from the mall", russian: "мой друг будет отъезжать от торгового центра" },
+        { english: "The nurse will back away from clinic areas", russian: "медсестра будет отъезжать от клинических районов" }
       ]
     },
     {
@@ -199,13 +248,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-foot",
       sentences: [
-        { english: "He will step away from park areas", russian: "он будет отходить от парковых районов" },
-        { english: "The visitor will move away from woodland areas (male)", russian: "посетитель будет отходить от лесных районов" },
-        { english: "The visitor will move away from woodland areas (female)", russian: "посетительница будет отходить от лесных районов" },
-        { english: "The tourists will step back from canyon areas", russian: "туристы будут отходить от районов ущелий" },
+        { english: "I will step away from park areas", russian: "я буду отходить от парковых районов" },
+        { english: "You will move away from woodland areas", russian: "ты будешь отходить от лесных районов" },
+        { english: "He will step back from canyon areas", russian: "он будет отходить от районов ущелий" },
+        { english: "She will move away from meadow areas", russian: "она будет отходить от луговых районов" },
         { english: "We will move away from mountain areas", russian: "мы будем отходить от горных районов" },
-        { english: "They will step away from river areas", russian: "они будут отходить от речных районов" },
-        { english: "She will move away from meadow areas", russian: "она будет отходить от луговых районов" }
+        { english: "You all will step away from river areas", russian: "вы будете отходить от речных районов" },
+        { english: "They will step back from valley areas", russian: "они будут отходить от долинных районов" },
+        { english: "The visitor will move away from lake areas", russian: "посетитель будет отходить от озёрных районов" },
+        { english: "The tourists will step back from waterfall areas", russian: "туристы будут отходить от водопадных районов" }
       ]
     },
     {
@@ -214,10 +265,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "They will drive back from concert areas", russian: "они будут отъезжать от концертных районов" },
-        { english: "She will drive back from market areas", russian: "она будет отъезжать от рыночных районов" },
+        { english: "I will drive back from concert areas", russian: "я буду отъезжать от концертных районов" },
+        { english: "You will drive back from market areas", russian: "ты будешь отъезжать от рыночных районов" },
         { english: "He will pull back from stadium areas", russian: "он будет отъезжать от районов стадионов" },
-        { english: "The nurse will drive back from museum areas", russian: "медсестра будет отъезжать от музейных районов" }
+        { english: "She will drive back from theater areas", russian: "она будет отъезжать от театральных районов" },
+        { english: "We will back away from museum areas", russian: "мы будем отъезжать от музейных районов" },
+        { english: "You all will drive back from restaurant areas", russian: "вы будете отъезжать от ресторанных районов" },
+        { english: "They will pull back from library areas", russian: "они будут отъезжать от библиотечных районов" },
+        { english: "The nurse will drive back from hospital areas", russian: "медсестра будет отъезжать от больничных районов" },
+        { english: "My colleague will back away from office areas", russian: "мой коллега будет отъезжать от офисных районов" }
       ]
     },
     {
@@ -228,10 +284,13 @@ window.отMotionData = {
       sentences: [
         { english: "I will step away from the lake (male)", russian: "я отойду от озера" },
         { english: "I will step away from the lake (female)", russian: "я отойду от озера" },
-        { english: "She will move back from the forest", russian: "она отойдёт от леса" },
-        { english: "They will step away from the hill", russian: "они отойдут от холма" },
-        { english: "The kids will step back from the playground", russian: "дети отойдут от площадки" },
-        { english: "We will move away from the trail", russian: "мы отойдём от тропы" }
+        { english: "You will move back from the forest (male)", russian: "ты отойдёшь от леса" },
+        { english: "You will move back from the forest (female)", russian: "ты отойдёшь от леса" },
+        { english: "He will step away from the hill", russian: "он отойдёт от холма" },
+        { english: "She will move away from the trail", russian: "она отойдёт от тропы" },
+        { english: "We will step back from the playground", russian: "мы отойдём от площадки" },
+        { english: "You all will move away from the creek", russian: "вы отойдёте от ручья" },
+        { english: "They will step back from the meadow", russian: "они отойдут от луга" }
       ]
     },
     {
@@ -240,11 +299,15 @@ window.отMotionData = {
       direction: "unidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "He will back away from the cinema", russian: "он отъедет от кинотеатра" },
-        { english: "We will pull back from the airport", russian: "мы отъедем от аэропорта" },
-        { english: "You will drive back from the hospital", russian: "вы отъедете от больницы" },
-        { english: "My colleague will drive back from the meeting center (male)", russian: "мой коллега отъедет от центра встреч" },
-        { english: "My colleague will drive back from the meeting center (female)", russian: "моя коллега отъедет от центра встреч" }
+        { english: "I will back away from the cinema (male)", russian: "я отъеду от кинотеатра" },
+        { english: "I will back away from the cinema (female)", russian: "я отъеду от кинотеатра" },
+        { english: "You will pull back from the airport (male)", russian: "ты отъедешь от аэропорта" },
+        { english: "You will pull back from the airport (female)", russian: "ты отъедешь от аэропорта" },
+        { english: "He will drive back from the hospital", russian: "он отъедет от больницы" },
+        { english: "My colleague will drive back from the meeting center (female)", russian: "моя коллега отъедет от центра встреч" },
+        { english: "We will back away from the theater", russian: "мы отъедем от театра" },
+        { english: "You all will pull back from the mall", russian: "вы отъедете от торгового центра" },
+        { english: "They will drive back from the stadium", russian: "они отъедут от стадиона" }
       ]
     },
     {
@@ -253,13 +316,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-foot",
       sentences: [
-        { english: "He will step away from the woods", russian: "он отойдёт от леса" },
-        { english: "The hiker will move away from the waterfall (male)", russian: "путешественник отойдёт от водопада" },
-        { english: "The hiker will move away from the waterfall (female)", russian: "путешественница отойдёт от водопада" },
-        { english: "The group will step back from the summit", russian: "группа отойдёт от вершины" },
+        { english: "I will step away from the woods (male)", russian: "я отойду от леса" },
+        { english: "I will step away from the woods (female)", russian: "я отойду от леса" },
+        { english: "You will move away from the waterfall (male)", russian: "ты отойдёшь от водопада" },
+        { english: "You will move away from the waterfall (female)", russian: "ты отойдёшь от водопада" },
+        { english: "He will step back from the summit", russian: "он отойдёт от вершины" },
+        { english: "She will move away from the field", russian: "она отойдёт от поля" },
         { english: "We will move away from the creek", russian: "мы отойдём от ручья" },
-        { english: "They will step away from the valley", russian: "они отойдут от долины" },
-        { english: "She will move away from the field", russian: "она отойдёт от поля" }
+        { english: "You all will step away from the valley", russian: "вы отойдёте от долины" },
+        { english: "They will step back from the canyon", russian: "они отойдут от ущелья" }
       ]
     },
     {
@@ -268,10 +333,15 @@ window.отMotionData = {
       direction: "multidirectional",
       travelMode: "by-vehicle",
       sentences: [
-        { english: "She will pull back from the mall", russian: "она отъедет от торгового центра" },
-        { english: "They will drive back from the restaurant", russian: "они отъедут от ресторана" },
-        { english: "She will drive back from the bridge", russian: "она отъедет от моста" },
-        { english: "He will pull back from the theater", russian: "он отъедет от театра" }
+        { english: "I will pull back from the mall (male)", russian: "я отъеду от торгового центра" },
+        { english: "I will pull back from the mall (female)", russian: "я отъеду от торгового центра" },
+        { english: "You will drive back from the restaurant (male)", russian: "ты отъедешь от ресторана" },
+        { english: "You will drive back from the restaurant (female)", russian: "ты отъедешь от ресторана" },
+        { english: "He will drive back from the bridge", russian: "он отъедет от моста" },
+        { english: "She will pull back from the theater", russian: "она отъедет от театра" },
+        { english: "We will drive back from the airport", russian: "мы отъедем от аэропорта" },
+        { english: "You all will back away from the library", russian: "вы отъедете от библиотеки" },
+        { english: "They will pull back from the hospital", russian: "они отъедут от больницы" }
       ]
     }
   ]
