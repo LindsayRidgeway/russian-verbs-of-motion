@@ -490,8 +490,8 @@
         // Flatten sentences from loaded data
         const availableSentences = flattenSentences(loadedData, selectedTravelModes, selectedDirections, selectedTenseAspects);
 
-        if (availableSentences.length < 10) {
-          challengeEl.innerText = `Not enough data for selected filters. Found ${availableSentences.length} sentences, need at least 10.`;
+        if (availableSentences.length < 5) {
+          challengeEl.innerText = `Not enough data for selected filters. Found ${availableSentences.length} sentences, need at least 5.`;
           setButtonsDisabled(false);
           return;
         }
