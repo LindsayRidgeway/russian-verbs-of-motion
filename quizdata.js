@@ -8,7 +8,7 @@ let availablePrefixes = [];
 const prefixModules = [
   { 
     prefix: "", 
-    name: "(no prefix)", 
+    name: "(basic forms)", 
     file: "unprefixed-motion.js",
     loaded: false,
     data: null

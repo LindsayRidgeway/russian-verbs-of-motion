@@ -357,7 +357,9 @@
         const label = document.createElement('label');
         label.htmlFor = checkbox.id;
         const description = prefixDescriptions[prefixInfo.prefix] || "";
-        label.textContent = `${prefixInfo.name} ${description}`;
+        label.textContent = (prefixInfo.prefix === '')
+	      ? `${description}`                // shows "(basic forms)"
+	      : `${prefixInfo.name} ${description}`;
         
         div.appendChild(checkbox);
         div.appendChild(label);
